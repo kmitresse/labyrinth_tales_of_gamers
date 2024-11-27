@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: labyrinth_tales_of_gamers;singleton:=true
+Automatic-Module-Name: labyrinth_tales_of_gamers
+Bundle-Version: 0.1.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-22
+Export-Package: labyrinthTalesOfGamers,
+ labyrinthTalesOfGamers.impl,
+ labyrinthTalesOfGamers.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport
+Bundle-ActivationPolicy: lazy

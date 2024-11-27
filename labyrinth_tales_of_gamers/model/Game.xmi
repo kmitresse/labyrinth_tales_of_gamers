@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<labyrinthTalesOfGamers:Game
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:labyrinthTalesOfGamers="http://labyrinthtalesofgamers.com/"
+    xsi:schemaLocation="http://labyrinthtalesofgamers.com/ ../meta-model/labyrinth.ecore">
+  <Player name="Player"/>
+  <rooms south="//@rooms.1"
+      name="A1"/>
+  <rooms north="//@rooms.0"
+      name="A2"/>
+  <rooms name="B1"/>
+  <rooms name="B2"/>
+</labyrinthTalesOfGamers:Game>
