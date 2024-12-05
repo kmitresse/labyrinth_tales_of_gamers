@@ -1,0 +1,24 @@
+[comment encoding = UTF-8 /]
+[module generate_entity_list('http://labyrinthtalesofgamers.com/')]
+
+
+[template public generateNpcList(aGame : Game)]
+ArrayList<Npc> npcs = new ArrayList<>();
+[for (room : Room | aGame.rooms)]
+[if (not room.npc.oclIsUndefined())]
+Npc [room.npc.name/] = new Npc("[room.npc.name/]","[room.npc.helloSentence/]", "[room.npc.validPropositionSentence/]","[room.npc.validPropositionSentence/]");
+npcs.add([room.npc.name/]);
+[/if]
+[/for]
+[/template]
+
+[template public generateHintList(aGame : Game)]
+ArrayList<Hint> hints = new ArrayList<>();
+[for (room : Room | aGame.rooms)]
+[if (not room.hint.oclIsUndefined())]
+Hint [room.hint.name/] = new Hint("[room.hint.name/]","[room.hint.label/]");
+hints.add([room.hint.name/]);
+[/if]
+[/for]
+
+[/template]

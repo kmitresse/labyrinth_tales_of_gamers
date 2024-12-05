@@ -1,0 +1,50 @@
+[comment encoding = UTF-8 /]
+[module main('http://labyrinthtalesofgamers.com/')]
+
+[import labyrinth_acceleo::queries::generate_entity_list/]
+[import labyrinth_acceleo::queries::generate_room_list/]
+[import labyrinth_acceleo::queries::generate_linked_rooms/]
+
+
+[template public generateMainClass(aGame : Game)]
+
+[file ('app/Main.java', false, 'UTF-8')]
+package app;
+import java.util.ArrayList;
+
+public class Main { 
+	public static Action move = new Action(Action.MOVE);
+ 	public static Action talk = new Action(Action.NPC);
+ 	public static Action propose = new Action(Action.PROPOSE);
+ 	public static Action hint = new Action(Action.HINT);
+	public static void main(String['[]'/] args){
+		
+	    //Creation des Personnages
+		[aGame.generateNpcList()/]
+		
+	    //Création des Indices
+		[aGame.generateHintList()/]
+		
+	    //Création des Pièces
+	    [aGame.generateRoomList()/]
+	
+	    //Liaison des pièces
+	    [aGame.generateLinkedRooms()/]
+
+	    //Création de la game
+	    Game game = new Game("[aGame.player.name/]", [aGame.player.currentRoom.backendName/], "[aGame.title/]", "[aGame.prologue/]", "[aGame.epilogue/]");
+	    for (Room room : rooms) {
+	      game.addRoom(room);
+	    }
+	    //Management de la game
+	    game.introduce();
+	    while (!game.isTerminated()) {
+	      System.out.println("\n--------------------------------------------------\n");
+	      game.getPlayer().getCurrentRoom().introduce();
+	      game.getPlayer().getCurrentRoom().selectAction();
+	    }
+	    game.terminate();
+	  }
+	}
+[/file]
+[/template]

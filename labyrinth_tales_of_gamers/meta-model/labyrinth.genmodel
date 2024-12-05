@@ -5,34 +5,48 @@
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="22.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
   <foreignModel>labyrinth.ecore</foreignModel>
-  <genPackages prefix="LabyrinthTalesOfGamers" disposableProviderFactory="true" ecorePackage="labyrinth.ecore#/">
+  <genPackages prefix="Labyrinth_tales_of_gamers" disposableProviderFactory="true"
+      ecorePackage="labyrinth.ecore#/">
     <genClasses ecoreClass="labyrinth.ecore#//Game">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference labyrinth.ecore#//Game/Player"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference labyrinth.ecore#//Game/rooms"/>
-      <genOperations ecoreOperation="labyrinth.ecore#//Game/newGame"/>
-      <genOperations ecoreOperation="labyrinth.ecore#//Game/proposeChoices"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference labyrinth.ecore#//Game/player"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference labyrinth.ecore#//Game/rooms"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute labyrinth.ecore#//Game/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute labyrinth.ecore#//Game/prologue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute labyrinth.ecore#//Game/epilogue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute labyrinth.ecore#//Game/nbNpc"/>
     </genClasses>
     <genClasses ecoreClass="labyrinth.ecore#//Room">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference labyrinth.ecore#//Room/north"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference labyrinth.ecore#//Room/east"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference labyrinth.ecore#//Room/west"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference labyrinth.ecore#//Room/south"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference labyrinth.ecore#//Room/entities"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference labyrinth.ecore#//Room/hint"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute labyrinth.ecore#//Room/name"/>
-      <genOperations ecoreOperation="labyrinth.ecore#//Room/introduce"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference labyrinth.ecore#//Room/game"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference labyrinth.ecore#//Room/actions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference labyrinth.ecore#//Room/npc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute labyrinth.ecore#//Room/backendName"/>
     </genClasses>
     <genClasses image="false" ecoreClass="labyrinth.ecore#//Entity">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference labyrinth.ecore#//Entity/currentRoom"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute labyrinth.ecore#//Entity/name"/>
     </genClasses>
+    <genClasses ecoreClass="labyrinth.ecore#//Hint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute labyrinth.ecore#//Hint/label"/>
+    </genClasses>
     <genClasses ecoreClass="labyrinth.ecore#//MainCharacter">
-      <genOperations ecoreOperation="labyrinth.ecore#//MainCharacter/selectChoices">
-        <genParameters ecoreParameter="labyrinth.ecore#//MainCharacter/selectChoices/choices"/>
-      </genOperations>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute labyrinth.ecore#//MainCharacter/nbDiscoveredNpc"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference labyrinth.ecore#//MainCharacter/game"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference labyrinth.ecore#//MainCharacter/currentRoom"/>
     </genClasses>
     <genClasses ecoreClass="labyrinth.ecore#//Npc">
-      <genOperations ecoreOperation="labyrinth.ecore#//Npc/salute"/>
-      <genOperations ecoreOperation="labyrinth.ecore#//Npc/giveHintPosition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute labyrinth.ecore#//Npc/helloSentence"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference labyrinth.ecore#//Npc/hintPosition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute labyrinth.ecore#//Npc/discovered"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute labyrinth.ecore#//Npc/validPropositionSentence"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute labyrinth.ecore#//Npc/invalidPropositionSentence"/>
+    </genClasses>
+    <genClasses ecoreClass="labyrinth.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute labyrinth.ecore#//Action/label"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -1,55 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="labyrinthTalesOfGamers" nsURI="http://labyrinthtalesofgamers.com/"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="labyrinth_tales_of_gamers" nsURI="http://labyrinthtalesofgamers.com/"
     nsPrefix="labyrinthTalesOfGamers">
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Game">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Player" lowerBound="1"
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="nbNpcPositiveOrNull"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="nbNpcPositiveOrNull" value="self.nbNpc >= 0"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="player" lowerBound="1"
         eType="#//MainCharacter" containment="true" eOpposite="#//MainCharacter/game"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rooms" lowerBound="1" upperBound="-1"
-        eType="#//Room" containment="true" eOpposite="#//Room/game"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eType="#//Room" containment="true" eOpposite="#//Room/game">
+      <eAnnotations source="http://www.eclipse.org/OCL/Collection">
+        <details key="nullFree" value="false"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="prologue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="epilogue" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbNpc" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Room">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="existingAnExit notHisOwnExit existingAction npcActionImpliesNpcExists proposeActionImpliesNpcExists hintActionImpliesHintExists"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="existingAnExit" value="self.east &lt;> null or self.north &lt;> null or self.south &lt;> null or self.west &lt;> null"/>
+      <details key="notHisOwnExit" value="self.east &lt;> self and self.north &lt;> self and self.south &lt;> self and self.west &lt;> self"/>
+      <details key="existingAction" value="self.actions->size() > 0"/>
+      <details key="npcActionImpliesNpcExists" value="self.actions->exists(action | action.label = 'Demander l\'indice') implies not self.npc.oclIsUndefined()"/>
+      <details key="proposeActionImpliesNpcExists" value="self.actions->exists(action | action.label = 'Proposer un nom') implies not self.npc.oclIsUndefined()"/>
+      <details key="hintActionImpliesHintExists" value="self.actions->exists(action | action.label = 'Lire l\'indice') implies not self.npc.oclIsUndefined()"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="north" eType="#//Room"
         eOpposite="#//Room/south"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="east" eType="#//Room" eOpposite="#//Room/west"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="west" eType="#//Room" eOpposite="#//Room/east"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="south" eType="#//Room"
         eOpposite="#//Room/north"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entities" upperBound="-1"
-        eType="#//Entity" eOpposite="#//Entity/currentRoom"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hint" eType="#//Hint" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="game" lowerBound="1" eType="#//Game"
         eOpposite="#//Game/rooms"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
-        eType="#//Action"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actions" lowerBound="1"
+        upperBound="-1" eType="#//Action" containment="true">
+      <eAnnotations source="http://www.eclipse.org/OCL/Collection">
+        <details key="nullFree" value="false"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="npc" eType="#//Npc" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backendName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entity" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="currentRoom" lowerBound="1"
-        eType="#//Room" eOpposite="#//Room/entities"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
-        eType="#//Action"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Hint" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MainCharacter" eSuperTypes="#//Entity">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbDiscoverdPnj" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="nbDiscoveredNpcBorned"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="nbDiscoveredNpcBorned" value="self.nbDiscoveredNpc >= 0 and self.nbDiscoveredNpc &lt;= self.game.nbNpc"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbDiscoveredNpc" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="game" lowerBound="1" eType="#//Game"
-        eOpposite="#//Game/Player"/>
+        eOpposite="#//Game/player"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="currentRoom" lowerBound="1"
+        eType="#//Room"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Npc" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="helloSentence" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hintPosition" lowerBound="1"
         eType="#//Room"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="discovered" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="discovered" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="validPropositionSentence"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="InvalidPropositionSentence"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EShort"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="invalidPropositionSentence"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Action">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="labelAction"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="labelAction" value="self.label = 'Se déplacer' or self.label = 'Demander l\'indice' or self.label = 'Proposer un nom' or self.label = 'Lire l\'indice'"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>

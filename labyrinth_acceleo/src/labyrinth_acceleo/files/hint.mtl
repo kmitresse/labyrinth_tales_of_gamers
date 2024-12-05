@@ -1,0 +1,23 @@
+[comment encoding = UTF-8 /]
+[module hint('http://labyrinthtalesofgamers.com/')]
+
+
+[template public generateHintClass(aGame : Game)]
+
+[file ('app/Hint.java', false, 'UTF-8')]
+package app;
+
+public class Hint extends Entity{
+  private String content;
+
+  public Hint(String name, String content) {
+    super(name);
+    this.content = content;
+  }
+
+  public void getContent() {
+    TextManager.print(TextManager.YELLOW + this.content + TextManager.RESET);
+  }
+}
+[/file]
+[/template]

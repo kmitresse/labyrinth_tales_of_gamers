@@ -1,0 +1,9 @@
+[comment encoding = UTF-8 /]
+[module generate_linked_rooms('http://labyrinthtalesofgamers.com/')]
+
+
+[template public generateLinkedRooms(aGame: Game)]
+[for(aRoom : Room | aGame.rooms)]
+[aRoom.backendName/][if(not aRoom.north.oclIsUndefined())].setNorth([aRoom.north.backendName/])[/if][if(not aRoom.east.oclIsUndefined())].setEast([aRoom.east.backendName/])[/if][if(not aRoom.south.oclIsUndefined())].setSouth([aRoom.south.backendName/])[/if][if(not aRoom.west.oclIsUndefined())].setWest([aRoom.west.backendName/])[/if];
+[/for]
+[/template]

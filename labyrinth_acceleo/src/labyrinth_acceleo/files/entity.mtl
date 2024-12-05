@@ -1,0 +1,22 @@
+[comment encoding = UTF-8 /]
+[module entity('http://labyrinthtalesofgamers.com/')]
+
+[template public generateEntityClass(aGame : Game)]
+
+[file ('app/Entity.java', false, 'UTF-8')]
+package app;
+
+public abstract class Entity {
+  private String name;
+
+  public Entity(String name){
+    this.name = name;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+}
+[/file]
+[/template]

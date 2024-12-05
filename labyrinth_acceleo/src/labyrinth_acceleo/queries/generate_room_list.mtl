@@ -1,0 +1,11 @@
+[comment encoding = UTF-8 /]
+[module generate_room_list('http://labyrinthtalesofgamers.com/')]
+
+
+[template public generateRoomList(aGame : Game)]
+ArrayList<Room> rooms = new ArrayList<>();
+[for (room : Room | aGame.rooms)]
+Room [room.backendName/] = new Room("[room.name/]",[if(not room.npc.oclIsUndefined())][room.npc.name/][else]null[/if], [if(not room.hint.oclIsUndefined())][room.hint.name/][else]null[/if]);
+rooms.add([room.backendName/]);
+[/for]
+[/template]

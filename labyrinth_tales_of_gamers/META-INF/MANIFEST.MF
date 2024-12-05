@@ -8,9 +8,11 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-22
-Export-Package: labyrinthTalesOfGamers,
- labyrinthTalesOfGamers.impl,
- labyrinthTalesOfGamers.util
+Export-Package: labyrinth_tales_of_gamers,
+ labyrinth_tales_of_gamers.impl,
+ labyrinth_tales_of_gamers.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.ocl.pivot;visibility:=reexport,
+ org.eclipse.ocl.examples.codegen;visibility:=reexport
 Bundle-ActivationPolicy: lazy

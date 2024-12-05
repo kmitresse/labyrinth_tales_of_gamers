@@ -9,8 +9,8 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated labyrinth -->
       <package
-            uri="http://www.labyrinthtalesofgamers.com/"
-            class="labyrinthTalesOfGamers.LabyrinthTalesOfGamersPackage"
+            uri="http://labyrinthtalesofgamers.com/"
+            class="labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage"
             genModel="meta-model/labyrinth.genmodel"/>
    </extension>
 
