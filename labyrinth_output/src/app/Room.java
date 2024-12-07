@@ -24,11 +24,15 @@ public class Room {
     this.actions.add(Main.move);
 		this.npc = npc;
     if (npc != null) {
+		this.npc.setCurrentRoom(this);
       this.actions.add(Main.propose);
       this.actions.add(Main.talk);
     }
     this.hint = hint;
-    if (this.hint != null) this.actions.add(Main.hint);
+    if (this.hint != null){
+		this.hint.setCurrentRoom(this);
+		this.actions.add(Main.hint);
+	}
   }
 
   public String getName() {
@@ -102,6 +106,15 @@ public class Room {
     if (this.npc != null) this.npc.salute();
   }
 
+  public boolean containAction(String actionLabel){
+	for(Action action : this.actions){
+		if (actionLabel.equals(action.getLabel())) {
+			return true;
+		}
+	}
+	return false;
+	}
+
   public void generateDescription(){
     TextManager.print("Vous entrez dans la pièce '" + this.name + "'. Vous voyez une sortie:");
     if (this.north != null){
@@ -124,10 +137,11 @@ public class Room {
       TextManager.print("Une personne est présente dans la pièce, elle vous salue");
     }
   }
+  
   public void selectAction() {
-    TextManager.print("Que voulez-vous faire?");
     boolean validAction = false;
     while (!validAction) {
+	    TextManager.print("Que voulez-vous faire?");
       this.displayActions();
       validAction = this.manageAction(MainCharacter.selectAction()); ;
     }
@@ -143,54 +157,60 @@ public class Room {
   }
 
   public boolean manageAction(String action) {
-    if (action.equals(Action.MOVE)) {
-      TextManager.print("Dans quelle direction souhaitez-vous aller?");
-      Boolean directionSelected = false;
-      while (!directionSelected) {
-        this.displayDirections();
-        String selectedDirection = MainCharacter.selectAction();
-        if (selectedDirection.equals(NORTH)) {
-          game.getPlayer().setCurrentRoom(this.north);
-          directionSelected = true;
-        } else if (selectedDirection.equals(SOUTH)) {
-          game.getPlayer().setCurrentRoom(this.south);
-          directionSelected = true;
-        } else if (selectedDirection.equals(EAST)) {
-          game.getPlayer().setCurrentRoom(this.east);
-          directionSelected = true;
-        } else if (selectedDirection.equals(WEST)) {
-          game.getPlayer().setCurrentRoom(this.west);
-          directionSelected = true;
-        } else {
-          TextManager.print("Direction invalide, choisissez en une nouvelle");
-        }
-      }
-      TextManager.print("Vous quittez la pièce.");
-      return true;
-    } else if (action.equals(Action.HINT)) {
-      this.hint.getContent();
-      return false;
-    } else if (action.equals(Action.NPC)) {
-      this.npc.giveHint();
-      return false;
-    } else if (action.equals(Action.PROPOSE)) {
-      TextManager.print("Proposez un nom");
-      String proposition = MainCharacter.selectAction();
-      if (proposition.equals(this.npc.getName())) {
-        this.npc.acceptProposition();
-        this.game.getPlayer().addDiscoverie();
-        if (this.game.isTerminated()) {
-          return true;
-        }
-      } else {
-        this.npc.refuseProposition();
-      }
-      return false;
-    }
-    else {
+    if (this.containAction(action)){
+		if (action.equals(Action.MOVE)) {
+    	  TextManager.print("Dans quelle direction souhaitez-vous aller?");
+      	Boolean directionSelected = false;
+	      while (!directionSelected) {
+	        this.displayDirections();
+	        String selectedDirection = MainCharacter.selectAction();
+	        if (this.north != null && selectedDirection.equals(NORTH)) {
+	          game.getPlayer().setCurrentRoom(this.north);
+	          directionSelected = true;
+	        } else if (this.south != null && selectedDirection.equals(SOUTH)) {
+	          game.getPlayer().setCurrentRoom(this.south);
+	          directionSelected = true;
+	        } else if (this.east != null && selectedDirection.equals(EAST)) {
+	          game.getPlayer().setCurrentRoom(this.east);
+	          directionSelected = true;
+	        } else if (this.west != null && selectedDirection.equals(WEST)) {
+	          game.getPlayer().setCurrentRoom(this.west);
+	          directionSelected = true;
+	        } else {
+	          TextManager.print("Direction invalide, choisissez en une nouvelle");
+	        }
+	      }
+	      TextManager.print("Vous quittez la pièce.");
+	      return true;
+	    } else if (action.equals(Action.HINT)) {
+	      this.hint.getContent();
+	      return false;
+	    } else if (action.equals(Action.NPC)) {
+	      this.npc.giveHint();
+	      return false;
+	    } else if (action.equals(Action.PROPOSE)) {
+	    	if (this.npc.getDiscovered()) {
+			TextManager.print(this.npc.pseudo() + " tu as déjà trouvé mon nom", TextManager.BLUE);
+	    	} else {
+	    		TextManager.print("Proposez un nom");
+	    		String proposition = MainCharacter.selectAction();
+	    		if (proposition.equals(this.npc.getName())) {
+			        this.npc.acceptProposition();
+			        this.game.getPlayer().addDiscoverie();
+			        if (this.game.isTerminated()) {
+			          return true;
+			        }
+		        } else {
+		          this.npc.refuseProposition();
+		        }
+		    }
+	    	return false;
+	    }
+	} else {
       TextManager.print("Action invalide, selectionnez une nouvelle action");
       return false;
     }
+	return false;
   }
 
   public void displayDirections() {

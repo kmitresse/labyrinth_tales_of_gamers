@@ -5,15 +5,19 @@ public class Npc extends Entity{
   private String helloSentence;
   private String validPropositionSentence;
   private String invalidPropositionSentence;
-  private Room currentRoom;
-  private Room hintPosition;
+  private Hint hint;
   private Boolean discovered;
-  public Npc(String name, String helloSentence, String validPropositionSentence, String invalidPropositionSentence) {
+  public Npc(String name,Hint hint, String helloSentence, String validPropositionSentence, String invalidPropositionSentence) {
     super(name);
+	this.hint = hint;
     this.helloSentence = helloSentence;
     this.validPropositionSentence = validPropositionSentence;
     this.invalidPropositionSentence = invalidPropositionSentence;
     this.discovered = false;
+  }
+
+  public Boolean getDiscovered(){
+	return discovered;
   }
 
   public void salute() {
@@ -30,7 +34,7 @@ public class Npc extends Entity{
   }
   public void giveHint() {
     if (!discovered) {
-      TextManager.print(pseudo() + "L'indice se trouve dans la pièce " + hintPosition.getName(), TextManager.BLUE);
+      TextManager.print(pseudo() + "L'indice se trouve dans la pièce " + hint.getCurrentRoom().getName(), TextManager.BLUE);
     } else {
       TextManager.print(pseudo() + "Pourquoi aurais-je besoin de vous donner un indice? Vous avez déjà découvert mon identité!", TextManager.BLUE);
     }
@@ -42,7 +46,8 @@ public class Npc extends Entity{
     return "??? > ";
   }
 
-  public void setHintPosition(Room room) {
-    this.hintPosition = room;
+  public Hint getHint() {
+	return this.hint;
   }
+
 }

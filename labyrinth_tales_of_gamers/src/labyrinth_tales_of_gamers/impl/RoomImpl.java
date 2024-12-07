@@ -481,9 +481,9 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		if (newHint != hint) {
 			NotificationChain msgs = null;
 			if (hint != null)
-				msgs = ((InternalEObject)hint).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Labyrinth_tales_of_gamersPackage.ROOM__HINT, null, msgs);
+				msgs = ((InternalEObject)hint).eInverseRemove(this, Labyrinth_tales_of_gamersPackage.HINT__CURRENT_ROOM, Hint.class, msgs);
 			if (newHint != null)
-				msgs = ((InternalEObject)newHint).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Labyrinth_tales_of_gamersPackage.ROOM__HINT, null, msgs);
+				msgs = ((InternalEObject)newHint).eInverseAdd(this, Labyrinth_tales_of_gamersPackage.HINT__CURRENT_ROOM, Hint.class, msgs);
 			msgs = basicSetHint(newHint, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -605,9 +605,9 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		if (newNpc != npc) {
 			NotificationChain msgs = null;
 			if (npc != null)
-				msgs = ((InternalEObject)npc).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Labyrinth_tales_of_gamersPackage.ROOM__NPC, null, msgs);
+				msgs = ((InternalEObject)npc).eInverseRemove(this, Labyrinth_tales_of_gamersPackage.NPC__CURRENT_ROOM, Npc.class, msgs);
 			if (newNpc != null)
-				msgs = ((InternalEObject)newNpc).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Labyrinth_tales_of_gamersPackage.ROOM__NPC, null, msgs);
+				msgs = ((InternalEObject)newNpc).eInverseAdd(this, Labyrinth_tales_of_gamersPackage.NPC__CURRENT_ROOM, Npc.class, msgs);
 			msgs = basicSetNpc(newNpc, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -1340,10 +1340,18 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				if (south != null)
 					msgs = ((InternalEObject)south).eInverseRemove(this, Labyrinth_tales_of_gamersPackage.ROOM__NORTH, Room.class, msgs);
 				return basicSetSouth((Room)otherEnd, msgs);
+			case Labyrinth_tales_of_gamersPackage.ROOM__HINT:
+				if (hint != null)
+					msgs = ((InternalEObject)hint).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Labyrinth_tales_of_gamersPackage.ROOM__HINT, null, msgs);
+				return basicSetHint((Hint)otherEnd, msgs);
 			case Labyrinth_tales_of_gamersPackage.ROOM__GAME:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetGame((Game)otherEnd, msgs);
+			case Labyrinth_tales_of_gamersPackage.ROOM__NPC:
+				if (npc != null)
+					msgs = ((InternalEObject)npc).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Labyrinth_tales_of_gamersPackage.ROOM__NPC, null, msgs);
+				return basicSetNpc((Npc)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}

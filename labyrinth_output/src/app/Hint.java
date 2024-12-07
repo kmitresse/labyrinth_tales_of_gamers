@@ -9,6 +9,6 @@ public class Hint extends Entity{
   }
 
   public void getContent() {
-    TextManager.print(TextManager.YELLOW + this.content + TextManager.RESET);
+    TextManager.print(this.content, TextManager.YELLOW);
   }
 }

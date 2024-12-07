@@ -19,19 +19,19 @@ public class Main {
  	public static Action hint = new Action(Action.HINT);
 	public static void main(String['[]'/] args){
 		
-	    //Creation des Personnages
+	    // Hints creation
+		[aGame.generateHintList()/]
+
+	    // Non players characters creation
 		[aGame.generateNpcList()/]
 		
-	    //Création des Indices
-		[aGame.generateHintList()/]
-		
-	    //Création des Pièces
+	    // Rooms creation
 	    [aGame.generateRoomList()/]
 	
-	    //Liaison des pièces
-	    [aGame.generateLinkedRooms()/]
+	    // Link rooms
+	    [aGame.generateLinkedRooms()/]	
 
-	    //Création de la game
+	    //Game creation
 	    Game game = new Game("[aGame.player.name/]", [aGame.player.currentRoom.backendName/], "[aGame.title/]", "[aGame.prologue/]", "[aGame.epilogue/]");
 	    for (Room room : rooms) {
 	      game.addRoom(room);

@@ -132,12 +132,14 @@ public interface Room extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Hint</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link labyrinth_tales_of_gamers.Hint#getCurrentRoom <em>Current Room</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Hint</em>' containment reference.
 	 * @see #setHint(Hint)
 	 * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getRoom_Hint()
-	 * @model containment="true"
+	 * @see labyrinth_tales_of_gamers.Hint#getCurrentRoom
+	 * @model opposite="currentRoom" containment="true"
 	 * @generated
 	 */
 	Hint getHint();
@@ -213,12 +215,14 @@ public interface Room extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Npc</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link labyrinth_tales_of_gamers.Npc#getCurrentRoom <em>Current Room</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Npc</em>' containment reference.
 	 * @see #setNpc(Npc)
 	 * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getRoom_Npc()
-	 * @model containment="true"
+	 * @see labyrinth_tales_of_gamers.Npc#getCurrentRoom
+	 * @model opposite="currentRoom" containment="true"
 	 * @generated
 	 */
 	Npc getNpc();

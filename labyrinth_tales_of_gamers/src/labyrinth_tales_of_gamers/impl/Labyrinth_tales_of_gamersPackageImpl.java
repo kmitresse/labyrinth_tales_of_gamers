@@ -445,6 +445,26 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
+	public EReference getHint_CurrentRoom() {
+		return (EReference)hintEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getHint_Npc() {
+		return (EReference)hintEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getMainCharacter() {
 		return mainCharacterEClass;
 	}
@@ -555,6 +575,26 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
+	public EReference getNpc_Hint() {
+		return (EReference)npcEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getNpc_CurrentRoom() {
+		return (EReference)npcEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getAction() {
 		return actionEClass;
 	}
@@ -640,6 +680,8 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 
 		hintEClass = createEClass(HINT);
 		createEAttribute(hintEClass, HINT__LABEL);
+		createEReference(hintEClass, HINT__CURRENT_ROOM);
+		createEReference(hintEClass, HINT__NPC);
 
 		mainCharacterEClass = createEClass(MAIN_CHARACTER);
 		createEAttribute(mainCharacterEClass, MAIN_CHARACTER__NB_DISCOVERED_NPC);
@@ -653,6 +695,8 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 		createEAttribute(npcEClass, NPC__DISCOVERED);
 		createEAttribute(npcEClass, NPC__VALID_PROPOSITION_SENTENCE);
 		createEAttribute(npcEClass, NPC__INVALID_PROPOSITION_SENTENCE);
+		createEReference(npcEClass, NPC__HINT);
+		createEReference(npcEClass, NPC__CURRENT_ROOM);
 
 		actionEClass = createEClass(ACTION);
 		createEAttribute(actionEClass, ACTION__LABEL);
@@ -714,11 +758,11 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 		initEReference(getRoom_East(), this.getRoom(), this.getRoom_West(), "east", null, 0, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRoom_West(), this.getRoom(), this.getRoom_East(), "west", null, 0, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRoom_South(), this.getRoom(), this.getRoom_North(), "south", null, 0, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRoom_Hint(), this.getHint(), null, "hint", null, 0, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRoom_Hint(), this.getHint(), this.getHint_CurrentRoom(), "hint", null, 0, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRoom_Name(), ecorePackage.getEString(), "name", null, 0, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRoom_Game(), this.getGame(), this.getGame_Rooms(), "game", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRoom_Actions(), this.getAction(), null, "actions", null, 1, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRoom_Npc(), this.getNpc(), null, "npc", null, 0, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRoom_Npc(), this.getNpc(), this.getNpc_CurrentRoom(), "npc", null, 0, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRoom_BackendName(), ecorePackage.getEString(), "backendName", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getRoom__NotHisOwnExit__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "notHisOwnExit", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -780,6 +824,8 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 
 		initEClass(hintEClass, Hint.class, "Hint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getHint_Label(), ecorePackage.getEString(), "label", null, 0, 1, Hint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHint_CurrentRoom(), this.getRoom(), this.getRoom_Hint(), "currentRoom", null, 1, 1, Hint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHint_Npc(), this.getNpc(), this.getNpc_Hint(), "npc", null, 1, 1, Hint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mainCharacterEClass, MainCharacter.class, "MainCharacter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMainCharacter_NbDiscoveredNpc(), ecorePackage.getEInt(), "nbDiscoveredNpc", null, 1, 1, MainCharacter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -801,6 +847,8 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 		initEAttribute(getNpc_Discovered(), ecorePackage.getEBoolean(), "discovered", null, 1, 1, Npc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNpc_ValidPropositionSentence(), ecorePackage.getEString(), "validPropositionSentence", null, 0, 1, Npc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNpc_InvalidPropositionSentence(), ecorePackage.getEString(), "invalidPropositionSentence", null, 1, 1, Npc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNpc_Hint(), this.getHint(), this.getHint_Npc(), "hint", null, 0, 1, Npc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNpc_CurrentRoom(), this.getRoom(), this.getRoom_Npc(), "currentRoom", null, 1, 1, Npc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAction_Label(), ecorePackage.getEString(), "label", null, 1, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

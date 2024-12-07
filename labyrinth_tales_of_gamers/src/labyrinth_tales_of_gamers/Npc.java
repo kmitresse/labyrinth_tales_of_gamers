@@ -17,6 +17,8 @@ package labyrinth_tales_of_gamers;
  *   <li>{@link labyrinth_tales_of_gamers.Npc#isDiscovered <em>Discovered</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.Npc#getValidPropositionSentence <em>Valid Proposition Sentence</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.Npc#getInvalidPropositionSentence <em>Invalid Proposition Sentence</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.Npc#getHint <em>Hint</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.Npc#getCurrentRoom <em>Current Room</em>}</li>
  * </ul>
  *
  * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getNpc()
@@ -133,5 +135,53 @@ public interface Npc extends Entity {
 	 * @generated
 	 */
 	void setInvalidPropositionSentence(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Hint</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link labyrinth_tales_of_gamers.Hint#getNpc <em>Npc</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Hint</em>' reference.
+	 * @see #setHint(Hint)
+	 * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getNpc_Hint()
+	 * @see labyrinth_tales_of_gamers.Hint#getNpc
+	 * @model opposite="npc"
+	 * @generated
+	 */
+	Hint getHint();
+
+	/**
+	 * Sets the value of the '{@link labyrinth_tales_of_gamers.Npc#getHint <em>Hint</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Hint</em>' reference.
+	 * @see #getHint()
+	 * @generated
+	 */
+	void setHint(Hint value);
+
+	/**
+	 * Returns the value of the '<em><b>Current Room</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link labyrinth_tales_of_gamers.Room#getNpc <em>Npc</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Current Room</em>' container reference.
+	 * @see #setCurrentRoom(Room)
+	 * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getNpc_CurrentRoom()
+	 * @see labyrinth_tales_of_gamers.Room#getNpc
+	 * @model opposite="npc" required="true" transient="false"
+	 * @generated
+	 */
+	Room getCurrentRoom();
+
+	/**
+	 * Sets the value of the '{@link labyrinth_tales_of_gamers.Npc#getCurrentRoom <em>Current Room</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Current Room</em>' container reference.
+	 * @see #getCurrentRoom()
+	 * @generated
+	 */
+	void setCurrentRoom(Room value);
 
 } // Npc

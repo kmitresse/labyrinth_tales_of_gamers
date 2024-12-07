@@ -2,16 +2,19 @@
  */
 package labyrinth_tales_of_gamers.impl;
 
+import labyrinth_tales_of_gamers.Hint;
 import labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage;
 import labyrinth_tales_of_gamers.Npc;
 import labyrinth_tales_of_gamers.Room;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +29,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link labyrinth_tales_of_gamers.impl.NpcImpl#isDiscovered <em>Discovered</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.impl.NpcImpl#getValidPropositionSentence <em>Valid Proposition Sentence</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.impl.NpcImpl#getInvalidPropositionSentence <em>Invalid Proposition Sentence</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.impl.NpcImpl#getHint <em>Hint</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.impl.NpcImpl#getCurrentRoom <em>Current Room</em>}</li>
  * </ul>
  *
  * @generated
@@ -120,6 +125,16 @@ public class NpcImpl extends EntityImpl implements Npc {
 	 * @ordered
 	 */
 	protected String invalidPropositionSentence = INVALID_PROPOSITION_SENTENCE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getHint() <em>Hint</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHint()
+	 * @generated
+	 * @ordered
+	 */
+	protected Hint hint;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -278,6 +293,161 @@ public class NpcImpl extends EntityImpl implements Npc {
 	 * @generated
 	 */
 	@Override
+	public Hint getHint() {
+		if (hint != null && hint.eIsProxy()) {
+			InternalEObject oldHint = (InternalEObject)hint;
+			hint = (Hint)eResolveProxy(oldHint);
+			if (hint != oldHint) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Labyrinth_tales_of_gamersPackage.NPC__HINT, oldHint, hint));
+			}
+		}
+		return hint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Hint basicGetHint() {
+		return hint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetHint(Hint newHint, NotificationChain msgs) {
+		Hint oldHint = hint;
+		hint = newHint;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Labyrinth_tales_of_gamersPackage.NPC__HINT, oldHint, newHint);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setHint(Hint newHint) {
+		if (newHint != hint) {
+			NotificationChain msgs = null;
+			if (hint != null)
+				msgs = ((InternalEObject)hint).eInverseRemove(this, Labyrinth_tales_of_gamersPackage.HINT__NPC, Hint.class, msgs);
+			if (newHint != null)
+				msgs = ((InternalEObject)newHint).eInverseAdd(this, Labyrinth_tales_of_gamersPackage.HINT__NPC, Hint.class, msgs);
+			msgs = basicSetHint(newHint, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Labyrinth_tales_of_gamersPackage.NPC__HINT, newHint, newHint));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Room getCurrentRoom() {
+		if (eContainerFeatureID() != Labyrinth_tales_of_gamersPackage.NPC__CURRENT_ROOM) return null;
+		return (Room)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetCurrentRoom(Room newCurrentRoom, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newCurrentRoom, Labyrinth_tales_of_gamersPackage.NPC__CURRENT_ROOM, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCurrentRoom(Room newCurrentRoom) {
+		if (newCurrentRoom != eInternalContainer() || (eContainerFeatureID() != Labyrinth_tales_of_gamersPackage.NPC__CURRENT_ROOM && newCurrentRoom != null)) {
+			if (EcoreUtil.isAncestor(this, newCurrentRoom))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newCurrentRoom != null)
+				msgs = ((InternalEObject)newCurrentRoom).eInverseAdd(this, Labyrinth_tales_of_gamersPackage.ROOM__NPC, Room.class, msgs);
+			msgs = basicSetCurrentRoom(newCurrentRoom, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Labyrinth_tales_of_gamersPackage.NPC__CURRENT_ROOM, newCurrentRoom, newCurrentRoom));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Labyrinth_tales_of_gamersPackage.NPC__HINT:
+				if (hint != null)
+					msgs = ((InternalEObject)hint).eInverseRemove(this, Labyrinth_tales_of_gamersPackage.HINT__NPC, Hint.class, msgs);
+				return basicSetHint((Hint)otherEnd, msgs);
+			case Labyrinth_tales_of_gamersPackage.NPC__CURRENT_ROOM:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetCurrentRoom((Room)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Labyrinth_tales_of_gamersPackage.NPC__HINT:
+				return basicSetHint(null, msgs);
+			case Labyrinth_tales_of_gamersPackage.NPC__CURRENT_ROOM:
+				return basicSetCurrentRoom(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case Labyrinth_tales_of_gamersPackage.NPC__CURRENT_ROOM:
+				return eInternalContainer().eInverseRemove(this, Labyrinth_tales_of_gamersPackage.ROOM__NPC, Room.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Labyrinth_tales_of_gamersPackage.NPC__HELLO_SENTENCE:
@@ -291,6 +461,11 @@ public class NpcImpl extends EntityImpl implements Npc {
 				return getValidPropositionSentence();
 			case Labyrinth_tales_of_gamersPackage.NPC__INVALID_PROPOSITION_SENTENCE:
 				return getInvalidPropositionSentence();
+			case Labyrinth_tales_of_gamersPackage.NPC__HINT:
+				if (resolve) return getHint();
+				return basicGetHint();
+			case Labyrinth_tales_of_gamersPackage.NPC__CURRENT_ROOM:
+				return getCurrentRoom();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -317,6 +492,12 @@ public class NpcImpl extends EntityImpl implements Npc {
 				return;
 			case Labyrinth_tales_of_gamersPackage.NPC__INVALID_PROPOSITION_SENTENCE:
 				setInvalidPropositionSentence((String)newValue);
+				return;
+			case Labyrinth_tales_of_gamersPackage.NPC__HINT:
+				setHint((Hint)newValue);
+				return;
+			case Labyrinth_tales_of_gamersPackage.NPC__CURRENT_ROOM:
+				setCurrentRoom((Room)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -345,6 +526,12 @@ public class NpcImpl extends EntityImpl implements Npc {
 			case Labyrinth_tales_of_gamersPackage.NPC__INVALID_PROPOSITION_SENTENCE:
 				setInvalidPropositionSentence(INVALID_PROPOSITION_SENTENCE_EDEFAULT);
 				return;
+			case Labyrinth_tales_of_gamersPackage.NPC__HINT:
+				setHint((Hint)null);
+				return;
+			case Labyrinth_tales_of_gamersPackage.NPC__CURRENT_ROOM:
+				setCurrentRoom((Room)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -367,6 +554,10 @@ public class NpcImpl extends EntityImpl implements Npc {
 				return VALID_PROPOSITION_SENTENCE_EDEFAULT == null ? validPropositionSentence != null : !VALID_PROPOSITION_SENTENCE_EDEFAULT.equals(validPropositionSentence);
 			case Labyrinth_tales_of_gamersPackage.NPC__INVALID_PROPOSITION_SENTENCE:
 				return INVALID_PROPOSITION_SENTENCE_EDEFAULT == null ? invalidPropositionSentence != null : !INVALID_PROPOSITION_SENTENCE_EDEFAULT.equals(invalidPropositionSentence);
+			case Labyrinth_tales_of_gamersPackage.NPC__HINT:
+				return hint != null;
+			case Labyrinth_tales_of_gamersPackage.NPC__CURRENT_ROOM:
+				return getCurrentRoom() != null;
 		}
 		return super.eIsSet(featureID);
 	}

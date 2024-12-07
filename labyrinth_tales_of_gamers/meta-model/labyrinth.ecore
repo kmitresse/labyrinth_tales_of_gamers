@@ -49,7 +49,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="west" eType="#//Room" eOpposite="#//Room/east"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="south" eType="#//Room"
         eOpposite="#//Room/north"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hint" eType="#//Hint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hint" eType="#//Hint" containment="true"
+        eOpposite="#//Hint/currentRoom"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="game" lowerBound="1" eType="#//Game"
         eOpposite="#//Game/rooms"/>
@@ -59,7 +60,8 @@
         <details key="nullFree" value="false"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="npc" eType="#//Npc" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="npc" eType="#//Npc" containment="true"
+        eOpposite="#//Npc/currentRoom"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="backendName" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -68,6 +70,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Hint" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="currentRoom" lowerBound="1"
+        eType="#//Room" eOpposite="#//Room/hint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="npc" lowerBound="1" eType="#//Npc"
+        eOpposite="#//Npc/hint"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MainCharacter" eSuperTypes="#//Entity">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -85,14 +91,15 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Npc" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="helloSentence" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hintPosition" lowerBound="1"
-        eType="#//Room"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="discovered" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="validPropositionSentence"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="invalidPropositionSentence"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hint" eType="#//Hint" eOpposite="#//Hint/npc"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="currentRoom" lowerBound="1"
+        eType="#//Room" eOpposite="#//Room/npc"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">

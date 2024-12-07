@@ -387,13 +387,31 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	int HINT__LABEL = ENTITY_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Current Room</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HINT__CURRENT_ROOM = ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Npc</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HINT__NPC = ENTITY_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Hint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HINT_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 1;
+	int HINT_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Hint</em>' class.
@@ -542,13 +560,31 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	int NPC__INVALID_PROPOSITION_SENTENCE = ENTITY_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Hint</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NPC__HINT = ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Current Room</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NPC__CURRENT_ROOM = ENTITY_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Npc</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NPC_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 5;
+	int NPC_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Npc</em>' class.
@@ -915,6 +951,28 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	EAttribute getHint_Label();
 
 	/**
+	 * Returns the meta object for the container reference '{@link labyrinth_tales_of_gamers.Hint#getCurrentRoom <em>Current Room</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Current Room</em>'.
+	 * @see labyrinth_tales_of_gamers.Hint#getCurrentRoom()
+	 * @see #getHint()
+	 * @generated
+	 */
+	EReference getHint_CurrentRoom();
+
+	/**
+	 * Returns the meta object for the reference '{@link labyrinth_tales_of_gamers.Hint#getNpc <em>Npc</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Npc</em>'.
+	 * @see labyrinth_tales_of_gamers.Hint#getNpc()
+	 * @see #getHint()
+	 * @generated
+	 */
+	EReference getHint_Npc();
+
+	/**
 	 * Returns the meta object for class '{@link labyrinth_tales_of_gamers.MainCharacter <em>Main Character</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1031,6 +1089,28 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getNpc_InvalidPropositionSentence();
+
+	/**
+	 * Returns the meta object for the reference '{@link labyrinth_tales_of_gamers.Npc#getHint <em>Hint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Hint</em>'.
+	 * @see labyrinth_tales_of_gamers.Npc#getHint()
+	 * @see #getNpc()
+	 * @generated
+	 */
+	EReference getNpc_Hint();
+
+	/**
+	 * Returns the meta object for the container reference '{@link labyrinth_tales_of_gamers.Npc#getCurrentRoom <em>Current Room</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Current Room</em>'.
+	 * @see labyrinth_tales_of_gamers.Npc#getCurrentRoom()
+	 * @see #getNpc()
+	 * @generated
+	 */
+	EReference getNpc_CurrentRoom();
 
 	/**
 	 * Returns the meta object for class '{@link labyrinth_tales_of_gamers.Action <em>Action</em>}'.
@@ -1327,6 +1407,22 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 		EAttribute HINT__LABEL = eINSTANCE.getHint_Label();
 
 		/**
+		 * The meta object literal for the '<em><b>Current Room</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HINT__CURRENT_ROOM = eINSTANCE.getHint_CurrentRoom();
+
+		/**
+		 * The meta object literal for the '<em><b>Npc</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HINT__NPC = eINSTANCE.getHint_Npc();
+
+		/**
 		 * The meta object literal for the '{@link labyrinth_tales_of_gamers.impl.MainCharacterImpl <em>Main Character</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1417,6 +1513,22 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NPC__INVALID_PROPOSITION_SENTENCE = eINSTANCE.getNpc_InvalidPropositionSentence();
+
+		/**
+		 * The meta object literal for the '<em><b>Hint</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NPC__HINT = eINSTANCE.getNpc_Hint();
+
+		/**
+		 * The meta object literal for the '<em><b>Current Room</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NPC__CURRENT_ROOM = eINSTANCE.getNpc_CurrentRoom();
 
 		/**
 		 * The meta object literal for the '{@link labyrinth_tales_of_gamers.impl.ActionImpl <em>Action</em>}' class.
