@@ -195,7 +195,7 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGame_Prologue() {
+	public EAttribute getGame_Subtitle() {
 		return (EAttribute)gameEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -205,7 +205,7 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGame_Epilogue() {
+	public EAttribute getGame_Prologue() {
 		return (EAttribute)gameEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -215,8 +215,38 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGame_NbNpc() {
+	public EAttribute getGame_Epilogue() {
 		return (EAttribute)gameEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getGame_NbNpc() {
+		return (EAttribute)gameEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getGame_Aim() {
+		return (EAttribute)gameEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getGame_HowToPlay() {
+		return (EAttribute)gameEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -535,18 +565,8 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EReference getNpc_HintPosition() {
-		return (EReference)npcEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getNpc_Discovered() {
-		return (EAttribute)npcEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)npcEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -556,7 +576,7 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 	 */
 	@Override
 	public EAttribute getNpc_ValidPropositionSentence() {
-		return (EAttribute)npcEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)npcEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -566,7 +586,7 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 	 */
 	@Override
 	public EAttribute getNpc_InvalidPropositionSentence() {
-		return (EAttribute)npcEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)npcEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -576,7 +596,7 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 	 */
 	@Override
 	public EReference getNpc_Hint() {
-		return (EReference)npcEClass.getEStructuralFeatures().get(5);
+		return (EReference)npcEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -586,7 +606,7 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 	 */
 	@Override
 	public EReference getNpc_CurrentRoom() {
-		return (EReference)npcEClass.getEStructuralFeatures().get(6);
+		return (EReference)npcEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -652,9 +672,12 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 		createEReference(gameEClass, GAME__PLAYER);
 		createEReference(gameEClass, GAME__ROOMS);
 		createEAttribute(gameEClass, GAME__TITLE);
+		createEAttribute(gameEClass, GAME__SUBTITLE);
 		createEAttribute(gameEClass, GAME__PROLOGUE);
 		createEAttribute(gameEClass, GAME__EPILOGUE);
 		createEAttribute(gameEClass, GAME__NB_NPC);
+		createEAttribute(gameEClass, GAME__AIM);
+		createEAttribute(gameEClass, GAME__HOW_TO_PLAY);
 		createEOperation(gameEClass, GAME___NB_NPC_POSITIVE_OR_NULL__DIAGNOSTICCHAIN_MAP);
 
 		roomEClass = createEClass(ROOM);
@@ -691,7 +714,6 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 
 		npcEClass = createEClass(NPC);
 		createEAttribute(npcEClass, NPC__HELLO_SENTENCE);
-		createEReference(npcEClass, NPC__HINT_POSITION);
 		createEAttribute(npcEClass, NPC__DISCOVERED);
 		createEAttribute(npcEClass, NPC__VALID_PROPOSITION_SENTENCE);
 		createEAttribute(npcEClass, NPC__INVALID_PROPOSITION_SENTENCE);
@@ -740,9 +762,12 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 		initEReference(getGame_Player(), this.getMainCharacter(), this.getMainCharacter_Game(), "player", null, 1, 1, Game.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGame_Rooms(), this.getRoom(), this.getRoom_Game(), "rooms", null, 1, -1, Game.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGame_Title(), ecorePackage.getEString(), "title", null, 0, 1, Game.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGame_Subtitle(), ecorePackage.getEString(), "subtitle", null, 1, 1, Game.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGame_Prologue(), ecorePackage.getEString(), "prologue", null, 0, 1, Game.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGame_Epilogue(), ecorePackage.getEString(), "epilogue", null, 1, 1, Game.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGame_NbNpc(), ecorePackage.getEInt(), "nbNpc", null, 1, 1, Game.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGame_Aim(), ecorePackage.getEString(), "aim", null, 1, 1, Game.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGame_HowToPlay(), ecorePackage.getEString(), "howToPlay", null, 1, 1, Game.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = initEOperation(getGame__NbNpcPositiveOrNull__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "nbNpcPositiveOrNull", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -843,7 +868,6 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 
 		initEClass(npcEClass, Npc.class, "Npc", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNpc_HelloSentence(), ecorePackage.getEString(), "helloSentence", null, 0, 1, Npc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getNpc_HintPosition(), this.getRoom(), null, "hintPosition", null, 1, 1, Npc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNpc_Discovered(), ecorePackage.getEBoolean(), "discovered", null, 1, 1, Npc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNpc_ValidPropositionSentence(), ecorePackage.getEString(), "validPropositionSentence", null, 0, 1, Npc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNpc_InvalidPropositionSentence(), ecorePackage.getEString(), "invalidPropositionSentence", null, 1, 1, Npc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

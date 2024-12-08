@@ -1,0 +1,100 @@
+[comment encoding = UTF-8 /]
+[module generateCSS('http://labyrinthtalesofgamers.com/')]
+
+
+[template public generateCss(aGame : Game)]
+
+[file ('livret/style.css', false, 'UTF-8')]
+main, body {
+    width:100%;
+}
+body {
+    background-color: #f4f1e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: 'Papyrus', cursive, serif;
+}
+
+.parchment {
+    width: 60%;
+    max-width: 800px;
+    padding: 20px;
+    background: #fdf4dc;
+    border: 5px solid #d4ab76;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
+    text-align: justify;
+    background-image: url('https://www.transparenttextures.com/patterns/aged-paper.png'); /* Optionnel : ajoute une texture */
+}
+
+.parchment h1 {
+    font-size: 2.5em;
+    text-align: center;
+    color: #8b5a2b;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.parchment h2 {
+    font-size: 1.8em;
+    color: #8b5a2b;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid #d4ab76;
+}
+
+.parchment p, .parchment ul, .parchment span, .parchment li {
+    font-family: 'Georgia', serif;
+}
+
+.parchment p {
+    font-size: 1.2em;
+    color: #5f4b32;
+}
+
+.parchment span {
+    color: #a83232;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.parchment ul {
+    margin: 15px 0;
+    padding-left: 20px;
+    list-style-type: circle;
+}
+
+.parchment ul li {
+    font-size: 1.2em;
+    color: #5f4b32;
+    margin-bottom: 5px;
+}
+
+.parchment:before,
+.parchment:after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: #d4ab76;
+    border: 3px solid #8b5a2b;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.parchment:before {
+    top: 0px;
+    left: 0px;
+}
+
+.parchment:after {
+    right: 0px;
+}
+[/file]
+[/template]

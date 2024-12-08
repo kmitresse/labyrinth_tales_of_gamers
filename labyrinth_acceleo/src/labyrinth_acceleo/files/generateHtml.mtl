@@ -1,0 +1,43 @@
+[comment encoding = UTF-8 /]
+[module generateHtml('http://labyrinthtalesofgamers.com/')]
+
+
+[template public generateHtml(aGame : Game)]
+
+[file ('livret/livret.html', false, 'UTF-8')]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livret</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="parchment">
+    <h1>[aGame.title/]<br/>[aGame.subtitle/]</h1>
+    <p>[aGame.prologue/]</p>
+    <h2>Objectif</h2>
+    <p> [aGame.aim/]</p>
+    <h2>Comment jouer ?</h2>
+    <p>[aGame.howToPlay/]</p>
+    <h2>Les actions possibles</h2>
+    <p>Vous pouvez effectuer les actions suivantes:</p>
+    <ul>
+        <li><span>Se déplacer</span>: Changer de pièce</li>
+        <li><span>Demander l'indice</span>: (Seulement en présence d'un personnage) Le personnage vous indique dans quelle pièce se trouve l'indice qui le concerne.</li>
+        <li><span>Proposer un nom</span>: (Seulement en présence d'un personnage) Effectuer une tentative d'identification.</li>
+        <li><span>Lire l'indice</span>: (Seulement en présence d'un indice) Lire l'indice se trouvant dans la pièce</li>
+    </ul>
+    <h2>Plan du labyrinthe</h2>
+    <p>Pour vous aider, nous vous confions cette carte du labyrinthe. Malheureusement le temps a eu quelques effets sur l'encre, certains murs ont disparus. A vous de la complèter en fonction de vos découvertes</p>
+    <p>Vous commencez dans la salle [aGame.player.currentRoom.backendName/]</p>
+	<!-- TODO: Ajouter une image de la carte dans le dossier src/livret/ --> 
+    <img src="map.png" alt="Plan du labyrinthe" style="width: 100%; max-width: 600px; display: block; margin: 0 auto;"/>
+    <h1>Bon courage !</h1>
+</div>
+</body>
+</html>
+
+[/file]
+[/template]

@@ -25,7 +25,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * </p>
  * <ul>
  *   <li>{@link labyrinth_tales_of_gamers.impl.NpcImpl#getHelloSentence <em>Hello Sentence</em>}</li>
- *   <li>{@link labyrinth_tales_of_gamers.impl.NpcImpl#getHintPosition <em>Hint Position</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.impl.NpcImpl#isDiscovered <em>Discovered</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.impl.NpcImpl#getValidPropositionSentence <em>Valid Proposition Sentence</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.impl.NpcImpl#getInvalidPropositionSentence <em>Invalid Proposition Sentence</em>}</li>
@@ -55,16 +54,6 @@ public class NpcImpl extends EntityImpl implements Npc {
 	 * @ordered
 	 */
 	protected String helloSentence = HELLO_SENTENCE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getHintPosition() <em>Hint Position</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getHintPosition()
-	 * @generated
-	 * @ordered
-	 */
-	protected Room hintPosition;
 
 	/**
 	 * The default value of the '{@link #isDiscovered() <em>Discovered</em>}' attribute.
@@ -176,46 +165,6 @@ public class NpcImpl extends EntityImpl implements Npc {
 		helloSentence = newHelloSentence;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Labyrinth_tales_of_gamersPackage.NPC__HELLO_SENTENCE, oldHelloSentence, helloSentence));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Room getHintPosition() {
-		if (hintPosition != null && hintPosition.eIsProxy()) {
-			InternalEObject oldHintPosition = (InternalEObject)hintPosition;
-			hintPosition = (Room)eResolveProxy(oldHintPosition);
-			if (hintPosition != oldHintPosition) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Labyrinth_tales_of_gamersPackage.NPC__HINT_POSITION, oldHintPosition, hintPosition));
-			}
-		}
-		return hintPosition;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Room basicGetHintPosition() {
-		return hintPosition;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setHintPosition(Room newHintPosition) {
-		Room oldHintPosition = hintPosition;
-		hintPosition = newHintPosition;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Labyrinth_tales_of_gamersPackage.NPC__HINT_POSITION, oldHintPosition, hintPosition));
 	}
 
 	/**
@@ -452,9 +401,6 @@ public class NpcImpl extends EntityImpl implements Npc {
 		switch (featureID) {
 			case Labyrinth_tales_of_gamersPackage.NPC__HELLO_SENTENCE:
 				return getHelloSentence();
-			case Labyrinth_tales_of_gamersPackage.NPC__HINT_POSITION:
-				if (resolve) return getHintPosition();
-				return basicGetHintPosition();
 			case Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED:
 				return isDiscovered();
 			case Labyrinth_tales_of_gamersPackage.NPC__VALID_PROPOSITION_SENTENCE:
@@ -480,9 +426,6 @@ public class NpcImpl extends EntityImpl implements Npc {
 		switch (featureID) {
 			case Labyrinth_tales_of_gamersPackage.NPC__HELLO_SENTENCE:
 				setHelloSentence((String)newValue);
-				return;
-			case Labyrinth_tales_of_gamersPackage.NPC__HINT_POSITION:
-				setHintPosition((Room)newValue);
 				return;
 			case Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED:
 				setDiscovered((Boolean)newValue);
@@ -514,9 +457,6 @@ public class NpcImpl extends EntityImpl implements Npc {
 			case Labyrinth_tales_of_gamersPackage.NPC__HELLO_SENTENCE:
 				setHelloSentence(HELLO_SENTENCE_EDEFAULT);
 				return;
-			case Labyrinth_tales_of_gamersPackage.NPC__HINT_POSITION:
-				setHintPosition((Room)null);
-				return;
 			case Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED:
 				setDiscovered(DISCOVERED_EDEFAULT);
 				return;
@@ -546,8 +486,6 @@ public class NpcImpl extends EntityImpl implements Npc {
 		switch (featureID) {
 			case Labyrinth_tales_of_gamersPackage.NPC__HELLO_SENTENCE:
 				return HELLO_SENTENCE_EDEFAULT == null ? helloSentence != null : !HELLO_SENTENCE_EDEFAULT.equals(helloSentence);
-			case Labyrinth_tales_of_gamersPackage.NPC__HINT_POSITION:
-				return hintPosition != null;
 			case Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED:
 				return discovered != DISCOVERED_EDEFAULT;
 			case Labyrinth_tales_of_gamersPackage.NPC__VALID_PROPOSITION_SENTENCE:

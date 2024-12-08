@@ -36,7 +36,7 @@ public class Npc extends Entity{
     if (!discovered) {
       TextManager.print(pseudo() + "L'indice se trouve dans la pièce " + hint.getCurrentRoom().getName(), TextManager.BLUE);
     } else {
-      TextManager.print(pseudo() + "Pourquoi aurais-je besoin de vous donner un indice? Vous avez déjà découvert mon identité!", TextManager.BLUE);
+      TextManager.print(pseudo() + "Pourquoi aurais-je besoin de te donner un indice? Tu as déjà découvert mon identité!", TextManager.BLUE);
     }
   }
   public String pseudo() {

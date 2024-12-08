@@ -47,9 +47,12 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  *   <li>{@link labyrinth_tales_of_gamers.impl.GameImpl#getPlayer <em>Player</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.impl.GameImpl#getRooms <em>Rooms</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.impl.GameImpl#getTitle <em>Title</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.impl.GameImpl#getSubtitle <em>Subtitle</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.impl.GameImpl#getPrologue <em>Prologue</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.impl.GameImpl#getEpilogue <em>Epilogue</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.impl.GameImpl#getNbNpc <em>Nb Npc</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.impl.GameImpl#getAim <em>Aim</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.impl.GameImpl#getHowToPlay <em>How To Play</em>}</li>
  * </ul>
  *
  * @generated
@@ -94,6 +97,26 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 	 * @ordered
 	 */
 	protected String title = TITLE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSubtitle() <em>Subtitle</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSubtitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SUBTITLE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSubtitle() <em>Subtitle</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSubtitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected String subtitle = SUBTITLE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPrologue() <em>Prologue</em>}' attribute.
@@ -154,6 +177,46 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 	 * @ordered
 	 */
 	protected int nbNpc = NB_NPC_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAim() <em>Aim</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAim()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String AIM_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAim() <em>Aim</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAim()
+	 * @generated
+	 * @ordered
+	 */
+	protected String aim = AIM_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getHowToPlay() <em>How To Play</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHowToPlay()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String HOW_TO_PLAY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getHowToPlay() <em>How To Play</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHowToPlay()
+	 * @generated
+	 * @ordered
+	 */
+	protected String howToPlay = HOW_TO_PLAY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -261,6 +324,29 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 	 * @generated
 	 */
 	@Override
+	public String getSubtitle() {
+		return subtitle;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSubtitle(String newSubtitle) {
+		String oldSubtitle = subtitle;
+		subtitle = newSubtitle;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Labyrinth_tales_of_gamersPackage.GAME__SUBTITLE, oldSubtitle, subtitle));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String getPrologue() {
 		return prologue;
 	}
@@ -322,6 +408,52 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 		nbNpc = newNbNpc;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Labyrinth_tales_of_gamersPackage.GAME__NB_NPC, oldNbNpc, nbNpc));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getAim() {
+		return aim;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setAim(String newAim) {
+		String oldAim = aim;
+		aim = newAim;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Labyrinth_tales_of_gamersPackage.GAME__AIM, oldAim, aim));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getHowToPlay() {
+		return howToPlay;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setHowToPlay(String newHowToPlay) {
+		String oldHowToPlay = howToPlay;
+		howToPlay = newHowToPlay;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Labyrinth_tales_of_gamersPackage.GAME__HOW_TO_PLAY, oldHowToPlay, howToPlay));
 	}
 
 	/**
@@ -416,12 +548,18 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 				return getRooms();
 			case Labyrinth_tales_of_gamersPackage.GAME__TITLE:
 				return getTitle();
+			case Labyrinth_tales_of_gamersPackage.GAME__SUBTITLE:
+				return getSubtitle();
 			case Labyrinth_tales_of_gamersPackage.GAME__PROLOGUE:
 				return getPrologue();
 			case Labyrinth_tales_of_gamersPackage.GAME__EPILOGUE:
 				return getEpilogue();
 			case Labyrinth_tales_of_gamersPackage.GAME__NB_NPC:
 				return getNbNpc();
+			case Labyrinth_tales_of_gamersPackage.GAME__AIM:
+				return getAim();
+			case Labyrinth_tales_of_gamersPackage.GAME__HOW_TO_PLAY:
+				return getHowToPlay();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -445,6 +583,9 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 			case Labyrinth_tales_of_gamersPackage.GAME__TITLE:
 				setTitle((String)newValue);
 				return;
+			case Labyrinth_tales_of_gamersPackage.GAME__SUBTITLE:
+				setSubtitle((String)newValue);
+				return;
 			case Labyrinth_tales_of_gamersPackage.GAME__PROLOGUE:
 				setPrologue((String)newValue);
 				return;
@@ -453,6 +594,12 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 				return;
 			case Labyrinth_tales_of_gamersPackage.GAME__NB_NPC:
 				setNbNpc((Integer)newValue);
+				return;
+			case Labyrinth_tales_of_gamersPackage.GAME__AIM:
+				setAim((String)newValue);
+				return;
+			case Labyrinth_tales_of_gamersPackage.GAME__HOW_TO_PLAY:
+				setHowToPlay((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -475,6 +622,9 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 			case Labyrinth_tales_of_gamersPackage.GAME__TITLE:
 				setTitle(TITLE_EDEFAULT);
 				return;
+			case Labyrinth_tales_of_gamersPackage.GAME__SUBTITLE:
+				setSubtitle(SUBTITLE_EDEFAULT);
+				return;
 			case Labyrinth_tales_of_gamersPackage.GAME__PROLOGUE:
 				setPrologue(PROLOGUE_EDEFAULT);
 				return;
@@ -483,6 +633,12 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 				return;
 			case Labyrinth_tales_of_gamersPackage.GAME__NB_NPC:
 				setNbNpc(NB_NPC_EDEFAULT);
+				return;
+			case Labyrinth_tales_of_gamersPackage.GAME__AIM:
+				setAim(AIM_EDEFAULT);
+				return;
+			case Labyrinth_tales_of_gamersPackage.GAME__HOW_TO_PLAY:
+				setHowToPlay(HOW_TO_PLAY_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -502,12 +658,18 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 				return rooms != null && !rooms.isEmpty();
 			case Labyrinth_tales_of_gamersPackage.GAME__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
+			case Labyrinth_tales_of_gamersPackage.GAME__SUBTITLE:
+				return SUBTITLE_EDEFAULT == null ? subtitle != null : !SUBTITLE_EDEFAULT.equals(subtitle);
 			case Labyrinth_tales_of_gamersPackage.GAME__PROLOGUE:
 				return PROLOGUE_EDEFAULT == null ? prologue != null : !PROLOGUE_EDEFAULT.equals(prologue);
 			case Labyrinth_tales_of_gamersPackage.GAME__EPILOGUE:
 				return EPILOGUE_EDEFAULT == null ? epilogue != null : !EPILOGUE_EDEFAULT.equals(epilogue);
 			case Labyrinth_tales_of_gamersPackage.GAME__NB_NPC:
 				return nbNpc != NB_NPC_EDEFAULT;
+			case Labyrinth_tales_of_gamersPackage.GAME__AIM:
+				return AIM_EDEFAULT == null ? aim != null : !AIM_EDEFAULT.equals(aim);
+			case Labyrinth_tales_of_gamersPackage.GAME__HOW_TO_PLAY:
+				return HOW_TO_PLAY_EDEFAULT == null ? howToPlay != null : !HOW_TO_PLAY_EDEFAULT.equals(howToPlay);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -539,12 +701,18 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (title: ");
 		result.append(title);
+		result.append(", subtitle: ");
+		result.append(subtitle);
 		result.append(", prologue: ");
 		result.append(prologue);
 		result.append(", epilogue: ");
 		result.append(epilogue);
 		result.append(", nbNpc: ");
 		result.append(nbNpc);
+		result.append(", aim: ");
+		result.append(aim);
+		result.append(", howToPlay: ");
+		result.append(howToPlay);
 		result.append(')');
 		return result.toString();
 	}

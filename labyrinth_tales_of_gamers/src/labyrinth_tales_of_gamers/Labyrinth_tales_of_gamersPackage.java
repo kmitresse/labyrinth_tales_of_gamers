@@ -96,13 +96,22 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	int GAME__TITLE = 2;
 
 	/**
+	 * The feature id for the '<em><b>Subtitle</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME__SUBTITLE = 3;
+
+	/**
 	 * The feature id for the '<em><b>Prologue</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GAME__PROLOGUE = 3;
+	int GAME__PROLOGUE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Epilogue</b></em>' attribute.
@@ -111,7 +120,7 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GAME__EPILOGUE = 4;
+	int GAME__EPILOGUE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Nb Npc</b></em>' attribute.
@@ -120,7 +129,25 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GAME__NB_NPC = 5;
+	int GAME__NB_NPC = 6;
+
+	/**
+	 * The feature id for the '<em><b>Aim</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME__AIM = 7;
+
+	/**
+	 * The feature id for the '<em><b>How To Play</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME__HOW_TO_PLAY = 8;
 
 	/**
 	 * The number of structural features of the '<em>Game</em>' class.
@@ -129,7 +156,7 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GAME_FEATURE_COUNT = 6;
+	int GAME_FEATURE_COUNT = 9;
 
 	/**
 	 * The operation id for the '<em>Nb Npc Positive Or Null</em>' operation.
@@ -524,22 +551,13 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	int NPC__HELLO_SENTENCE = ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Hint Position</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NPC__HINT_POSITION = ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Discovered</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NPC__DISCOVERED = ENTITY_FEATURE_COUNT + 2;
+	int NPC__DISCOVERED = ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Valid Proposition Sentence</b></em>' attribute.
@@ -548,7 +566,7 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NPC__VALID_PROPOSITION_SENTENCE = ENTITY_FEATURE_COUNT + 3;
+	int NPC__VALID_PROPOSITION_SENTENCE = ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Invalid Proposition Sentence</b></em>' attribute.
@@ -557,7 +575,7 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NPC__INVALID_PROPOSITION_SENTENCE = ENTITY_FEATURE_COUNT + 4;
+	int NPC__INVALID_PROPOSITION_SENTENCE = ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Hint</b></em>' reference.
@@ -566,7 +584,7 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NPC__HINT = ENTITY_FEATURE_COUNT + 5;
+	int NPC__HINT = ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Current Room</b></em>' container reference.
@@ -575,7 +593,7 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NPC__CURRENT_ROOM = ENTITY_FEATURE_COUNT + 6;
+	int NPC__CURRENT_ROOM = ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Npc</em>' class.
@@ -584,7 +602,7 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NPC_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 7;
+	int NPC_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Npc</em>' class.
@@ -686,6 +704,17 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	EAttribute getGame_Title();
 
 	/**
+	 * Returns the meta object for the attribute '{@link labyrinth_tales_of_gamers.Game#getSubtitle <em>Subtitle</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Subtitle</em>'.
+	 * @see labyrinth_tales_of_gamers.Game#getSubtitle()
+	 * @see #getGame()
+	 * @generated
+	 */
+	EAttribute getGame_Subtitle();
+
+	/**
 	 * Returns the meta object for the attribute '{@link labyrinth_tales_of_gamers.Game#getPrologue <em>Prologue</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -717,6 +746,28 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getGame_NbNpc();
+
+	/**
+	 * Returns the meta object for the attribute '{@link labyrinth_tales_of_gamers.Game#getAim <em>Aim</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Aim</em>'.
+	 * @see labyrinth_tales_of_gamers.Game#getAim()
+	 * @see #getGame()
+	 * @generated
+	 */
+	EAttribute getGame_Aim();
+
+	/**
+	 * Returns the meta object for the attribute '{@link labyrinth_tales_of_gamers.Game#getHowToPlay <em>How To Play</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>How To Play</em>'.
+	 * @see labyrinth_tales_of_gamers.Game#getHowToPlay()
+	 * @see #getGame()
+	 * @generated
+	 */
+	EAttribute getGame_HowToPlay();
 
 	/**
 	 * Returns the meta object for the '{@link labyrinth_tales_of_gamers.Game#nbNpcPositiveOrNull(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Nb Npc Positive Or Null</em>}' operation.
@@ -1047,17 +1098,6 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	EAttribute getNpc_HelloSentence();
 
 	/**
-	 * Returns the meta object for the reference '{@link labyrinth_tales_of_gamers.Npc#getHintPosition <em>Hint Position</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Hint Position</em>'.
-	 * @see labyrinth_tales_of_gamers.Npc#getHintPosition()
-	 * @see #getNpc()
-	 * @generated
-	 */
-	EReference getNpc_HintPosition();
-
-	/**
 	 * Returns the meta object for the attribute '{@link labyrinth_tales_of_gamers.Npc#isDiscovered <em>Discovered</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1201,6 +1241,14 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 		EAttribute GAME__TITLE = eINSTANCE.getGame_Title();
 
 		/**
+		 * The meta object literal for the '<em><b>Subtitle</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GAME__SUBTITLE = eINSTANCE.getGame_Subtitle();
+
+		/**
 		 * The meta object literal for the '<em><b>Prologue</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1223,6 +1271,22 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute GAME__NB_NPC = eINSTANCE.getGame_NbNpc();
+
+		/**
+		 * The meta object literal for the '<em><b>Aim</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GAME__AIM = eINSTANCE.getGame_Aim();
+
+		/**
+		 * The meta object literal for the '<em><b>How To Play</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GAME__HOW_TO_PLAY = eINSTANCE.getGame_HowToPlay();
 
 		/**
 		 * The meta object literal for the '<em><b>Nb Npc Positive Or Null</b></em>' operation.
@@ -1481,14 +1545,6 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NPC__HELLO_SENTENCE = eINSTANCE.getNpc_HelloSentence();
-
-		/**
-		 * The meta object literal for the '<em><b>Hint Position</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference NPC__HINT_POSITION = eINSTANCE.getNpc_HintPosition();
 
 		/**
 		 * The meta object literal for the '<em><b>Discovered</b></em>' attribute feature.

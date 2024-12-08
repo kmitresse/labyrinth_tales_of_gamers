@@ -3,9 +3,12 @@
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:labyrinthTalesOfGamers="http://labyrinthtalesofgamers.com/"
-    title="Labyrinth: Tales of Gamers"
+    title="Labyrinth"
+    subtitle="Tales of Gamers"
     prologue="Vous qui êtes en train de lancer ce jeu, préparez-vous à traverser le quatrième mur. Laissez derrière vous le monde réel et entrez dans un labyrinthe où chaque recoin cache un mystère, chaque pièce un défi, et chaque rencontre une énigme. Ici, les règles ne sont dictées que par votre intuition et votre curiosité. Oserez-vous marcher dans l’inconnu, résoudre les indices disséminés dans ce monde pour percer les identités de ceux qui l’habitent ? Alors, franchissez cette porte. Le labyrinthe vous attend, et ses secrets aussi."
-    epilogue="Tout à coup, les lumières s’éteignent. Dans l’ombre, une silhouette se dessine, puis une autre. Un par un, les personnages du labyrinthe entrent dans la pièce, leurs visages illuminés par une lueur reconnaissante. Vous les avez tous trouvés, tous compris. Ils s’inclinent devant vous, un sourire énigmatique aux lèvres, avant de disparaître dans une douce obscurité. Le labyrinthe s’efface, la pièce s'assombrit, et soudain, vous vous réveillez. Votre manette repose dans vos mains, mais quelque chose vous dit que cette aventure n’était pas qu’un simple jeu. Était-ce réel ? Ou seulement une énigme de plus ? À vous de deviner.">
+    epilogue="Tout à coup, les lumières s’éteignent. Dans l’ombre, une silhouette se dessine, puis une autre. Un par un, les personnages du labyrinthe entrent dans la pièce, leurs visages illuminés par une lueur reconnaissante. Vous les avez tous trouvés, tous compris. Ils s’inclinent devant vous, un sourire énigmatique aux lèvres, avant de disparaître dans une douce obscurité. Le labyrinthe s’efface, la pièce s'assombrit, et soudain, vous vous réveillez. Votre manette repose dans vos mains, mais quelque chose vous dit que cette aventure n’était pas qu’un simple jeu. Était-ce réel ? Ou seulement une énigme de plus ? À vous de deviner."
+    aim="Identifier tout les personnages issus de jeux vidéo"
+    howToPlay="Parcourez les pièces à la recherche des personnages et de leurs indices. L'indice concernant ce personnage ne se trouve pas dans la même pièce que lui.">
   <player name="player"
       currentRoom="//@rooms.51"/>
   <rooms south="//@rooms.1"

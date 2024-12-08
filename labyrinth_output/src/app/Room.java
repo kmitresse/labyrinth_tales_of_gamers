@@ -137,7 +137,6 @@ public class Room {
       TextManager.print("Une personne est présente dans la pièce, elle vous salue");
     }
   }
-  
   public void selectAction() {
     boolean validAction = false;
     while (!validAction) {
@@ -190,7 +189,7 @@ public class Room {
 	      return false;
 	    } else if (action.equals(Action.PROPOSE)) {
 	    	if (this.npc.getDiscovered()) {
-			TextManager.print(this.npc.pseudo() + " tu as déjà trouvé mon nom", TextManager.BLUE);
+			TextManager.print(this.npc.pseudo() + " Tu as déjà trouvé mon nom", TextManager.BLUE);
 	    	} else {
 	    		TextManager.print("Proposez un nom");
 	    		String proposition = MainCharacter.selectAction();

@@ -432,6 +432,7 @@ public class Main {
 	      game.getPlayer().getCurrentRoom().introduce();
 	      game.getPlayer().getCurrentRoom().selectAction();
 	    }
+	    System.out.println("\n--------------------------------------------------\n");
 	    game.terminate();
 	  }
 	}

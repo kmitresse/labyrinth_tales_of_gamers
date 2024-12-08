@@ -13,7 +13,6 @@ package labyrinth_tales_of_gamers;
  * </p>
  * <ul>
  *   <li>{@link labyrinth_tales_of_gamers.Npc#getHelloSentence <em>Hello Sentence</em>}</li>
- *   <li>{@link labyrinth_tales_of_gamers.Npc#getHintPosition <em>Hint Position</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.Npc#isDiscovered <em>Discovered</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.Npc#getValidPropositionSentence <em>Valid Proposition Sentence</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.Npc#getInvalidPropositionSentence <em>Invalid Proposition Sentence</em>}</li>
@@ -47,28 +46,6 @@ public interface Npc extends Entity {
 	 * @generated
 	 */
 	void setHelloSentence(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Hint Position</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Hint Position</em>' reference.
-	 * @see #setHintPosition(Room)
-	 * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getNpc_HintPosition()
-	 * @model required="true"
-	 * @generated
-	 */
-	Room getHintPosition();
-
-	/**
-	 * Sets the value of the '{@link labyrinth_tales_of_gamers.Npc#getHintPosition <em>Hint Position</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Hint Position</em>' reference.
-	 * @see #getHintPosition()
-	 * @generated
-	 */
-	void setHintPosition(Room value);
 
 	/**
 	 * Returns the value of the '<em><b>Discovered</b></em>' attribute.

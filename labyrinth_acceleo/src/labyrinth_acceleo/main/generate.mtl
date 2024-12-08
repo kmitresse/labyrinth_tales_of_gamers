@@ -10,6 +10,8 @@
 [import labyrinth_acceleo::files::action/]
 [import labyrinth_acceleo::files::entity/]
 [import labyrinth_acceleo::files::text_manager/]
+[import labyrinth_acceleo::files::generateHtml/]
+[import labyrinth_acceleo::files::generateCSS/]
 
 [template public generateElement( aGame : Game)]
 [comment @main/]
@@ -23,4 +25,6 @@
 [aGame.generateNpcClass()/]
 [aGame.generateActionClass()/]
 [aGame.generateMainCharacterClass()/]
+[aGame.generateHtml()/]
+[aGame.generateCss()/]
 [/template]
