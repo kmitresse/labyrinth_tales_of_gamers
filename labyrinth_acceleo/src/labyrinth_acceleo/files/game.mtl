@@ -20,10 +20,10 @@ public class Game {
 
   private int nbNpc;
 
-  public Game(String name, Room currentRoom, String title, String prologue, String epilogue) {
-    player = new MainCharacter(name, this, currentRoom);
-    rooms = new ArrayList<>();
-    nbNpc = 0;
+  public Game(String name, Room currentRoom, int nbNpc, String title, String prologue, String epilogue) {
+    this.player = new MainCharacter(name, this, currentRoom);
+    this.rooms = new ArrayList<>();
+    this.nbNpc = nbNpc;
     this.title = title;
     this.prologue = prologue;
     this.epilogue = epilogue;

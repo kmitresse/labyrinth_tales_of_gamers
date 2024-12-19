@@ -29,16 +29,16 @@ public class Room {
   public Room(String name, Npc npc, Hint hint) {
     this.name = name;
     this.actions.add(Main.move);
-		this.npc = npc;
+	this.npc = npc;
     if (npc != null) {
-		this.npc.setCurrentRoom(this);
+	  this.npc.setCurrentRoom(this);
       this.actions.add(Main.propose);
       this.actions.add(Main.talk);
     }
     this.hint = hint;
     if (this.hint != null){
-		this.hint.setCurrentRoom(this);
-		this.actions.add(Main.hint);
+	  this.hint.setCurrentRoom(this);
+	  this.actions.add(Main.hint);
 	}
   }
 
@@ -115,12 +115,12 @@ public class Room {
 
   public boolean containAction(String actionLabel){
 	for(Action action : this.actions){
-		if (actionLabel.equals(action.getLabel())) {
-			return true;
-		}
+	  if (actionLabel.equals(action.getLabel())) {
+	    return true;
+	  }
 	}
 	return false;
-	}
+  }
 
   public void generateDescription(){
     TextManager.print("Vous entrez dans la pièce '" + this.name + "'. Vous voyez une sortie:");
@@ -144,10 +144,11 @@ public class Room {
       TextManager.print("Une personne est présente dans la pièce, elle vous salue");
     }
   }
+
   public void selectAction() {
     boolean validAction = false;
     while (!validAction) {
-	    TextManager.print("Que voulez-vous faire?");
+	  TextManager.print("Que voulez-vous faire?");
       this.displayActions();
       validAction = this.manageAction(MainCharacter.selectAction()); ;
     }
@@ -159,59 +160,70 @@ public class Room {
       System.out.print(action.getLabel() + "\t - \t");
     }
     System.out.println(TextManager.RESET);
-
   }
 
   public boolean manageAction(String action) {
     if (this.containAction(action)){
-		if (action.equals(Action.MOVE)) {
-    	  TextManager.print("Dans quelle direction souhaitez-vous aller?");
+	  if (action.equals(Action.MOVE)) {
+    	TextManager.print("Dans quelle direction souhaitez-vous aller?");
       	Boolean directionSelected = false;
-	      while (!directionSelected) {
-	        this.displayDirections();
-	        String selectedDirection = MainCharacter.selectAction();
-	        if (this.north != null && selectedDirection.equals(NORTH)) {
-	          game.getPlayer().setCurrentRoom(this.north);
-	          directionSelected = true;
-	        } else if (this.south != null && selectedDirection.equals(SOUTH)) {
-	          game.getPlayer().setCurrentRoom(this.south);
-	          directionSelected = true;
-	        } else if (this.east != null && selectedDirection.equals(EAST)) {
-	          game.getPlayer().setCurrentRoom(this.east);
-	          directionSelected = true;
-	        } else if (this.west != null && selectedDirection.equals(WEST)) {
-	          game.getPlayer().setCurrentRoom(this.west);
-	          directionSelected = true;
-	        } else {
-	          TextManager.print("Direction invalide, choisissez en une nouvelle");
-	        }
+	    while (!directionSelected) {
+	      this.displayDirections();
+	      String selectedDirection = MainCharacter.selectAction();
+	      if (this.north != null && selectedDirection.equals(NORTH)) {
+	        game.getPlayer().setCurrentRoom(this.north);
+	        directionSelected = true;
+	      } else if (this.south != null && selectedDirection.equals(SOUTH)) {
+	        game.getPlayer().setCurrentRoom(this.south);
+	        directionSelected = true;
+	      } else if (this.east != null && selectedDirection.equals(EAST)) {
+	        game.getPlayer().setCurrentRoom(this.east);
+	        directionSelected = true;
+	      } else if (this.west != null && selectedDirection.equals(WEST)) {
+	        game.getPlayer().setCurrentRoom(this.west);
+	        directionSelected = true;
+	      } else {
+	        TextManager.print("Direction invalide, choisissez en une nouvelle");
 	      }
-	      TextManager.print("Vous quittez la pièce.");
-	      return true;
-	    } else if (action.equals(Action.HINT)) {
-	      this.hint.getContent();
-	      return false;
-	    } else if (action.equals(Action.NPC)) {
-	      this.npc.giveHint();
-	      return false;
-	    } else if (action.equals(Action.PROPOSE)) {
-	    	if (this.npc.getDiscovered()) {
-			TextManager.print(this.npc.pseudo() + " Tu as déjà trouvé mon nom", TextManager.BLUE);
-	    	} else {
-	    		TextManager.print("Proposez un nom");
-	    		String proposition = MainCharacter.selectAction();
-	    		if (proposition.equals(this.npc.getName())) {
-			        this.npc.acceptProposition();
-			        this.game.getPlayer().addDiscoverie();
-			        if (this.game.isTerminated()) {
-			          return true;
-			        }
-		        } else {
-		          this.npc.refuseProposition();
-		        }
-		    }
-	    	return false;
 	    }
+	    TextManager.print("Vous quittez la pièce.");
+	    return true;
+	  } else if (action.equals(Action.HINT)) {
+	    this.hint.getContent();
+	    return false;
+	  } else if (action.equals(Action.NPC)) {
+	    this.npc.giveHint();
+	    return false;
+	  } else if (action.equals(Action.PROPOSE)) {
+	    if (this.npc.getDiscovered()) {
+		  TextManager.print(this.npc.pseudo() + " Tu as déjà trouvé mon nom", TextManager.BLUE);
+	    } else {
+		  TextManager.print("Proposez un nom");
+		  String proposition = MainCharacter.selectAction();
+		  if (proposition.equals(this.npc.getName())) {
+	        this.npc.acceptProposition();
+	        this.game.getPlayer().addDiscoverie();
+	        if (this.game.isTerminated()) {
+	          return true;
+	        }
+          } else {
+            this.npc.refuseProposition();
+          }
+        }
+	    return false;
+	    } 
+    } else if (action.equals(Action.KONAMI_CODE)){
+	  TextManager.print("Une personne apparaît dans la pièce.");
+	  TextManager.print("Konami >>> C'est pas bien de tricher ! Mais bon, le code est là pour ça... \nDans quelle pièce souhaites tu aller ?", TextManager.RED);
+	  String newRoomName = MainCharacter.selectAction();
+      Room newRoom = game.getRoom(newRoomName);
+	  if (newRoom != null) {
+        game.getPlayer().setCurrentRoom(newRoom);
+        return true;
+      } else {
+	    TextManager.print("Konami >>> Ah Ah ! Non seulement ça triche, mais en plus ça ne triche pas correctement ! Cette salle n'existe pas !", TextManager.RED);
+        return false;
+      }
 	} else {
       TextManager.print("Action invalide, selectionnez une nouvelle action");
       return false;
@@ -222,16 +234,16 @@ public class Room {
   public void displayDirections() {
     System.out.print(TextManager.YELLOW);
     if (this.north != null) {
-      System.out.print( "Nord\t/\t");
+      System.out.print( "Nord\t-\t");
     }
     if (this.south != null) {
-      System.out.print("Sud\t/\t");
+      System.out.print("Sud\t-\t");
     }
     if (this.east != null) {
-      System.out.print("Est\t/\t");
+      System.out.print("Est\t-\t");
     }
     if (this.west != null) {
-      System.out.print("Ouest\t/\t");
+      System.out.print("Ouest\t-\t");
     }
     System.out.println(TextManager.RESET);
   }

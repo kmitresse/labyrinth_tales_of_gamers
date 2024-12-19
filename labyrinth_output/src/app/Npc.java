@@ -7,6 +7,7 @@ public class Npc extends Entity{
   private String invalidPropositionSentence;
   private Hint hint;
   private Boolean discovered;
+  
   public Npc(String name,Hint hint, String helloSentence, String validPropositionSentence, String invalidPropositionSentence) {
     super(name);
 	this.hint = hint;
@@ -36,7 +37,7 @@ public class Npc extends Entity{
     if (!discovered) {
       TextManager.print(pseudo() + "L'indice se trouve dans la pièce " + hint.getCurrentRoom().getName(), TextManager.BLUE);
     } else {
-      TextManager.print(pseudo() + "Pourquoi aurais-je besoin de te donner un indice? Tu as déjà découvert mon identité!", TextManager.BLUE);
+      TextManager.print(pseudo() + "Pourquoi aurais-je besoin de te donner un indice ? Tu as déjà découvert mon identité !", TextManager.BLUE);
     }
   }
   public String pseudo() {
@@ -49,5 +50,4 @@ public class Npc extends Entity{
   public Hint getHint() {
 	return this.hint;
   }
-
 }

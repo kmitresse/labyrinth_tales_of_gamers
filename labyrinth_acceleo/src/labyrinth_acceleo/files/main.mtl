@@ -32,7 +32,7 @@ public class Main {
 	    [aGame.generateLinkedRooms()/]	
 
 	    //Game creation
-	    Game game = new Game("[aGame.player.name/]", [aGame.player.currentRoom.backendName/], "[aGame.title/]: [aGame.subtitle/]", "[aGame.prologue/]", "[aGame.epilogue/]");
+	    Game game = new Game("[aGame.player.name/]", [aGame.player.currentRoom.backendName/], npcs.size(), "[aGame.title/]: [aGame.subtitle/]", "[aGame.prologue/]", "[aGame.epilogue/]");
 	    for (Room room : rooms) {
 	      game.addRoom(room);
 	    }
