@@ -161,7 +161,7 @@ public interface Room extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getRoom_Name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
@@ -302,7 +302,7 @@ public interface Room extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.east &lt;&gt; null or self.north &lt;&gt; null or self.south &lt;&gt; null or self.west &lt;&gt; null'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='not self.east.oclIsUndefined() or not self.north.oclIsUndefined() or not self.south.oclIsUndefined() or not self.west.oclIsUndefined()'"
 	 * @generated
 	 */
 	boolean existingAnExit(DiagnosticChain diagnostics, Map<Object, Object> context);

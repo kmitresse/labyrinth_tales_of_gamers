@@ -1222,7 +1222,11 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			 *     if severity <= 0
 			 *     then true
 			 *     else
-			 *       let result : Boolean[?] = self.east <> null or self.north <> null or self.south <> null or self.west <> null
+			 *       let
+			 *         result : Boolean[?] = not self.east.oclIsUndefined() or
+			 *         not self.north.oclIsUndefined() or
+			 *         not self.south.oclIsUndefined() or
+			 *         not self.west.oclIsUndefined()
 			 *       in
 			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
 			 *     endif
@@ -1239,34 +1243,85 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				try {
 					/*@Caught*/ Object CAUGHT_or_0;
 					try {
-						final /*@NonInvalid*/ Room east = this.getEast();
-						final /*@NonInvalid*/ boolean ne = east != null;
-						final /*@NonInvalid*/ Boolean or;
-						if (ne) {
-							or = ValueUtil.TRUE_VALUE;
-						}
-						else {
-							final /*@NonInvalid*/ Room north = this.getNorth();
-							final /*@NonInvalid*/ boolean ne_0 = north != null;
-							if (ne_0) {
+						/*@Caught*/ Object CAUGHT_or;
+						try {
+							final /*@NonInvalid*/ Room east = this.getEast();
+							final /*@NonInvalid*/ boolean oclIsUndefined = east == null;
+							final /*@NonInvalid*/ Boolean not;
+							if (!oclIsUndefined) {
+								not = ValueUtil.TRUE_VALUE;
+							}
+							else {
+								if (oclIsUndefined) {
+									not = ValueUtil.FALSE_VALUE;
+								}
+								else {
+									not = null;
+								}
+							}
+							final /*@Thrown*/ Boolean or;
+							if (not == ValueUtil.TRUE_VALUE) {
 								or = ValueUtil.TRUE_VALUE;
 							}
 							else {
-								or = ValueUtil.FALSE_VALUE;
+								final /*@NonInvalid*/ Room north = this.getNorth();
+								final /*@NonInvalid*/ boolean oclIsUndefined_0 = north == null;
+								final /*@NonInvalid*/ Boolean not_0;
+								if (!oclIsUndefined_0) {
+									not_0 = ValueUtil.TRUE_VALUE;
+								}
+								else {
+									if (oclIsUndefined_0) {
+										not_0 = ValueUtil.FALSE_VALUE;
+									}
+									else {
+										not_0 = null;
+									}
+								}
+								if (not_0 == ValueUtil.TRUE_VALUE) {
+									or = ValueUtil.TRUE_VALUE;
+								}
+								else {
+									if ((not == null) || (not_0 == null)) {
+										or = null;
+									}
+									else {
+										or = ValueUtil.FALSE_VALUE;
+									}
+								}
 							}
+							CAUGHT_or = or;
+						}
+						catch (Exception e) {
+							CAUGHT_or = ValueUtil.createInvalidValue(e);
 						}
 						final /*@Thrown*/ Boolean or_0;
-						if (or == ValueUtil.TRUE_VALUE) {
+						if (CAUGHT_or == ValueUtil.TRUE_VALUE) {
 							or_0 = ValueUtil.TRUE_VALUE;
 						}
 						else {
 							final /*@NonInvalid*/ Room south = this.getSouth();
-							final /*@NonInvalid*/ boolean ne_1 = south != null;
-							if (ne_1) {
+							final /*@NonInvalid*/ boolean oclIsUndefined_1 = south == null;
+							final /*@NonInvalid*/ Boolean not_1;
+							if (!oclIsUndefined_1) {
+								not_1 = ValueUtil.TRUE_VALUE;
+							}
+							else {
+								if (oclIsUndefined_1) {
+									not_1 = ValueUtil.FALSE_VALUE;
+								}
+								else {
+									not_1 = null;
+								}
+							}
+							if (not_1 == ValueUtil.TRUE_VALUE) {
 								or_0 = ValueUtil.TRUE_VALUE;
 							}
 							else {
-								if (or == null) {
+								if (CAUGHT_or instanceof InvalidValueException) {
+									throw (InvalidValueException)CAUGHT_or;
+								}
+								if ((CAUGHT_or == null) || (not_1 == null)) {
 									or_0 = null;
 								}
 								else {
@@ -1285,15 +1340,27 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 					}
 					else {
 						final /*@NonInvalid*/ Room west = this.getWest();
-						final /*@NonInvalid*/ boolean ne_2 = west != null;
-						if (ne_2) {
+						final /*@NonInvalid*/ boolean oclIsUndefined_2 = west == null;
+						final /*@NonInvalid*/ Boolean not_2;
+						if (!oclIsUndefined_2) {
+							not_2 = ValueUtil.TRUE_VALUE;
+						}
+						else {
+							if (oclIsUndefined_2) {
+								not_2 = ValueUtil.FALSE_VALUE;
+							}
+							else {
+								not_2 = null;
+							}
+						}
+						if (not_2 == ValueUtil.TRUE_VALUE) {
 							result = ValueUtil.TRUE_VALUE;
 						}
 						else {
 							if (CAUGHT_or_0 instanceof InvalidValueException) {
 								throw (InvalidValueException)CAUGHT_or_0;
 							}
-							if (CAUGHT_or_0 == null) {
+							if ((CAUGHT_or_0 == null) || (not_2 == null)) {
 								result = null;
 							}
 							else {

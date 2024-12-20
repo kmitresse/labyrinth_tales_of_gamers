@@ -18,7 +18,7 @@
     <h1>[aGame.title/]<br/>[aGame.subtitle/]</h1>
     <p>[aGame.prologue/]</p>
     <h2>Objectif</h2>
-    <p> [aGame.aim/]</p>
+    <p>[aGame.aim/]</p>
     <h2>Comment jouer ?</h2>
     <p>[aGame.howToPlay/]</p>
     <h2>Les actions possibles</h2>
@@ -29,12 +29,14 @@
         <li><span>Proposer un nom</span>: (Seulement en présence d'un personnage) Effectuer une tentative d'identification.</li>
         <li><span>Lire l'indice</span>: (Seulement en présence d'un indice) Lire l'indice se trouvant dans la pièce</li>
     </ul>
+	[if(not aGame.map.oclIsUndefined())]
     <h2>Plan du labyrinthe</h2>
-    <p>Pour vous aider, nous vous confions cette carte du labyrinthe. Malheureusement le temps a eu quelques effets sur l'encre, certains murs ont disparus. A vous de la complèter en fonction de vos découvertes</p>
+    <p>[aGame.map/]</p>
     <p>Vous commencez dans la salle [aGame.player.currentRoom.backendName/]</p>
 	<!-- TODO: Ajouter une image de la carte dans le dossier src/livret/ --> 
     <img src="map.png" alt="Plan du labyrinthe" style="width: 100%; max-width: 600px; display: block; margin: 0 auto;"/>
     <h1>Bon courage !</h1>
+	[/if]
 </div>
 </body>
 </html>

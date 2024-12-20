@@ -8,7 +8,8 @@
     prologue="Vous qui êtes en train de lancer ce jeu, préparez-vous à traverser le quatrième mur. Laissez derrière vous le monde réel et entrez dans un labyrinthe où chaque recoin cache un mystère, chaque pièce un défi, et chaque rencontre une énigme. Ici, les règles ne sont dictées que par votre intuition et votre curiosité. Oserez-vous marcher dans l’inconnu, résoudre les indices disséminés dans ce monde pour percer les identités de ceux qui l’habitent ? Alors, franchissez cette porte. Le labyrinthe vous attend, et ses secrets aussi."
     epilogue="Tout à coup, les lumières s’éteignent. Dans l’ombre, une silhouette se dessine, puis une autre. Un par un, les personnages du labyrinthe entrent dans la pièce, leurs visages illuminés par une lueur reconnaissante. Vous les avez tous trouvés, tous compris. Ils s’inclinent devant vous, un sourire énigmatique aux lèvres, avant de disparaître dans une douce obscurité. Le labyrinthe s’efface, la pièce s'assombrit, et soudain, vous vous réveillez. Votre manette repose dans vos mains, mais quelque chose vous dit que cette aventure n’était pas qu’un simple jeu. Était-ce réel ? Ou seulement une énigme de plus ? À vous de deviner."
     aim="Identifier tout les personnages issus de jeux vidéo."
-    howToPlay="Parcourez les pièces à la recherche des personnages et de leurs indices. L'indice concernant ce personnage ne se trouve pas dans la même pièce que lui.">
+    howToPlay="Parcourez les pièces à la recherche des personnages et de leurs indices. L'indice concernant ce personnage ne se trouve pas dans la même pièce que lui."
+    map="Pour vous aider, nous vous confions cette carte du labyrinthe. Malheureusement le temps a eu quelques effets sur l'encre, certains murs ont disparus. A vous de la complèter en fonction de vos découvertes.">
   <player name="player"
       currentRoom="//@rooms.51"/>
   <rooms south="//@rooms.1"
@@ -18,7 +19,9 @@
         helloSentence="Intrigué par ces ruines, voyageur ? Moi aussi."
         validPropositionSentence="Bravo, tu m'as reconnue. Lara Croft, exploratrice de l'inconnu."
         invalidPropositionSentence="Non, c'est un mauvais tir. Mais garde espoir."
-        hint="//@rooms.10/@hint"/>
+        hint="//@rooms.10/@hint"
+        discoveredSentenceNpc="Tu as déjà percé le mystère de mon identité. Impressionnant."
+        discoveredSentenceHint="Pourquoi donner un indice ? Tu sais déjà qui je suis, explorateur."/>
   </rooms>
   <rooms north="//@rooms.0"
       south="//@rooms.2"
@@ -67,7 +70,9 @@
         helloSentence="Soldat, restez concentré. La mission est loin d’être terminée."
         validPropositionSentence="Correct. Master Chief, Spartan 117, au rapport."
         invalidPropositionSentence="Non, recalé. Réessayez, marine."
-        hint="//@rooms.29/@hint"/>
+        hint="//@rooms.29/@hint"
+        discoveredSentenceNpc="Tu as déjà découvert qui je suis. Bonne mission, soldat."
+        discoveredSentenceHint="Un indice ? Pas nécessaire, tu sais déjà que je suis Master Chief. Ah moins que.. t'es un Covenant?"/>
   </rooms>
   <rooms north="//@rooms.8"
       east="//@rooms.19"
@@ -92,7 +97,9 @@
         helloSentence="Une lame ne suffit pas. Le courage fait tout."
         validPropositionSentence="C'est moi, Cloud Strife. Mais tu le savais déjà, non ?"
         invalidPropositionSentence="Non, ce n'est pas ça. Concentre-toi, comme sur une limite."
-        hint="//@rooms.21/@hint"/>
+        hint="//@rooms.21/@hint"
+        discoveredSentenceNpc="Tu sais déjà qui je suis. Cloud Strife, ça te dit quelque chose ?"
+        discoveredSentenceHint="Un indice ? Pas besoin, tu as déjà percé le mystère."/>
   </rooms>
   <rooms east="//@rooms.23"
       name="B3"
@@ -111,7 +118,9 @@
         helloSentence="Un autre monstre à chasser, ou peut-être juste un humain curieux ?"
         validPropositionSentence="Correct. Je suis Geralt, le Loup Blanc."
         invalidPropositionSentence="Non, une mauvaise piste. Reviens quand tu auras compris l'indice."
-        hint="//@rooms.27/@hint"/>
+        hint="//@rooms.27/@hint"
+        discoveredSentenceNpc="Mon identité ne t’est plus étrangère."
+        discoveredSentenceHint="Un indice ? Pourquoi en aurais-tu besoin, sorceleur ?"/>
   </rooms>
   <rooms east="//@rooms.26"
       south="//@rooms.17"
@@ -137,7 +146,9 @@
         helloSentence="Woooaaah! T'a pas des pommes sur toi ?"
         validPropositionSentence="Haha, ouais, c'est moi, Crash Bandicoot ! Où sont mes Wumpas?!"
         invalidPropositionSentence="Boing boing Non, c'est pas ça ! Essaie encore, ami !"
-        hint="//@rooms.8/@hint"/>
+        hint="//@rooms.8/@hint"
+        discoveredSentenceNpc="Tu as trop tourbillonné on dirai ! C'est moi crash !"
+        discoveredSentenceHint="Pourquoi faire ? Tu sais déjà qui je suis !"/>
   </rooms>
   <rooms east="//@rooms.30"
       west="//@rooms.10"
@@ -155,7 +166,9 @@
         helloSentence="Un voyageur dans mon royaume ? Espère ne pas éveiller ma colère."
         validPropositionSentence="Tu es perspicace. Oui, je suis Kratos, le Fantôme de Sparte."
         invalidPropositionSentence="Non. Ton ignorance ne mérite pas ma pitié."
-        hint="//@rooms.2/@hint"/>
+        hint="//@rooms.2/@hint"
+        discoveredSentenceNpc="Tu as déjà trouvé mon identité. N’insulte pas ma patience."
+        discoveredSentenceHint="Pourquoi aurais-je besoin de te donner un indice ? Tu as déjà découvert qui je suis."/>
   </rooms>
   <rooms north="//@rooms.21"
       east="//@rooms.32"
@@ -175,7 +188,9 @@
         helloSentence="Hé, toi là-bas ! T’arrives à me suivre ou je vais trop vite ?"
         validPropositionSentence="Tu as vu juste ! Sonic, le hérisson le plus rapide au monde !"
         invalidPropositionSentence="Non, mauvaise réponse ! Allez, accélère un peu !"
-        hint="//@rooms.40/@hint"/>
+        hint="//@rooms.40/@hint"
+        discoveredSentenceNpc="Haha, évidemment que tu sais déjà que c’est moi, Sonic !"
+        discoveredSentenceHint="Un indice ? Pourquoi perdre du temps ? Tu sais que c’est moi !"/>
   </rooms>
   <rooms north="//@rooms.23"
       east="//@rooms.33"
@@ -201,7 +216,9 @@
         helloSentence="La montagne est rude. Mais toi aussi, non ?"
         validPropositionSentence="Oui, je suis Madeline. Je gravis les sommets, à ma façon."
         invalidPropositionSentence="Non, ce n’est pas ça. Mais ne lâche pas prise."
-        hint="//@rooms.52/@hint"/>
+        hint="//@rooms.52/@hint"
+        discoveredSentenceNpc="Oui, tu sais déjà que c’est moi. Félicitations, grimpeur."
+        discoveredSentenceHint="Un indice ? Pas besoin, tu m’as déjà reconnue."/>
   </rooms>
   <rooms north="//@rooms.27"
       east="//@rooms.36"
@@ -233,7 +250,9 @@
         helloSentence="Hé, toi ! T’es pas infecté, hein ?"
         validPropositionSentence="Bien vu. Ellie, survivante coriace, prête à tout."
         invalidPropositionSentence="Nope. Mauvaise réponse. Essaie encore, cowboy."
-        hint="//@rooms.23/@hint"/>
+        hint="//@rooms.23/@hint"
+        discoveredSentenceNpc="T'as perdu la mémoire ? T'es pas infecté au moins ?"
+        discoveredSentenceHint="Un indice ? T’es sérieux ? Tu sais déjà qui je suis."/>
   </rooms>
   <rooms east="//@rooms.40"
       west="//@rooms.22"
@@ -247,7 +266,9 @@
         helloSentence="Hé, petite flamme ! T'as vu d'autres dragons par ici ?"
         validPropositionSentence="C'est moi, Spyro, prêt à brûler quelques ennemis !"
         invalidPropositionSentence="Non, t'es à côté de la plaque. Essaie encore !"
-        hint="//@rooms.4/@hint"/>
+        hint="//@rooms.4/@hint"
+        discoveredSentenceNpc="Oh, tu sais déjà que c'est moi ? Cool, pas besoin de me présenter à nouveau !"
+        discoveredSentenceHint="Un indice ? Hé, pas besoin, tu connais déjà le dragon le plus cool !"/>
   </rooms>
   <rooms east="//@rooms.44"
       south="//@rooms.35"
@@ -257,7 +278,9 @@
         helloSentence="... (il vous regarde intensément en silence)"
         validPropositionSentence="... (il hoche la tête, vous avez raison)"
         invalidPropositionSentence="... (il grogne, visiblement agacé)"
-        hint="//@rooms.45/@hint"/>
+        hint="//@rooms.45/@hint"
+        discoveredSentenceNpc="... (Il croise les bras, car vous n’avez plus besoin d’indice.)"
+        discoveredSentenceHint="... (Un hochement de tête confirme que vous savez déjà qui il est.)"/>
   </rooms>
   <rooms north="//@rooms.34"
       east="//@rooms.45"
@@ -274,7 +297,9 @@
         helloSentence="Tiens, un autre mortel venu braver les Enfers ?"
         validPropositionSentence="Bravo, c'est bien moi, Zagreus, fils d'Hadès."
         invalidPropositionSentence="Non, pas cette fois. Mais l’échec fait partie du défi."
-        hint="//@rooms.55/@hint"/>
+        hint="//@rooms.55/@hint"
+        discoveredSentenceNpc="Tu sais déjà que je suis Zagreus. Continuons !"
+        discoveredSentenceHint="Un indice ? Tu n’en as pas besoin, tu as percé mon secret."/>
   </rooms>
   <rooms north="//@rooms.36"
       west="//@rooms.29"
@@ -287,7 +312,9 @@
         helloSentence="Attention où tu marches, ou tu pourrais te couper"
         validPropositionSentence="Oui, je suis Rayne. Tu aimes jouer avec le feu ?"
         invalidPropositionSentence="Non, ce n’est pas moi. Mais tu as du goût pour les ténèbres."
-        hint="//@rooms.30/@hint"/>
+        hint="//@rooms.30/@hint"
+        discoveredSentenceNpc="Tu m’as déjà identifiée. Pas mal pour un humain."
+        discoveredSentenceHint="Un indice ? Pourquoi faire ? Tu sais déjà que je suis Rayne."/>
   </rooms>
   <rooms east="//@rooms.48"
       west="//@rooms.31"
@@ -314,7 +341,9 @@
         helloSentence="Poyo ! (Il vous regarde en souriant.)"
         validPropositionSentence="Poyo ! C’est bien moi, Kirby ! Gagné !"
         invalidPropositionSentence="Poyo... (Il fait une moue triste.)"
-        hint="//@rooms.69/@hint"/>
+        hint="//@rooms.69/@hint"
+        discoveredSentenceNpc="Poyo ! Oui, tu sais déjà que je suis Kirby !"
+        discoveredSentenceHint="Poyo ? Pas besoin d’indice, tu m’as déjà trouvé !"/>
   </rooms>
   <rooms east="//@rooms.51"
       west="//@rooms.33"
@@ -351,7 +380,9 @@
         helloSentence="... (Il brandit son épée en guise de salut.)"
         validPropositionSentence="... (Il sourit et joue un air sur son ocarina.)"
         invalidPropositionSentence="... (Il secoue la tête et pointe vers l’horizon.)"
-        hint="//@rooms.66/@hint"/>
+        hint="//@rooms.66/@hint"
+        discoveredSentenceNpc="... (Il hoche la tête, approuvant que vous connaissez son identité.)"
+        discoveredSentenceHint="... (Il vous lance un regard amusé, car un indice est inutile.)"/>
   </rooms>
   <rooms east="//@rooms.57"
       west="//@rooms.38"
@@ -396,7 +427,9 @@
         helloSentence="Tu te crois prêt pour la guerre, rookie ?"
         validPropositionSentence="Exact. Marcus Fenix, héros de la CGU, à votre service."
         invalidPropositionSentence="Non, tu t’es trompé de soldat. Essaie encore."
-        hint="//@rooms.46/@hint"/>
+        hint="//@rooms.46/@hint"
+        discoveredSentenceNpc="Bon boulot, tu sais déjà que je suis Marcus. On avance ?"
+        discoveredSentenceHint="Un indice ? T’en as pas besoin. Tu connais déjà le soldat."/>
   </rooms>
   <rooms north="//@rooms.53"
       west="//@rooms.45"
@@ -429,7 +462,9 @@
         helloSentence="Oh, tu veux parler au maître du temps ?"
         validPropositionSentence="Exact, c'est moi, Blinx, le chat nettoyeur temporel !"
         invalidPropositionSentence="Non, désolé, tu dois rembobiner ta réponse."
-        hint="//@rooms.39/@hint"/>
+        hint="//@rooms.39/@hint"
+        discoveredSentenceNpc="Bravo, tu sais déjà que c’est moi, Blinx, le maître du temps !"
+        discoveredSentenceHint="Un indice ? Ha ! Pas besoin, tu m’as déjà reconnu !"/>
   </rooms>
   <rooms north="//@rooms.58"
       east="//@rooms.69"
@@ -439,7 +474,9 @@
         helloSentence="'Un scintillement lumineux danse autour de vous.'"
         validPropositionSentence="'Un doux son résonne, Ori approuve en silence.'"
         invalidPropositionSentence="'Un murmure triste traverse la pièce, comme un regret.'"
-        hint="//@rooms.50/@hint"/>
+        hint="//@rooms.50/@hint"
+        discoveredSentenceNpc="Un scintillement lumineux vous indique que vous avez déjà identifié cette lumière"
+        discoveredSentenceHint="Une douce lumière vous enveloppe, vous savez déjà tout."/>
   </rooms>
   <rooms east="//@rooms.70"
       west="//@rooms.50"
@@ -456,7 +493,9 @@
         helloSentence="La mission n’est pas encore terminée. Tu es prêt ?"
         validPropositionSentence="Bien vu. Samus Aran, chasseuse de primes intergalactique."
         invalidPropositionSentence="Non, ton scanner n’est pas bien réglé."
-        hint="//@rooms.81/@hint"/>
+        hint="//@rooms.81/@hint"
+        discoveredSentenceNpc="Tu as découvert mon identité. Bien joué, chasseur."
+        discoveredSentenceHint="Un indice ? Inutile. Tu sais déjà que je suis Samus."/>
   </rooms>
   <rooms north="//@rooms.61"
       name="G5"
@@ -474,7 +513,9 @@
         helloSentence="Ooh-ooh-ah-ah ! Bienvenue dans ma jungle."
         validPropositionSentence="Haha, ouais, c’est moi, DK ! Passons aux bananes !"
         invalidPropositionSentence="Ooh-ooh... Mauvaise réponse. Essaie encore !"
-        hint="//@rooms.85/@hint"/>
+        hint="//@rooms.85/@hint"
+        discoveredSentenceNpc="Ooh-ooh-ah-ah ! Tu sais déjà que c’est moi, Donkey Kong !"
+        discoveredSentenceHint="Un indice ? Sérieusement ? Tu sais que c’est moi, le roi des bananes !"/>
   </rooms>
   <rooms north="//@rooms.64"
       east="//@rooms.74"
@@ -486,7 +527,9 @@
         helloSentence="Attention ! Ce n'est pas un endroit pour les imprudents."
         validPropositionSentence="Bien joué. Regina, experte en situations de crise, à votre service."
         invalidPropositionSentence="Non, ce n'est pas moi. Les dinosaures sont plus rapides que toi ?"
-        hint="//@rooms.13/@hint"/>
+        hint="//@rooms.13/@hint"
+        discoveredSentenceNpc="Tu m’as déjà identifiée. On peut avancer maintenant ?"
+        discoveredSentenceHint="Un indice ? Sérieusement ? Tu sais déjà que c’est moi, Regina."/>
   </rooms>
   <rooms north="//@rooms.65"
       west="//@rooms.56"
@@ -532,7 +575,9 @@
         helloSentence="Une énigme pour toi : qui suis-je ?"
         validPropositionSentence="Très juste, je suis le professeur Layton. Félicitations !"
         invalidPropositionSentence="Non, ce n’est pas moi. Mais ton raisonnement est proche."
-        hint="//@rooms.93/@hint"/>
+        hint="//@rooms.93/@hint"
+        discoveredSentenceNpc="T'as mémoire est une énigme pour moi... Tu as déjà découvert mon identité."
+        discoveredSentenceHint="Un indice ? Inutile pour toi, tu sais déjà qui je suis."/>
   </rooms>
   <rooms east="//@rooms.83"
       west="//@rooms.64"
@@ -560,7 +605,9 @@
         helloSentence="Tu n’entendras pas mes pas, mais je suis là."
         validPropositionSentence="C’est exact. Sam Fisher, agent de l’ombre, à votre service."
         invalidPropositionSentence="Non, mauvaise cible. Réessaie, furtivement cette fois."
-        hint="//@rooms.58/@hint"/>
+        hint="//@rooms.58/@hint"
+        discoveredSentenceNpc="Bien joué, tu sais déjà qui je suis. Mission accomplie."
+        discoveredSentenceHint="Un indice ? Tu as déjà tout compris, pas besoin d’en rajouter."/>
   </rooms>
   <rooms east="//@rooms.87"
       west="//@rooms.68"
@@ -578,7 +625,9 @@
         helloSentence="Bienvenuti, mon ami."
         validPropositionSentence="Ouhouhou, it's me Mario!"
         invalidPropositionSentence="Oh no! mamamia!"
-        hint="//@rooms.61/@hint"/>
+        hint="//@rooms.61/@hint"
+        discoveredSentenceNpc="Oh It's me Mario, tu m'as déjà oublié ?"
+        discoveredSentenceHint="Tu sais déjà qui je suis, n’est-ce pas ? Let’s go !"/>
   </rooms>
   <rooms north="//@rooms.79"
       east="//@rooms.90"
@@ -600,7 +649,9 @@
         helloSentence="Tu as traversé bien des épreuves pour arriver jusqu'ici."
         validPropositionSentence="Tu es perspicace. Moi, c'est Aloy, chasseuse de machines."
         invalidPropositionSentence="Non, ce n'est pas moi. Ton focus doit être reconfiguré"
-        hint="//@rooms.16/@hint"/>
+        hint="//@rooms.16/@hint"
+        discoveredSentenceNpc="Tu as déjà trouvé mon nom. Bravo, voyageur."
+        discoveredSentenceHint="Un indice ? Pourquoi faire ? Tu connais déjà Aloy."/>
   </rooms>
   <rooms north="//@rooms.82"
       west="//@rooms.73"
@@ -614,7 +665,9 @@
         helloSentence="Cherches-tu la lumière ou les secrets de l’Alchimie ?"
         validPropositionSentence="Bien vu. Vlad, adepte de la Psynergie, à ton service."
         invalidPropositionSentence="Non, ton esprit est encore troublé. Réessaye."
-        hint="//@rooms.89/@hint"/>
+        hint="//@rooms.89/@hint"
+        discoveredSentenceNpc="Tu as déjà compris que je suis Vlad. Bravo."
+        discoveredSentenceHint="Un indice ? Pourquoi en aurais-tu besoin ? Tu connais déjà mon identité."/>
   </rooms>
   <rooms west="//@rooms.75"
       name="I9"
@@ -674,6 +727,8 @@
         helloSentence="Je veux devenir le meilleur dresseur, comme personne avant moi."
         validPropositionSentence="Exact ! Sacha Ketchum, de Bourg-Palette ! Prêt pour un duel ?"
         invalidPropositionSentence="Non, mauvais Pokémon. Rappelle ton choix et retente ta chance !"
-        hint="//@rooms.73/@hint"/>
+        hint="//@rooms.73/@hint"
+        discoveredSentenceNpc="Oui, c’est bien moi, Sacha ! On continue l’aventure ? J'ai des badge à gagner moi !"
+        discoveredSentenceHint="Un indice ? Pourquoi faire ? T'es pas plus futé qu'un Psyckokwak on dirai !"/>
   </rooms>
 </labyrinthTalesOfGamers:Game>

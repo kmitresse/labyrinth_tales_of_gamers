@@ -18,6 +18,8 @@ package labyrinth_tales_of_gamers;
  *   <li>{@link labyrinth_tales_of_gamers.Npc#getInvalidPropositionSentence <em>Invalid Proposition Sentence</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.Npc#getHint <em>Hint</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.Npc#getCurrentRoom <em>Current Room</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.Npc#getDiscoveredSentenceNpc <em>Discovered Sentence Npc</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.Npc#getDiscoveredSentenceHint <em>Discovered Sentence Hint</em>}</li>
  * </ul>
  *
  * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getNpc()
@@ -32,7 +34,7 @@ public interface Npc extends Entity {
 	 * @return the value of the '<em>Hello Sentence</em>' attribute.
 	 * @see #setHelloSentence(String)
 	 * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getNpc_HelloSentence()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getHelloSentence();
@@ -76,7 +78,7 @@ public interface Npc extends Entity {
 	 * @return the value of the '<em>Valid Proposition Sentence</em>' attribute.
 	 * @see #setValidPropositionSentence(String)
 	 * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getNpc_ValidPropositionSentence()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getValidPropositionSentence();
@@ -122,7 +124,7 @@ public interface Npc extends Entity {
 	 * @see #setHint(Hint)
 	 * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getNpc_Hint()
 	 * @see labyrinth_tales_of_gamers.Hint#getNpc
-	 * @model opposite="npc"
+	 * @model opposite="npc" required="true"
 	 * @generated
 	 */
 	Hint getHint();
@@ -160,5 +162,49 @@ public interface Npc extends Entity {
 	 * @generated
 	 */
 	void setCurrentRoom(Room value);
+
+	/**
+	 * Returns the value of the '<em><b>Discovered Sentence Npc</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Discovered Sentence Npc</em>' attribute.
+	 * @see #setDiscoveredSentenceNpc(String)
+	 * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getNpc_DiscoveredSentenceNpc()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getDiscoveredSentenceNpc();
+
+	/**
+	 * Sets the value of the '{@link labyrinth_tales_of_gamers.Npc#getDiscoveredSentenceNpc <em>Discovered Sentence Npc</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Discovered Sentence Npc</em>' attribute.
+	 * @see #getDiscoveredSentenceNpc()
+	 * @generated
+	 */
+	void setDiscoveredSentenceNpc(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Discovered Sentence Hint</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Discovered Sentence Hint</em>' attribute.
+	 * @see #setDiscoveredSentenceHint(String)
+	 * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getNpc_DiscoveredSentenceHint()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getDiscoveredSentenceHint();
+
+	/**
+	 * Sets the value of the '{@link labyrinth_tales_of_gamers.Npc#getDiscoveredSentenceHint <em>Discovered Sentence Hint</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Discovered Sentence Hint</em>' attribute.
+	 * @see #getDiscoveredSentenceHint()
+	 * @generated
+	 */
+	void setDiscoveredSentenceHint(String value);
 
 } // Npc

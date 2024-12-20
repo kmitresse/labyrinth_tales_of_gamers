@@ -150,7 +150,7 @@ public class Room {
   public void displayActions() {
     System.out.print(TextManager.YELLOW);
     for (Action action : this.actions) {
-      System.out.print(action.getLabel() + "\t - \t");
+      System.out.print(action.getLabel() + "\t -");
     }
     System.out.println(TextManager.RESET);
   }
@@ -189,7 +189,7 @@ public class Room {
 	    return false;
 	  } else if (action.equals(Action.PROPOSE)) {
 	    if (this.npc.getDiscovered()) {
-		  TextManager.print(this.npc.pseudo() + " Tu as déjà trouvé mon nom", TextManager.BLUE);
+		  TextManager.print(this.npc.pseudo() + " " + this.npc.getdiscoveredSentenceNpc(), TextManager.BLUE);
 	    } else {
 		  TextManager.print("Proposez un nom");
 		  String proposition = MainCharacter.selectAction();

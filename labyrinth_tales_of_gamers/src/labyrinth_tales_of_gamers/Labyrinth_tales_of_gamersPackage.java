@@ -150,13 +150,22 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	int GAME__HOW_TO_PLAY = 8;
 
 	/**
+	 * The feature id for the '<em><b>Map</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME__MAP = 9;
+
+	/**
 	 * The number of structural features of the '<em>Game</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GAME_FEATURE_COUNT = 9;
+	int GAME_FEATURE_COUNT = 10;
 
 	/**
 	 * The operation id for the '<em>Nb Npc Positive Or Null</em>' operation.
@@ -596,13 +605,31 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	int NPC__CURRENT_ROOM = ENTITY_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Discovered Sentence Npc</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NPC__DISCOVERED_SENTENCE_NPC = ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Discovered Sentence Hint</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NPC__DISCOVERED_SENTENCE_HINT = ENTITY_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>Npc</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NPC_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 6;
+	int NPC_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Npc</em>' class.
@@ -768,6 +795,17 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getGame_HowToPlay();
+
+	/**
+	 * Returns the meta object for the attribute '{@link labyrinth_tales_of_gamers.Game#getMap <em>Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Map</em>'.
+	 * @see labyrinth_tales_of_gamers.Game#getMap()
+	 * @see #getGame()
+	 * @generated
+	 */
+	EAttribute getGame_Map();
 
 	/**
 	 * Returns the meta object for the '{@link labyrinth_tales_of_gamers.Game#nbNpcPositiveOrNull(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Nb Npc Positive Or Null</em>}' operation.
@@ -1153,6 +1191,28 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	EReference getNpc_CurrentRoom();
 
 	/**
+	 * Returns the meta object for the attribute '{@link labyrinth_tales_of_gamers.Npc#getDiscoveredSentenceNpc <em>Discovered Sentence Npc</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Discovered Sentence Npc</em>'.
+	 * @see labyrinth_tales_of_gamers.Npc#getDiscoveredSentenceNpc()
+	 * @see #getNpc()
+	 * @generated
+	 */
+	EAttribute getNpc_DiscoveredSentenceNpc();
+
+	/**
+	 * Returns the meta object for the attribute '{@link labyrinth_tales_of_gamers.Npc#getDiscoveredSentenceHint <em>Discovered Sentence Hint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Discovered Sentence Hint</em>'.
+	 * @see labyrinth_tales_of_gamers.Npc#getDiscoveredSentenceHint()
+	 * @see #getNpc()
+	 * @generated
+	 */
+	EAttribute getNpc_DiscoveredSentenceHint();
+
+	/**
 	 * Returns the meta object for class '{@link labyrinth_tales_of_gamers.Action <em>Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1287,6 +1347,14 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute GAME__HOW_TO_PLAY = eINSTANCE.getGame_HowToPlay();
+
+		/**
+		 * The meta object literal for the '<em><b>Map</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GAME__MAP = eINSTANCE.getGame_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>Nb Npc Positive Or Null</b></em>' operation.
@@ -1585,6 +1653,22 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 		 * @generated
 		 */
 		EReference NPC__CURRENT_ROOM = eINSTANCE.getNpc_CurrentRoom();
+
+		/**
+		 * The meta object literal for the '<em><b>Discovered Sentence Npc</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NPC__DISCOVERED_SENTENCE_NPC = eINSTANCE.getNpc_DiscoveredSentenceNpc();
+
+		/**
+		 * The meta object literal for the '<em><b>Discovered Sentence Hint</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NPC__DISCOVERED_SENTENCE_HINT = eINSTANCE.getNpc_DiscoveredSentenceHint();
 
 		/**
 		 * The meta object literal for the '{@link labyrinth_tales_of_gamers.impl.ActionImpl <em>Action</em>}' class.

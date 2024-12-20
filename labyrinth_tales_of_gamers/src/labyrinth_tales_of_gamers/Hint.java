@@ -29,7 +29,7 @@ public interface Hint extends Entity {
 	 * @return the value of the '<em>Label</em>' attribute.
 	 * @see #setLabel(String)
 	 * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getHint_Label()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getLabel();

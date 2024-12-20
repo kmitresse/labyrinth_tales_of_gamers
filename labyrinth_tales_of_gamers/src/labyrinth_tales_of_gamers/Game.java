@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link labyrinth_tales_of_gamers.Game#getNbNpc <em>Nb Npc</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.Game#getAim <em>Aim</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.Game#getHowToPlay <em>How To Play</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.Game#getMap <em>Map</em>}</li>
  * </ul>
  *
  * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getGame()
@@ -79,7 +80,7 @@ public interface Game extends EObject {
 	 * @return the value of the '<em>Title</em>' attribute.
 	 * @see #setTitle(String)
 	 * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getGame_Title()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getTitle();
@@ -123,7 +124,7 @@ public interface Game extends EObject {
 	 * @return the value of the '<em>Prologue</em>' attribute.
 	 * @see #setPrologue(String)
 	 * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getGame_Prologue()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getPrologue();
@@ -225,6 +226,28 @@ public interface Game extends EObject {
 	 * @generated
 	 */
 	void setHowToPlay(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Map</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Map</em>' attribute.
+	 * @see #setMap(String)
+	 * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getGame_Map()
+	 * @model
+	 * @generated
+	 */
+	String getMap();
+
+	/**
+	 * Sets the value of the '{@link labyrinth_tales_of_gamers.Game#getMap <em>Map</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Map</em>' attribute.
+	 * @see #getMap()
+	 * @generated
+	 */
+	void setMap(String value);
 
 	/**
 	 * <!-- begin-user-doc -->

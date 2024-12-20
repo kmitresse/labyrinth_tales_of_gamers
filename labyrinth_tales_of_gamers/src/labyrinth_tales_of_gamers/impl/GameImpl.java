@@ -53,6 +53,7 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  *   <li>{@link labyrinth_tales_of_gamers.impl.GameImpl#getNbNpc <em>Nb Npc</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.impl.GameImpl#getAim <em>Aim</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.impl.GameImpl#getHowToPlay <em>How To Play</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.impl.GameImpl#getMap <em>Map</em>}</li>
  * </ul>
  *
  * @generated
@@ -217,6 +218,26 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 	 * @ordered
 	 */
 	protected String howToPlay = HOW_TO_PLAY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMap() <em>Map</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMap()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String MAP_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getMap() <em>Map</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMap()
+	 * @generated
+	 * @ordered
+	 */
+	protected String map = MAP_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -462,6 +483,29 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 	 * @generated
 	 */
 	@Override
+	public String getMap() {
+		return map;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setMap(String newMap) {
+		String oldMap = map;
+		map = newMap;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Labyrinth_tales_of_gamersPackage.GAME__MAP, oldMap, map));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public boolean nbNpcPositiveOrNull(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
 		final String constraintName = "Game::nbNpcPositiveOrNull";
 		try {
@@ -560,6 +604,8 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 				return getAim();
 			case Labyrinth_tales_of_gamersPackage.GAME__HOW_TO_PLAY:
 				return getHowToPlay();
+			case Labyrinth_tales_of_gamersPackage.GAME__MAP:
+				return getMap();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -601,6 +647,9 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 			case Labyrinth_tales_of_gamersPackage.GAME__HOW_TO_PLAY:
 				setHowToPlay((String)newValue);
 				return;
+			case Labyrinth_tales_of_gamersPackage.GAME__MAP:
+				setMap((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -640,6 +689,9 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 			case Labyrinth_tales_of_gamersPackage.GAME__HOW_TO_PLAY:
 				setHowToPlay(HOW_TO_PLAY_EDEFAULT);
 				return;
+			case Labyrinth_tales_of_gamersPackage.GAME__MAP:
+				setMap(MAP_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -670,6 +722,8 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 				return AIM_EDEFAULT == null ? aim != null : !AIM_EDEFAULT.equals(aim);
 			case Labyrinth_tales_of_gamersPackage.GAME__HOW_TO_PLAY:
 				return HOW_TO_PLAY_EDEFAULT == null ? howToPlay != null : !HOW_TO_PLAY_EDEFAULT.equals(howToPlay);
+			case Labyrinth_tales_of_gamersPackage.GAME__MAP:
+				return MAP_EDEFAULT == null ? map != null : !MAP_EDEFAULT.equals(map);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -713,6 +767,8 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 		result.append(aim);
 		result.append(", howToPlay: ");
 		result.append(howToPlay);
+		result.append(", map: ");
+		result.append(map);
 		result.append(')');
 		return result.toString();
 	}

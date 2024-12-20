@@ -17,6 +17,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute labyrinth.ecore#//Game/nbNpc"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute labyrinth.ecore#//Game/aim"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute labyrinth.ecore#//Game/howToPlay"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute labyrinth.ecore#//Game/map"/>
     </genClasses>
     <genClasses ecoreClass="labyrinth.ecore#//Room">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference labyrinth.ecore#//Room/north"/>
@@ -50,6 +51,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute labyrinth.ecore#//Npc/invalidPropositionSentence"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference labyrinth.ecore#//Npc/hint"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference labyrinth.ecore#//Npc/currentRoom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute labyrinth.ecore#//Npc/discoveredSentenceNpc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute labyrinth.ecore#//Npc/discoveredSentenceHint"/>
     </genClasses>
     <genClasses ecoreClass="labyrinth.ecore#//Action">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute labyrinth.ecore#//Action/label"/>
