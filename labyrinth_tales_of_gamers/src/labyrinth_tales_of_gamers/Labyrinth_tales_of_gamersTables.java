@@ -71,12 +71,17 @@ public class Labyrinth_tales_of_gamersTables extends AbstractTables
 	public static final /*@NonInvalid*/ ClassId CLSSid_Room = Labyrinth_tales_of_gamersTables.PACKid_http_c_s_s_labyrinthtalesofgamers_com_s.getClassId("Room", 0);
 	public static final /*@NonInvalid*/ DataTypeId DATAid_EInt = Labyrinth_tales_of_gamersTables.PACKid_http_c_s_s_www_eclipse_org_s_emf_s_2002_s_Ecore.getDataTypeId("EInt", 0);
 	public static final /*@NonInvalid*/ IntegerValue INT_0 = ValueUtil.integerValueOf("0");
+	public static final /*@NonInvalid*/ String STR_ASK_HINT = "ASK_HINT";
 	public static final /*@NonInvalid*/ String STR_Demander_32_l_39_indice = "Demander l\'indice";
 	public static final /*@NonInvalid*/ String STR_Lire_32_l_39_indice = "Lire l\'indice";
+	public static final /*@NonInvalid*/ String STR_MOVE = "MOVE";
+	public static final /*@NonInvalid*/ String STR_PROPOSE = "PROPOSE";
 	public static final /*@NonInvalid*/ String STR_Proposer_32_un_32_nom = "Proposer un nom";
-	public static final /*@NonInvalid*/ String STR_Se_32_déplacer = "Se d\u00E9placer";
+	public static final /*@NonInvalid*/ String STR_READ = "READ";
+	public static final /*@NonInvalid*/ String STR_TALK = "TALK";
 	public static final /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_MainCharacter = TypeId.BAG.getSpecializedId(Labyrinth_tales_of_gamersTables.CLSSid_MainCharacter, false, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
-	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_Action = TypeId.ORDERED_SET.getSpecializedId(Labyrinth_tales_of_gamersTables.CLSSid_Action, false, ValueUtil.ONE_VALUE, ValueUtil.UNLIMITED_VALUE);
+	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_Action = TypeId.ORDERED_SET.getSpecializedId(Labyrinth_tales_of_gamersTables.CLSSid_Action, true, ValueUtil.ONE_VALUE, ValueUtil.UNLIMITED_VALUE);
+	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_Action_0 = TypeId.ORDERED_SET.getSpecializedId(Labyrinth_tales_of_gamersTables.CLSSid_Action, false, ValueUtil.ONE_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_Room = TypeId.ORDERED_SET.getSpecializedId(Labyrinth_tales_of_gamersTables.CLSSid_Room, false, ValueUtil.ONE_VALUE, ValueUtil.UNLIMITED_VALUE);
 
 	/**
@@ -248,21 +253,26 @@ public class Labyrinth_tales_of_gamersTables extends AbstractTables
 			Operations.init();
 		}
 
-		public static final ExecutorProperty _Action__label = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.ACTION__LABEL, Types._Action, 0);
-		public static final ExecutorProperty _Action__Room__actions = new ExecutorPropertyWithImplementation("Room", Types._Action, 1, new EcoreLibraryOppositeProperty(Labyrinth_tales_of_gamersPackage.Literals.ROOM__ACTIONS));
+		public static final ExecutorProperty _Action__Informations = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.ACTION__INFORMATIONS, Types._Action, 0);
+		public static final ExecutorProperty _Action__label = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.ACTION__LABEL, Types._Action, 1);
+		public static final ExecutorProperty _Action__name = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.ACTION__NAME, Types._Action, 2);
+		public static final ExecutorProperty _Action__Game__actions = new ExecutorPropertyWithImplementation("Game", Types._Action, 3, new EcoreLibraryOppositeProperty(Labyrinth_tales_of_gamersPackage.Literals.GAME__ACTIONS));
+		public static final ExecutorProperty _Action__Room__actions = new ExecutorPropertyWithImplementation("Room", Types._Action, 4, new EcoreLibraryOppositeProperty(Labyrinth_tales_of_gamersPackage.Literals.ROOM__ACTIONS));
 
-		public static final ExecutorProperty _Entity__name = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.ENTITY__NAME, Types._Entity, 0);
+		public static final ExecutorProperty _Entity__discovered = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.ENTITY__DISCOVERED, Types._Entity, 0);
+		public static final ExecutorProperty _Entity__name = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.ENTITY__NAME, Types._Entity, 1);
 
-		public static final ExecutorProperty _Game__aim = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.GAME__AIM, Types._Game, 0);
-		public static final ExecutorProperty _Game__epilogue = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.GAME__EPILOGUE, Types._Game, 1);
-		public static final ExecutorProperty _Game__howToPlay = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.GAME__HOW_TO_PLAY, Types._Game, 2);
-		public static final ExecutorProperty _Game__map = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.GAME__MAP, Types._Game, 3);
-		public static final ExecutorProperty _Game__nbNpc = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.GAME__NB_NPC, Types._Game, 4);
-		public static final ExecutorProperty _Game__player = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.GAME__PLAYER, Types._Game, 5);
-		public static final ExecutorProperty _Game__prologue = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.GAME__PROLOGUE, Types._Game, 6);
-		public static final ExecutorProperty _Game__rooms = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.GAME__ROOMS, Types._Game, 7);
-		public static final ExecutorProperty _Game__subtitle = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.GAME__SUBTITLE, Types._Game, 8);
-		public static final ExecutorProperty _Game__title = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.GAME__TITLE, Types._Game, 9);
+		public static final ExecutorProperty _Game__actions = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.GAME__ACTIONS, Types._Game, 0);
+		public static final ExecutorProperty _Game__aim = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.GAME__AIM, Types._Game, 1);
+		public static final ExecutorProperty _Game__epilogue = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.GAME__EPILOGUE, Types._Game, 2);
+		public static final ExecutorProperty _Game__howToPlay = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.GAME__HOW_TO_PLAY, Types._Game, 3);
+		public static final ExecutorProperty _Game__map = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.GAME__MAP, Types._Game, 4);
+		public static final ExecutorProperty _Game__nbEnigmas = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.GAME__NB_ENIGMAS, Types._Game, 5);
+		public static final ExecutorProperty _Game__player = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.GAME__PLAYER, Types._Game, 6);
+		public static final ExecutorProperty _Game__prologue = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.GAME__PROLOGUE, Types._Game, 7);
+		public static final ExecutorProperty _Game__rooms = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.GAME__ROOMS, Types._Game, 8);
+		public static final ExecutorProperty _Game__subtitle = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.GAME__SUBTITLE, Types._Game, 9);
+		public static final ExecutorProperty _Game__title = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.GAME__TITLE, Types._Game, 10);
 
 		public static final ExecutorProperty _Hint__currentRoom = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.HINT__CURRENT_ROOM, Types._Hint, 0);
 		public static final ExecutorProperty _Hint__label = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.HINT__LABEL, Types._Hint, 1);
@@ -270,16 +280,19 @@ public class Labyrinth_tales_of_gamersTables extends AbstractTables
 
 		public static final ExecutorProperty _MainCharacter__currentRoom = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.MAIN_CHARACTER__CURRENT_ROOM, Types._MainCharacter, 0);
 		public static final ExecutorProperty _MainCharacter__game = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.MAIN_CHARACTER__GAME, Types._MainCharacter, 1);
-		public static final ExecutorProperty _MainCharacter__nbDiscoveredNpc = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.MAIN_CHARACTER__NB_DISCOVERED_NPC, Types._MainCharacter, 2);
+		public static final ExecutorProperty _MainCharacter__nbDiscoveredEnigmas = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.MAIN_CHARACTER__NB_DISCOVERED_ENIGMAS, Types._MainCharacter, 2);
 
 		public static final ExecutorProperty _Npc__currentRoom = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.NPC__CURRENT_ROOM, Types._Npc, 0);
-		public static final ExecutorProperty _Npc__discovered = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.NPC__DISCOVERED, Types._Npc, 1);
-		public static final ExecutorProperty _Npc__discoveredSentenceHint = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.NPC__DISCOVERED_SENTENCE_HINT, Types._Npc, 2);
-		public static final ExecutorProperty _Npc__discoveredSentenceNpc = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.NPC__DISCOVERED_SENTENCE_NPC, Types._Npc, 3);
-		public static final ExecutorProperty _Npc__helloSentence = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.NPC__HELLO_SENTENCE, Types._Npc, 4);
-		public static final ExecutorProperty _Npc__hint = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.NPC__HINT, Types._Npc, 5);
-		public static final ExecutorProperty _Npc__invalidPropositionSentence = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.NPC__INVALID_PROPOSITION_SENTENCE, Types._Npc, 6);
-		public static final ExecutorProperty _Npc__validPropositionSentence = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.NPC__VALID_PROPOSITION_SENTENCE, Types._Npc, 7);
+		public static final ExecutorProperty _Npc__discoveredEnigma = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.NPC__DISCOVERED_ENIGMA, Types._Npc, 1);
+		public static final ExecutorProperty _Npc__discoveredEnigmaSentence = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.NPC__DISCOVERED_ENIGMA_SENTENCE, Types._Npc, 2);
+		public static final ExecutorProperty _Npc__discoveredSentenceHint = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.NPC__DISCOVERED_SENTENCE_HINT, Types._Npc, 3);
+		public static final ExecutorProperty _Npc__enigmaSentence = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.NPC__ENIGMA_SENTENCE, Types._Npc, 4);
+		public static final ExecutorProperty _Npc__enigmaSolution = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.NPC__ENIGMA_SOLUTION, Types._Npc, 5);
+		public static final ExecutorProperty _Npc__helloSentence = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.NPC__HELLO_SENTENCE, Types._Npc, 6);
+		public static final ExecutorProperty _Npc__hint = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.NPC__HINT, Types._Npc, 7);
+		public static final ExecutorProperty _Npc__hintSentence = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.NPC__HINT_SENTENCE, Types._Npc, 8);
+		public static final ExecutorProperty _Npc__invalidPropositionSentence = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.NPC__INVALID_PROPOSITION_SENTENCE, Types._Npc, 9);
+		public static final ExecutorProperty _Npc__validPropositionSentence = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.NPC__VALID_PROPOSITION_SENTENCE, Types._Npc, 10);
 
 		public static final ExecutorProperty _Room__actions = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.ROOM__ACTIONS, Types._Room, 0);
 		public static final ExecutorProperty _Room__backendName = new EcoreExecutorProperty(Labyrinth_tales_of_gamersPackage.Literals.ROOM__BACKEND_NAME, Types._Room, 1);
@@ -688,23 +701,27 @@ public class Labyrinth_tales_of_gamersTables extends AbstractTables
 		}
 
 		private static final ExecutorProperty /*@NonNull*/ [] _Action = {
+			Labyrinth_tales_of_gamersTables.Properties._Action__Informations,
 			Labyrinth_tales_of_gamersTables.Properties._Action__label,
+			Labyrinth_tales_of_gamersTables.Properties._Action__name,
 			OCLstdlibTables.Properties._OclElement__oclContainer,
 			OCLstdlibTables.Properties._OclElement__oclContents
 		};
 
 		private static final ExecutorProperty /*@NonNull*/ [] _Entity = {
+			Labyrinth_tales_of_gamersTables.Properties._Entity__discovered,
 			Labyrinth_tales_of_gamersTables.Properties._Entity__name,
 			OCLstdlibTables.Properties._OclElement__oclContainer,
 			OCLstdlibTables.Properties._OclElement__oclContents
 		};
 
 		private static final ExecutorProperty /*@NonNull*/ [] _Game = {
+			Labyrinth_tales_of_gamersTables.Properties._Game__actions,
 			Labyrinth_tales_of_gamersTables.Properties._Game__aim,
 			Labyrinth_tales_of_gamersTables.Properties._Game__epilogue,
 			Labyrinth_tales_of_gamersTables.Properties._Game__howToPlay,
 			Labyrinth_tales_of_gamersTables.Properties._Game__map,
-			Labyrinth_tales_of_gamersTables.Properties._Game__nbNpc,
+			Labyrinth_tales_of_gamersTables.Properties._Game__nbEnigmas,
 			OCLstdlibTables.Properties._OclElement__oclContainer,
 			OCLstdlibTables.Properties._OclElement__oclContents,
 			Labyrinth_tales_of_gamersTables.Properties._Game__player,
@@ -716,6 +733,7 @@ public class Labyrinth_tales_of_gamersTables extends AbstractTables
 
 		private static final ExecutorProperty /*@NonNull*/ [] _Hint = {
 			Labyrinth_tales_of_gamersTables.Properties._Hint__currentRoom,
+			Labyrinth_tales_of_gamersTables.Properties._Entity__discovered,
 			Labyrinth_tales_of_gamersTables.Properties._Hint__label,
 			Labyrinth_tales_of_gamersTables.Properties._Entity__name,
 			Labyrinth_tales_of_gamersTables.Properties._Hint__npc,
@@ -725,20 +743,25 @@ public class Labyrinth_tales_of_gamersTables extends AbstractTables
 
 		private static final ExecutorProperty /*@NonNull*/ [] _MainCharacter = {
 			Labyrinth_tales_of_gamersTables.Properties._MainCharacter__currentRoom,
+			Labyrinth_tales_of_gamersTables.Properties._Entity__discovered,
 			Labyrinth_tales_of_gamersTables.Properties._MainCharacter__game,
 			Labyrinth_tales_of_gamersTables.Properties._Entity__name,
-			Labyrinth_tales_of_gamersTables.Properties._MainCharacter__nbDiscoveredNpc,
+			Labyrinth_tales_of_gamersTables.Properties._MainCharacter__nbDiscoveredEnigmas,
 			OCLstdlibTables.Properties._OclElement__oclContainer,
 			OCLstdlibTables.Properties._OclElement__oclContents
 		};
 
 		private static final ExecutorProperty /*@NonNull*/ [] _Npc = {
 			Labyrinth_tales_of_gamersTables.Properties._Npc__currentRoom,
-			Labyrinth_tales_of_gamersTables.Properties._Npc__discovered,
+			Labyrinth_tales_of_gamersTables.Properties._Entity__discovered,
+			Labyrinth_tales_of_gamersTables.Properties._Npc__discoveredEnigma,
+			Labyrinth_tales_of_gamersTables.Properties._Npc__discoveredEnigmaSentence,
 			Labyrinth_tales_of_gamersTables.Properties._Npc__discoveredSentenceHint,
-			Labyrinth_tales_of_gamersTables.Properties._Npc__discoveredSentenceNpc,
+			Labyrinth_tales_of_gamersTables.Properties._Npc__enigmaSentence,
+			Labyrinth_tales_of_gamersTables.Properties._Npc__enigmaSolution,
 			Labyrinth_tales_of_gamersTables.Properties._Npc__helloSentence,
 			Labyrinth_tales_of_gamersTables.Properties._Npc__hint,
+			Labyrinth_tales_of_gamersTables.Properties._Npc__hintSentence,
 			Labyrinth_tales_of_gamersTables.Properties._Npc__invalidPropositionSentence,
 			Labyrinth_tales_of_gamersTables.Properties._Entity__name,
 			OCLstdlibTables.Properties._OclElement__oclContainer,

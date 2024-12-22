@@ -6,7 +6,7 @@
 ArrayList<Npc> npcs = new ArrayList<>();
 [for (room : Room | aGame.rooms)]
 [if (not room.npc.oclIsUndefined())]
-Npc [room.npc.name.toLower().replaceAll(' ','')/] = new Npc("[room.npc.name/]",[if(not room.npc.hint.oclIsUndefined())][room.npc.hint.name/][else]null[/if],"[room.npc.helloSentence/]", "[room.npc.validPropositionSentence/]","[room.npc.invalidPropositionSentence/]","[room.npc.discoveredSentenceNpc/]","[room.npc.discoveredSentenceHint/]");
+Npc [room.npc.name.toLower().replaceAll(' ','')/] = new Npc("[room.npc.name/]",[if(not room.npc.hint.oclIsUndefined())][room.npc.hint.name/][else]null[/if],"[room.npc.helloSentence/]", "[if(not room.npc.enigmaSentence.oclIsUndefined())][room.npc.enigmaSentence/][/if]", "[room.npc.enigmaSolution/]", "[room.npc.hintSentence/]", "[room.npc.validPropositionSentence/]","[room.npc.invalidPropositionSentence/]","[room.npc.discoveredEnigmaSentence/]","[room.npc.discoveredSentenceHint/]");
 npcs.add([room.npc.name.toLower().replaceAll(' ','')/]);
 [/if]
 [/for]

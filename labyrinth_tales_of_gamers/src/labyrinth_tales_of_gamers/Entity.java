@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link labyrinth_tales_of_gamers.Entity#getName <em>Name</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.Entity#isDiscovered <em>Discovered</em>}</li>
  * </ul>
  *
  * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getEntity()
@@ -42,5 +43,28 @@ public interface Entity extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Discovered</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Discovered</em>' attribute.
+	 * @see #setDiscovered(boolean)
+	 * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getEntity_Discovered()
+	 * @model default="true" required="true"
+	 * @generated
+	 */
+	boolean isDiscovered();
+
+	/**
+	 * Sets the value of the '{@link labyrinth_tales_of_gamers.Entity#isDiscovered <em>Discovered</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Discovered</em>' attribute.
+	 * @see #isDiscovered()
+	 * @generated
+	 */
+	void setDiscovered(boolean value);
 
 } // Entity

@@ -6,6 +6,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import java.util.Map;
+import labyrinth_tales_of_gamers.Action;
 import labyrinth_tales_of_gamers.Game;
 import labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage;
 import labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersTables;
@@ -24,6 +25,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.ocl.pivot.evaluation.Executor;
@@ -50,10 +52,11 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  *   <li>{@link labyrinth_tales_of_gamers.impl.GameImpl#getSubtitle <em>Subtitle</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.impl.GameImpl#getPrologue <em>Prologue</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.impl.GameImpl#getEpilogue <em>Epilogue</em>}</li>
- *   <li>{@link labyrinth_tales_of_gamers.impl.GameImpl#getNbNpc <em>Nb Npc</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.impl.GameImpl#getNbEnigmas <em>Nb Enigmas</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.impl.GameImpl#getAim <em>Aim</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.impl.GameImpl#getHowToPlay <em>How To Play</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.impl.GameImpl#getMap <em>Map</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.impl.GameImpl#getActions <em>Actions</em>}</li>
  * </ul>
  *
  * @generated
@@ -160,24 +163,24 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 	protected String epilogue = EPILOGUE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getNbNpc() <em>Nb Npc</em>}' attribute.
+	 * The default value of the '{@link #getNbEnigmas() <em>Nb Enigmas</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNbNpc()
+	 * @see #getNbEnigmas()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int NB_NPC_EDEFAULT = 0;
+	protected static final int NB_ENIGMAS_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getNbNpc() <em>Nb Npc</em>}' attribute.
+	 * The cached value of the '{@link #getNbEnigmas() <em>Nb Enigmas</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNbNpc()
+	 * @see #getNbEnigmas()
 	 * @generated
 	 * @ordered
 	 */
-	protected int nbNpc = NB_NPC_EDEFAULT;
+	protected int nbEnigmas = NB_ENIGMAS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAim() <em>Aim</em>}' attribute.
@@ -238,6 +241,16 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 	 * @ordered
 	 */
 	protected String map = MAP_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getActions() <em>Actions</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Action> actions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -414,8 +427,8 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 	 * @generated
 	 */
 	@Override
-	public int getNbNpc() {
-		return nbNpc;
+	public int getNbEnigmas() {
+		return nbEnigmas;
 	}
 
 	/**
@@ -424,11 +437,11 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 	 * @generated
 	 */
 	@Override
-	public void setNbNpc(int newNbNpc) {
-		int oldNbNpc = nbNpc;
-		nbNpc = newNbNpc;
+	public void setNbEnigmas(int newNbEnigmas) {
+		int oldNbEnigmas = nbEnigmas;
+		nbEnigmas = newNbEnigmas;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Labyrinth_tales_of_gamersPackage.GAME__NB_NPC, oldNbNpc, nbNpc));
+			eNotify(new ENotificationImpl(this, Notification.SET, Labyrinth_tales_of_gamersPackage.GAME__NB_ENIGMAS, oldNbEnigmas, nbEnigmas));
 	}
 
 	/**
@@ -506,6 +519,19 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 	 * @generated
 	 */
 	@Override
+	public EList<Action> getActions() {
+		if (actions == null) {
+			actions = new EObjectContainmentEList<Action>(Action.class, this, Labyrinth_tales_of_gamersPackage.GAME__ACTIONS);
+		}
+		return actions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public boolean nbNpcPositiveOrNull(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
 		final String constraintName = "Game::nbNpcPositiveOrNull";
 		try {
@@ -517,7 +543,7 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 			 *     if severity <= 0
 			 *     then true
 			 *     else
-			 *       let result : Boolean[1] = self.nbNpc >= 0
+			 *       let result : Boolean[1] = self.nbEnigmas >= 0
 			 *       in
 			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
 			 *     endif
@@ -530,9 +556,9 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 				IF_le = true;
 			}
 			else {
-				final /*@NonInvalid*/ int nbNpc = this.getNbNpc();
-				final /*@NonInvalid*/ IntegerValue BOXED_nbNpc = ValueUtil.integerValueOf(nbNpc);
-				final /*@NonInvalid*/ boolean result = OclComparableGreaterThanEqualOperation.INSTANCE.evaluate(executor, BOXED_nbNpc, Labyrinth_tales_of_gamersTables.INT_0).booleanValue();
+				final /*@NonInvalid*/ int nbEnigmas = this.getNbEnigmas();
+				final /*@NonInvalid*/ IntegerValue BOXED_nbEnigmas = ValueUtil.integerValueOf(nbEnigmas);
+				final /*@NonInvalid*/ boolean result = OclComparableGreaterThanEqualOperation.INSTANCE.evaluate(executor, BOXED_nbEnigmas, Labyrinth_tales_of_gamersTables.INT_0).booleanValue();
 				final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, constraintName, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, Labyrinth_tales_of_gamersTables.INT_0).booleanValue();
 				IF_le = logDiagnostic;
 			}
@@ -574,6 +600,8 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 				return basicSetPlayer(null, msgs);
 			case Labyrinth_tales_of_gamersPackage.GAME__ROOMS:
 				return ((InternalEList<?>)getRooms()).basicRemove(otherEnd, msgs);
+			case Labyrinth_tales_of_gamersPackage.GAME__ACTIONS:
+				return ((InternalEList<?>)getActions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -598,14 +626,16 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 				return getPrologue();
 			case Labyrinth_tales_of_gamersPackage.GAME__EPILOGUE:
 				return getEpilogue();
-			case Labyrinth_tales_of_gamersPackage.GAME__NB_NPC:
-				return getNbNpc();
+			case Labyrinth_tales_of_gamersPackage.GAME__NB_ENIGMAS:
+				return getNbEnigmas();
 			case Labyrinth_tales_of_gamersPackage.GAME__AIM:
 				return getAim();
 			case Labyrinth_tales_of_gamersPackage.GAME__HOW_TO_PLAY:
 				return getHowToPlay();
 			case Labyrinth_tales_of_gamersPackage.GAME__MAP:
 				return getMap();
+			case Labyrinth_tales_of_gamersPackage.GAME__ACTIONS:
+				return getActions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -638,8 +668,8 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 			case Labyrinth_tales_of_gamersPackage.GAME__EPILOGUE:
 				setEpilogue((String)newValue);
 				return;
-			case Labyrinth_tales_of_gamersPackage.GAME__NB_NPC:
-				setNbNpc((Integer)newValue);
+			case Labyrinth_tales_of_gamersPackage.GAME__NB_ENIGMAS:
+				setNbEnigmas((Integer)newValue);
 				return;
 			case Labyrinth_tales_of_gamersPackage.GAME__AIM:
 				setAim((String)newValue);
@@ -649,6 +679,10 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 				return;
 			case Labyrinth_tales_of_gamersPackage.GAME__MAP:
 				setMap((String)newValue);
+				return;
+			case Labyrinth_tales_of_gamersPackage.GAME__ACTIONS:
+				getActions().clear();
+				getActions().addAll((Collection<? extends Action>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -680,8 +714,8 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 			case Labyrinth_tales_of_gamersPackage.GAME__EPILOGUE:
 				setEpilogue(EPILOGUE_EDEFAULT);
 				return;
-			case Labyrinth_tales_of_gamersPackage.GAME__NB_NPC:
-				setNbNpc(NB_NPC_EDEFAULT);
+			case Labyrinth_tales_of_gamersPackage.GAME__NB_ENIGMAS:
+				setNbEnigmas(NB_ENIGMAS_EDEFAULT);
 				return;
 			case Labyrinth_tales_of_gamersPackage.GAME__AIM:
 				setAim(AIM_EDEFAULT);
@@ -691,6 +725,9 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 				return;
 			case Labyrinth_tales_of_gamersPackage.GAME__MAP:
 				setMap(MAP_EDEFAULT);
+				return;
+			case Labyrinth_tales_of_gamersPackage.GAME__ACTIONS:
+				getActions().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -716,14 +753,16 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 				return PROLOGUE_EDEFAULT == null ? prologue != null : !PROLOGUE_EDEFAULT.equals(prologue);
 			case Labyrinth_tales_of_gamersPackage.GAME__EPILOGUE:
 				return EPILOGUE_EDEFAULT == null ? epilogue != null : !EPILOGUE_EDEFAULT.equals(epilogue);
-			case Labyrinth_tales_of_gamersPackage.GAME__NB_NPC:
-				return nbNpc != NB_NPC_EDEFAULT;
+			case Labyrinth_tales_of_gamersPackage.GAME__NB_ENIGMAS:
+				return nbEnigmas != NB_ENIGMAS_EDEFAULT;
 			case Labyrinth_tales_of_gamersPackage.GAME__AIM:
 				return AIM_EDEFAULT == null ? aim != null : !AIM_EDEFAULT.equals(aim);
 			case Labyrinth_tales_of_gamersPackage.GAME__HOW_TO_PLAY:
 				return HOW_TO_PLAY_EDEFAULT == null ? howToPlay != null : !HOW_TO_PLAY_EDEFAULT.equals(howToPlay);
 			case Labyrinth_tales_of_gamersPackage.GAME__MAP:
 				return MAP_EDEFAULT == null ? map != null : !MAP_EDEFAULT.equals(map);
+			case Labyrinth_tales_of_gamersPackage.GAME__ACTIONS:
+				return actions != null && !actions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -761,8 +800,8 @@ public class GameImpl extends MinimalEObjectImpl.Container implements Game {
 		result.append(prologue);
 		result.append(", epilogue: ");
 		result.append(epilogue);
-		result.append(", nbNpc: ");
-		result.append(nbNpc);
+		result.append(", nbEnigmas: ");
+		result.append(nbEnigmas);
 		result.append(", aim: ");
 		result.append(aim);
 		result.append(", howToPlay: ");

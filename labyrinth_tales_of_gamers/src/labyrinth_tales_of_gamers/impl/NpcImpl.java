@@ -25,13 +25,16 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * </p>
  * <ul>
  *   <li>{@link labyrinth_tales_of_gamers.impl.NpcImpl#getHelloSentence <em>Hello Sentence</em>}</li>
- *   <li>{@link labyrinth_tales_of_gamers.impl.NpcImpl#isDiscovered <em>Discovered</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.impl.NpcImpl#isDiscoveredEnigma <em>Discovered Enigma</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.impl.NpcImpl#getValidPropositionSentence <em>Valid Proposition Sentence</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.impl.NpcImpl#getInvalidPropositionSentence <em>Invalid Proposition Sentence</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.impl.NpcImpl#getHint <em>Hint</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.impl.NpcImpl#getCurrentRoom <em>Current Room</em>}</li>
- *   <li>{@link labyrinth_tales_of_gamers.impl.NpcImpl#getDiscoveredSentenceNpc <em>Discovered Sentence Npc</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.impl.NpcImpl#getDiscoveredEnigmaSentence <em>Discovered Enigma Sentence</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.impl.NpcImpl#getDiscoveredSentenceHint <em>Discovered Sentence Hint</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.impl.NpcImpl#getEnigmaSentence <em>Enigma Sentence</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.impl.NpcImpl#getHintSentence <em>Hint Sentence</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.impl.NpcImpl#getEnigmaSolution <em>Enigma Solution</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,24 +61,24 @@ public class NpcImpl extends EntityImpl implements Npc {
 	protected String helloSentence = HELLO_SENTENCE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isDiscovered() <em>Discovered</em>}' attribute.
+	 * The default value of the '{@link #isDiscoveredEnigma() <em>Discovered Enigma</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isDiscovered()
+	 * @see #isDiscoveredEnigma()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean DISCOVERED_EDEFAULT = false;
+	protected static final boolean DISCOVERED_ENIGMA_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isDiscovered() <em>Discovered</em>}' attribute.
+	 * The cached value of the '{@link #isDiscoveredEnigma() <em>Discovered Enigma</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isDiscovered()
+	 * @see #isDiscoveredEnigma()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean discovered = DISCOVERED_EDEFAULT;
+	protected boolean discoveredEnigma = DISCOVERED_ENIGMA_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getValidPropositionSentence() <em>Valid Proposition Sentence</em>}' attribute.
@@ -128,24 +131,24 @@ public class NpcImpl extends EntityImpl implements Npc {
 	protected Hint hint;
 
 	/**
-	 * The default value of the '{@link #getDiscoveredSentenceNpc() <em>Discovered Sentence Npc</em>}' attribute.
+	 * The default value of the '{@link #getDiscoveredEnigmaSentence() <em>Discovered Enigma Sentence</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDiscoveredSentenceNpc()
+	 * @see #getDiscoveredEnigmaSentence()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DISCOVERED_SENTENCE_NPC_EDEFAULT = null;
+	protected static final String DISCOVERED_ENIGMA_SENTENCE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getDiscoveredSentenceNpc() <em>Discovered Sentence Npc</em>}' attribute.
+	 * The cached value of the '{@link #getDiscoveredEnigmaSentence() <em>Discovered Enigma Sentence</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDiscoveredSentenceNpc()
+	 * @see #getDiscoveredEnigmaSentence()
 	 * @generated
 	 * @ordered
 	 */
-	protected String discoveredSentenceNpc = DISCOVERED_SENTENCE_NPC_EDEFAULT;
+	protected String discoveredEnigmaSentence = DISCOVERED_ENIGMA_SENTENCE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDiscoveredSentenceHint() <em>Discovered Sentence Hint</em>}' attribute.
@@ -166,6 +169,66 @@ public class NpcImpl extends EntityImpl implements Npc {
 	 * @ordered
 	 */
 	protected String discoveredSentenceHint = DISCOVERED_SENTENCE_HINT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getEnigmaSentence() <em>Enigma Sentence</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnigmaSentence()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ENIGMA_SENTENCE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getEnigmaSentence() <em>Enigma Sentence</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnigmaSentence()
+	 * @generated
+	 * @ordered
+	 */
+	protected String enigmaSentence = ENIGMA_SENTENCE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getHintSentence() <em>Hint Sentence</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHintSentence()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String HINT_SENTENCE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getHintSentence() <em>Hint Sentence</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHintSentence()
+	 * @generated
+	 * @ordered
+	 */
+	protected String hintSentence = HINT_SENTENCE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getEnigmaSolution() <em>Enigma Solution</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnigmaSolution()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ENIGMA_SOLUTION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getEnigmaSolution() <em>Enigma Solution</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnigmaSolution()
+	 * @generated
+	 * @ordered
+	 */
+	protected String enigmaSolution = ENIGMA_SOLUTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -215,8 +278,8 @@ public class NpcImpl extends EntityImpl implements Npc {
 	 * @generated
 	 */
 	@Override
-	public boolean isDiscovered() {
-		return discovered;
+	public boolean isDiscoveredEnigma() {
+		return discoveredEnigma;
 	}
 
 	/**
@@ -225,11 +288,11 @@ public class NpcImpl extends EntityImpl implements Npc {
 	 * @generated
 	 */
 	@Override
-	public void setDiscovered(boolean newDiscovered) {
-		boolean oldDiscovered = discovered;
-		discovered = newDiscovered;
+	public void setDiscoveredEnigma(boolean newDiscoveredEnigma) {
+		boolean oldDiscoveredEnigma = discoveredEnigma;
+		discoveredEnigma = newDiscoveredEnigma;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED, oldDiscovered, discovered));
+			eNotify(new ENotificationImpl(this, Notification.SET, Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED_ENIGMA, oldDiscoveredEnigma, discoveredEnigma));
 	}
 
 	/**
@@ -389,8 +452,8 @@ public class NpcImpl extends EntityImpl implements Npc {
 	 * @generated
 	 */
 	@Override
-	public String getDiscoveredSentenceNpc() {
-		return discoveredSentenceNpc;
+	public String getDiscoveredEnigmaSentence() {
+		return discoveredEnigmaSentence;
 	}
 
 	/**
@@ -399,11 +462,11 @@ public class NpcImpl extends EntityImpl implements Npc {
 	 * @generated
 	 */
 	@Override
-	public void setDiscoveredSentenceNpc(String newDiscoveredSentenceNpc) {
-		String oldDiscoveredSentenceNpc = discoveredSentenceNpc;
-		discoveredSentenceNpc = newDiscoveredSentenceNpc;
+	public void setDiscoveredEnigmaSentence(String newDiscoveredEnigmaSentence) {
+		String oldDiscoveredEnigmaSentence = discoveredEnigmaSentence;
+		discoveredEnigmaSentence = newDiscoveredEnigmaSentence;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED_SENTENCE_NPC, oldDiscoveredSentenceNpc, discoveredSentenceNpc));
+			eNotify(new ENotificationImpl(this, Notification.SET, Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED_ENIGMA_SENTENCE, oldDiscoveredEnigmaSentence, discoveredEnigmaSentence));
 	}
 
 	/**
@@ -427,6 +490,75 @@ public class NpcImpl extends EntityImpl implements Npc {
 		discoveredSentenceHint = newDiscoveredSentenceHint;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED_SENTENCE_HINT, oldDiscoveredSentenceHint, discoveredSentenceHint));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getEnigmaSentence() {
+		return enigmaSentence;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setEnigmaSentence(String newEnigmaSentence) {
+		String oldEnigmaSentence = enigmaSentence;
+		enigmaSentence = newEnigmaSentence;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Labyrinth_tales_of_gamersPackage.NPC__ENIGMA_SENTENCE, oldEnigmaSentence, enigmaSentence));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getHintSentence() {
+		return hintSentence;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setHintSentence(String newHintSentence) {
+		String oldHintSentence = hintSentence;
+		hintSentence = newHintSentence;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Labyrinth_tales_of_gamersPackage.NPC__HINT_SENTENCE, oldHintSentence, hintSentence));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getEnigmaSolution() {
+		return enigmaSolution;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setEnigmaSolution(String newEnigmaSolution) {
+		String oldEnigmaSolution = enigmaSolution;
+		enigmaSolution = newEnigmaSolution;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Labyrinth_tales_of_gamersPackage.NPC__ENIGMA_SOLUTION, oldEnigmaSolution, enigmaSolution));
 	}
 
 	/**
@@ -489,8 +621,8 @@ public class NpcImpl extends EntityImpl implements Npc {
 		switch (featureID) {
 			case Labyrinth_tales_of_gamersPackage.NPC__HELLO_SENTENCE:
 				return getHelloSentence();
-			case Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED:
-				return isDiscovered();
+			case Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED_ENIGMA:
+				return isDiscoveredEnigma();
 			case Labyrinth_tales_of_gamersPackage.NPC__VALID_PROPOSITION_SENTENCE:
 				return getValidPropositionSentence();
 			case Labyrinth_tales_of_gamersPackage.NPC__INVALID_PROPOSITION_SENTENCE:
@@ -500,10 +632,16 @@ public class NpcImpl extends EntityImpl implements Npc {
 				return basicGetHint();
 			case Labyrinth_tales_of_gamersPackage.NPC__CURRENT_ROOM:
 				return getCurrentRoom();
-			case Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED_SENTENCE_NPC:
-				return getDiscoveredSentenceNpc();
+			case Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED_ENIGMA_SENTENCE:
+				return getDiscoveredEnigmaSentence();
 			case Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED_SENTENCE_HINT:
 				return getDiscoveredSentenceHint();
+			case Labyrinth_tales_of_gamersPackage.NPC__ENIGMA_SENTENCE:
+				return getEnigmaSentence();
+			case Labyrinth_tales_of_gamersPackage.NPC__HINT_SENTENCE:
+				return getHintSentence();
+			case Labyrinth_tales_of_gamersPackage.NPC__ENIGMA_SOLUTION:
+				return getEnigmaSolution();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -519,8 +657,8 @@ public class NpcImpl extends EntityImpl implements Npc {
 			case Labyrinth_tales_of_gamersPackage.NPC__HELLO_SENTENCE:
 				setHelloSentence((String)newValue);
 				return;
-			case Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED:
-				setDiscovered((Boolean)newValue);
+			case Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED_ENIGMA:
+				setDiscoveredEnigma((Boolean)newValue);
 				return;
 			case Labyrinth_tales_of_gamersPackage.NPC__VALID_PROPOSITION_SENTENCE:
 				setValidPropositionSentence((String)newValue);
@@ -534,11 +672,20 @@ public class NpcImpl extends EntityImpl implements Npc {
 			case Labyrinth_tales_of_gamersPackage.NPC__CURRENT_ROOM:
 				setCurrentRoom((Room)newValue);
 				return;
-			case Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED_SENTENCE_NPC:
-				setDiscoveredSentenceNpc((String)newValue);
+			case Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED_ENIGMA_SENTENCE:
+				setDiscoveredEnigmaSentence((String)newValue);
 				return;
 			case Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED_SENTENCE_HINT:
 				setDiscoveredSentenceHint((String)newValue);
+				return;
+			case Labyrinth_tales_of_gamersPackage.NPC__ENIGMA_SENTENCE:
+				setEnigmaSentence((String)newValue);
+				return;
+			case Labyrinth_tales_of_gamersPackage.NPC__HINT_SENTENCE:
+				setHintSentence((String)newValue);
+				return;
+			case Labyrinth_tales_of_gamersPackage.NPC__ENIGMA_SOLUTION:
+				setEnigmaSolution((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -555,8 +702,8 @@ public class NpcImpl extends EntityImpl implements Npc {
 			case Labyrinth_tales_of_gamersPackage.NPC__HELLO_SENTENCE:
 				setHelloSentence(HELLO_SENTENCE_EDEFAULT);
 				return;
-			case Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED:
-				setDiscovered(DISCOVERED_EDEFAULT);
+			case Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED_ENIGMA:
+				setDiscoveredEnigma(DISCOVERED_ENIGMA_EDEFAULT);
 				return;
 			case Labyrinth_tales_of_gamersPackage.NPC__VALID_PROPOSITION_SENTENCE:
 				setValidPropositionSentence(VALID_PROPOSITION_SENTENCE_EDEFAULT);
@@ -570,11 +717,20 @@ public class NpcImpl extends EntityImpl implements Npc {
 			case Labyrinth_tales_of_gamersPackage.NPC__CURRENT_ROOM:
 				setCurrentRoom((Room)null);
 				return;
-			case Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED_SENTENCE_NPC:
-				setDiscoveredSentenceNpc(DISCOVERED_SENTENCE_NPC_EDEFAULT);
+			case Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED_ENIGMA_SENTENCE:
+				setDiscoveredEnigmaSentence(DISCOVERED_ENIGMA_SENTENCE_EDEFAULT);
 				return;
 			case Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED_SENTENCE_HINT:
 				setDiscoveredSentenceHint(DISCOVERED_SENTENCE_HINT_EDEFAULT);
+				return;
+			case Labyrinth_tales_of_gamersPackage.NPC__ENIGMA_SENTENCE:
+				setEnigmaSentence(ENIGMA_SENTENCE_EDEFAULT);
+				return;
+			case Labyrinth_tales_of_gamersPackage.NPC__HINT_SENTENCE:
+				setHintSentence(HINT_SENTENCE_EDEFAULT);
+				return;
+			case Labyrinth_tales_of_gamersPackage.NPC__ENIGMA_SOLUTION:
+				setEnigmaSolution(ENIGMA_SOLUTION_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -590,8 +746,8 @@ public class NpcImpl extends EntityImpl implements Npc {
 		switch (featureID) {
 			case Labyrinth_tales_of_gamersPackage.NPC__HELLO_SENTENCE:
 				return HELLO_SENTENCE_EDEFAULT == null ? helloSentence != null : !HELLO_SENTENCE_EDEFAULT.equals(helloSentence);
-			case Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED:
-				return discovered != DISCOVERED_EDEFAULT;
+			case Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED_ENIGMA:
+				return discoveredEnigma != DISCOVERED_ENIGMA_EDEFAULT;
 			case Labyrinth_tales_of_gamersPackage.NPC__VALID_PROPOSITION_SENTENCE:
 				return VALID_PROPOSITION_SENTENCE_EDEFAULT == null ? validPropositionSentence != null : !VALID_PROPOSITION_SENTENCE_EDEFAULT.equals(validPropositionSentence);
 			case Labyrinth_tales_of_gamersPackage.NPC__INVALID_PROPOSITION_SENTENCE:
@@ -600,10 +756,16 @@ public class NpcImpl extends EntityImpl implements Npc {
 				return hint != null;
 			case Labyrinth_tales_of_gamersPackage.NPC__CURRENT_ROOM:
 				return getCurrentRoom() != null;
-			case Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED_SENTENCE_NPC:
-				return DISCOVERED_SENTENCE_NPC_EDEFAULT == null ? discoveredSentenceNpc != null : !DISCOVERED_SENTENCE_NPC_EDEFAULT.equals(discoveredSentenceNpc);
+			case Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED_ENIGMA_SENTENCE:
+				return DISCOVERED_ENIGMA_SENTENCE_EDEFAULT == null ? discoveredEnigmaSentence != null : !DISCOVERED_ENIGMA_SENTENCE_EDEFAULT.equals(discoveredEnigmaSentence);
 			case Labyrinth_tales_of_gamersPackage.NPC__DISCOVERED_SENTENCE_HINT:
 				return DISCOVERED_SENTENCE_HINT_EDEFAULT == null ? discoveredSentenceHint != null : !DISCOVERED_SENTENCE_HINT_EDEFAULT.equals(discoveredSentenceHint);
+			case Labyrinth_tales_of_gamersPackage.NPC__ENIGMA_SENTENCE:
+				return ENIGMA_SENTENCE_EDEFAULT == null ? enigmaSentence != null : !ENIGMA_SENTENCE_EDEFAULT.equals(enigmaSentence);
+			case Labyrinth_tales_of_gamersPackage.NPC__HINT_SENTENCE:
+				return HINT_SENTENCE_EDEFAULT == null ? hintSentence != null : !HINT_SENTENCE_EDEFAULT.equals(hintSentence);
+			case Labyrinth_tales_of_gamersPackage.NPC__ENIGMA_SOLUTION:
+				return ENIGMA_SOLUTION_EDEFAULT == null ? enigmaSolution != null : !ENIGMA_SOLUTION_EDEFAULT.equals(enigmaSolution);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -620,16 +782,22 @@ public class NpcImpl extends EntityImpl implements Npc {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (helloSentence: ");
 		result.append(helloSentence);
-		result.append(", discovered: ");
-		result.append(discovered);
+		result.append(", discoveredEnigma: ");
+		result.append(discoveredEnigma);
 		result.append(", validPropositionSentence: ");
 		result.append(validPropositionSentence);
 		result.append(", invalidPropositionSentence: ");
 		result.append(invalidPropositionSentence);
-		result.append(", discoveredSentenceNpc: ");
-		result.append(discoveredSentenceNpc);
+		result.append(", discoveredEnigmaSentence: ");
+		result.append(discoveredEnigmaSentence);
 		result.append(", discoveredSentenceHint: ");
 		result.append(discoveredSentenceHint);
+		result.append(", enigmaSentence: ");
+		result.append(enigmaSentence);
+		result.append(", hintSentence: ");
+		result.append(hintSentence);
+		result.append(", enigmaSolution: ");
+		result.append(enigmaSolution);
 		result.append(')');
 		return result.toString();
 	}

@@ -39,7 +39,7 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link labyrinth_tales_of_gamers.impl.MainCharacterImpl#getNbDiscoveredNpc <em>Nb Discovered Npc</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.impl.MainCharacterImpl#getNbDiscoveredEnigmas <em>Nb Discovered Enigmas</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.impl.MainCharacterImpl#getGame <em>Game</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.impl.MainCharacterImpl#getCurrentRoom <em>Current Room</em>}</li>
  * </ul>
@@ -48,24 +48,24 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  */
 public class MainCharacterImpl extends EntityImpl implements MainCharacter {
 	/**
-	 * The default value of the '{@link #getNbDiscoveredNpc() <em>Nb Discovered Npc</em>}' attribute.
+	 * The default value of the '{@link #getNbDiscoveredEnigmas() <em>Nb Discovered Enigmas</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNbDiscoveredNpc()
+	 * @see #getNbDiscoveredEnigmas()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int NB_DISCOVERED_NPC_EDEFAULT = 0;
+	protected static final int NB_DISCOVERED_ENIGMAS_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getNbDiscoveredNpc() <em>Nb Discovered Npc</em>}' attribute.
+	 * The cached value of the '{@link #getNbDiscoveredEnigmas() <em>Nb Discovered Enigmas</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNbDiscoveredNpc()
+	 * @see #getNbDiscoveredEnigmas()
 	 * @generated
 	 * @ordered
 	 */
-	protected int nbDiscoveredNpc = NB_DISCOVERED_NPC_EDEFAULT;
+	protected int nbDiscoveredEnigmas = NB_DISCOVERED_ENIGMAS_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getCurrentRoom() <em>Current Room</em>}' reference.
@@ -102,8 +102,8 @@ public class MainCharacterImpl extends EntityImpl implements MainCharacter {
 	 * @generated
 	 */
 	@Override
-	public int getNbDiscoveredNpc() {
-		return nbDiscoveredNpc;
+	public int getNbDiscoveredEnigmas() {
+		return nbDiscoveredEnigmas;
 	}
 
 	/**
@@ -112,11 +112,11 @@ public class MainCharacterImpl extends EntityImpl implements MainCharacter {
 	 * @generated
 	 */
 	@Override
-	public void setNbDiscoveredNpc(int newNbDiscoveredNpc) {
-		int oldNbDiscoveredNpc = nbDiscoveredNpc;
-		nbDiscoveredNpc = newNbDiscoveredNpc;
+	public void setNbDiscoveredEnigmas(int newNbDiscoveredEnigmas) {
+		int oldNbDiscoveredEnigmas = nbDiscoveredEnigmas;
+		nbDiscoveredEnigmas = newNbDiscoveredEnigmas;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Labyrinth_tales_of_gamersPackage.MAIN_CHARACTER__NB_DISCOVERED_NPC, oldNbDiscoveredNpc, nbDiscoveredNpc));
+			eNotify(new ENotificationImpl(this, Notification.SET, Labyrinth_tales_of_gamersPackage.MAIN_CHARACTER__NB_DISCOVERED_ENIGMAS, oldNbDiscoveredEnigmas, nbDiscoveredEnigmas));
 	}
 
 	/**
@@ -219,7 +219,7 @@ public class MainCharacterImpl extends EntityImpl implements MainCharacter {
 			 *     if severity <= 0
 			 *     then true
 			 *     else
-			 *       let result : Boolean[?] = self.nbDiscoveredNpc >= 0 and self.nbDiscoveredNpc <= self.game.nbNpc
+			 *       let result : Boolean[?] = self.nbDiscoveredEnigmas >= 0 and self.nbDiscoveredEnigmas <= self.game.nbEnigmas
 			 *       in
 			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
 			 *     endif
@@ -232,18 +232,18 @@ public class MainCharacterImpl extends EntityImpl implements MainCharacter {
 				IF_le = true;
 			}
 			else {
-				final /*@NonInvalid*/ int nbDiscoveredNpc_0 = this.getNbDiscoveredNpc();
-				final /*@NonInvalid*/ IntegerValue BOXED_nbDiscoveredNpc_0 = ValueUtil.integerValueOf(nbDiscoveredNpc_0);
-				final /*@NonInvalid*/ boolean ge = OclComparableGreaterThanEqualOperation.INSTANCE.evaluate(executor, BOXED_nbDiscoveredNpc_0, Labyrinth_tales_of_gamersTables.INT_0).booleanValue();
+				final /*@NonInvalid*/ int nbDiscoveredEnigmas_0 = this.getNbDiscoveredEnigmas();
+				final /*@NonInvalid*/ IntegerValue BOXED_nbDiscoveredEnigmas_0 = ValueUtil.integerValueOf(nbDiscoveredEnigmas_0);
+				final /*@NonInvalid*/ boolean ge = OclComparableGreaterThanEqualOperation.INSTANCE.evaluate(executor, BOXED_nbDiscoveredEnigmas_0, Labyrinth_tales_of_gamersTables.INT_0).booleanValue();
 				final /*@NonInvalid*/ Boolean result;
 				if (!ge) {
 					result = ValueUtil.FALSE_VALUE;
 				}
 				else {
 					final /*@NonInvalid*/ Game game = this.getGame();
-					final /*@NonInvalid*/ int nbNpc = game.getNbNpc();
-					final /*@NonInvalid*/ IntegerValue BOXED_nbNpc = ValueUtil.integerValueOf(nbNpc);
-					final /*@NonInvalid*/ boolean le_0 = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, BOXED_nbDiscoveredNpc_0, BOXED_nbNpc).booleanValue();
+					final /*@NonInvalid*/ int nbEnigmas = game.getNbEnigmas();
+					final /*@NonInvalid*/ IntegerValue BOXED_nbEnigmas = ValueUtil.integerValueOf(nbEnigmas);
+					final /*@NonInvalid*/ boolean le_0 = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, BOXED_nbDiscoveredEnigmas_0, BOXED_nbEnigmas).booleanValue();
 					if (!le_0) {
 						result = ValueUtil.FALSE_VALUE;
 					}
@@ -313,8 +313,8 @@ public class MainCharacterImpl extends EntityImpl implements MainCharacter {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Labyrinth_tales_of_gamersPackage.MAIN_CHARACTER__NB_DISCOVERED_NPC:
-				return getNbDiscoveredNpc();
+			case Labyrinth_tales_of_gamersPackage.MAIN_CHARACTER__NB_DISCOVERED_ENIGMAS:
+				return getNbDiscoveredEnigmas();
 			case Labyrinth_tales_of_gamersPackage.MAIN_CHARACTER__GAME:
 				return getGame();
 			case Labyrinth_tales_of_gamersPackage.MAIN_CHARACTER__CURRENT_ROOM:
@@ -332,8 +332,8 @@ public class MainCharacterImpl extends EntityImpl implements MainCharacter {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Labyrinth_tales_of_gamersPackage.MAIN_CHARACTER__NB_DISCOVERED_NPC:
-				setNbDiscoveredNpc((Integer)newValue);
+			case Labyrinth_tales_of_gamersPackage.MAIN_CHARACTER__NB_DISCOVERED_ENIGMAS:
+				setNbDiscoveredEnigmas((Integer)newValue);
 				return;
 			case Labyrinth_tales_of_gamersPackage.MAIN_CHARACTER__GAME:
 				setGame((Game)newValue);
@@ -353,8 +353,8 @@ public class MainCharacterImpl extends EntityImpl implements MainCharacter {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Labyrinth_tales_of_gamersPackage.MAIN_CHARACTER__NB_DISCOVERED_NPC:
-				setNbDiscoveredNpc(NB_DISCOVERED_NPC_EDEFAULT);
+			case Labyrinth_tales_of_gamersPackage.MAIN_CHARACTER__NB_DISCOVERED_ENIGMAS:
+				setNbDiscoveredEnigmas(NB_DISCOVERED_ENIGMAS_EDEFAULT);
 				return;
 			case Labyrinth_tales_of_gamersPackage.MAIN_CHARACTER__GAME:
 				setGame((Game)null);
@@ -374,8 +374,8 @@ public class MainCharacterImpl extends EntityImpl implements MainCharacter {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Labyrinth_tales_of_gamersPackage.MAIN_CHARACTER__NB_DISCOVERED_NPC:
-				return nbDiscoveredNpc != NB_DISCOVERED_NPC_EDEFAULT;
+			case Labyrinth_tales_of_gamersPackage.MAIN_CHARACTER__NB_DISCOVERED_ENIGMAS:
+				return nbDiscoveredEnigmas != NB_DISCOVERED_ENIGMAS_EDEFAULT;
 			case Labyrinth_tales_of_gamersPackage.MAIN_CHARACTER__GAME:
 				return getGame() != null;
 			case Labyrinth_tales_of_gamersPackage.MAIN_CHARACTER__CURRENT_ROOM:
@@ -409,8 +409,8 @@ public class MainCharacterImpl extends EntityImpl implements MainCharacter {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (nbDiscoveredNpc: ");
-		result.append(nbDiscoveredNpc);
+		result.append(" (nbDiscoveredEnigmas: ");
+		result.append(nbDiscoveredEnigmas);
 		result.append(')');
 		return result.toString();
 	}

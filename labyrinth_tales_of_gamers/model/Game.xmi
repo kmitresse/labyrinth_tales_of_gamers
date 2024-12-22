@@ -16,12 +16,15 @@
       name="A0"
       backendName="A0">
     <npc name="Lara Croft"
+        discovered="false"
         helloSentence="Intrigué par ces ruines, voyageur ? Moi aussi."
         validPropositionSentence="Bravo, tu m'as reconnue. Lara Croft, exploratrice de l'inconnu."
         invalidPropositionSentence="Non, c'est un mauvais tir. Mais garde espoir."
         hint="//@rooms.10/@hint"
-        discoveredSentenceNpc="Tu as déjà percé le mystère de mon identité. Impressionnant."
-        discoveredSentenceHint="Pourquoi donner un indice ? Tu sais déjà qui je suis, explorateur."/>
+        discoveredEnigmaSentence="Tu as déjà percé le mystère de mon identité. Impressionnant."
+        discoveredSentenceHint="Pourquoi donner un indice ? Tu sais déjà qui je suis, explorateur."
+        hintSentence="L’indice que tu cherches est dans la salle X. Une véritable relique pour les explorateurs avisés."
+        enigmaSolution="Lara Croft"/>
   </rooms>
   <rooms north="//@rooms.0"
       south="//@rooms.2"
@@ -66,13 +69,17 @@
     <hint name="crashHint"
         label="Avec Uka Uka, je sauve le mondes des horribles plans de N.Cortex"
         npc="//@rooms.19/@npc"/>
-    <npc name="MasterChief"
+    <npc name="Master Chief"
+        discovered="false"
         helloSentence="Soldat, restez concentré. La mission est loin d’être terminée."
         validPropositionSentence="Correct. Master Chief, Spartan 117, au rapport."
         invalidPropositionSentence="Non, recalé. Réessayez, marine."
         hint="//@rooms.29/@hint"
-        discoveredSentenceNpc="Tu as déjà découvert qui je suis. Bonne mission, soldat."
-        discoveredSentenceHint="Un indice ? Pas nécessaire, tu sais déjà que je suis Master Chief. Ah moins que.. t'es un Covenant?"/>
+        discoveredEnigmaSentence="Tu as déjà découvert qui je suis. Bonne mission, soldat."
+        discoveredSentenceHint="Un indice ? Pas nécessaire, tu sais déjà que je suis Master Chief. Ah moins que.. t'es un Covenant?"
+        enigmaSentence="Soldat, restez concentré. La mission est loin d’être terminée."
+        hintSentence="Mon indice est sécurisé dans la salle X. Dépêche-toi avant que l’ennemi ne le localise."
+        enigmaSolution="Master Chief"/>
   </rooms>
   <rooms north="//@rooms.8"
       east="//@rooms.19"
@@ -94,12 +101,16 @@
       name="B2"
       backendName="B2">
     <npc name="Cloud"
+        discovered="false"
         helloSentence="Une lame ne suffit pas. Le courage fait tout."
         validPropositionSentence="C'est moi, Cloud Strife. Mais tu le savais déjà, non ?"
         invalidPropositionSentence="Non, ce n'est pas ça. Concentre-toi, comme sur une limite."
         hint="//@rooms.21/@hint"
-        discoveredSentenceNpc="Tu sais déjà qui je suis. Cloud Strife, ça te dit quelque chose ?"
-        discoveredSentenceHint="Un indice ? Pas besoin, tu as déjà percé le mystère."/>
+        discoveredEnigmaSentence="Tu sais déjà qui je suis. Cloud Strife, ça te dit quelque chose ?"
+        discoveredSentenceHint="Un indice ? Pas besoin, tu as déjà percé le mystère."
+        enigmaSentence=""
+        hintSentence="Tu trouveras mon indice dans la salle X. Fais vite avant que l’ombre ne le recouvre."
+        enigmaSolution="Cloud"/>
   </rooms>
   <rooms east="//@rooms.23"
       name="B3"
@@ -115,12 +126,16 @@
       name="B5"
       backendName="B5">
     <npc name="Gerald de Riv"
+        discovered="false"
         helloSentence="Un autre monstre à chasser, ou peut-être juste un humain curieux ?"
         validPropositionSentence="Correct. Je suis Geralt, le Loup Blanc."
         invalidPropositionSentence="Non, une mauvaise piste. Reviens quand tu auras compris l'indice."
         hint="//@rooms.27/@hint"
-        discoveredSentenceNpc="Mon identité ne t’est plus étrangère."
-        discoveredSentenceHint="Un indice ? Pourquoi en aurais-tu besoin, sorceleur ?"/>
+        discoveredEnigmaSentence="Mon identité ne t’est plus étrangère."
+        discoveredSentenceHint="Un indice ? Pourquoi en aurais-tu besoin, sorceleur ?"
+        enigmaSentence=""
+        hintSentence="Mon indice t’attend dans la salle X. Suis les traces de l’évidence comme un vrai sorceleur."
+        enigmaSolution="Gerald de Riv"/>
   </rooms>
   <rooms east="//@rooms.26"
       south="//@rooms.17"
@@ -142,13 +157,16 @@
       west="//@rooms.9"
       name="B9"
       backendName="B9">
-    <npc name="CrashBandicoot"
+    <npc name="Crash Bandicoot"
+        discovered="false"
         helloSentence="Woooaaah! T'a pas des pommes sur toi ?"
         validPropositionSentence="Haha, ouais, c'est moi, Crash Bandicoot ! Où sont mes Wumpas?!"
         invalidPropositionSentence="Boing boing Non, c'est pas ça ! Essaie encore, ami !"
         hint="//@rooms.8/@hint"
-        discoveredSentenceNpc="Tu as trop tourbillonné on dirai ! C'est moi crash !"
-        discoveredSentenceHint="Pourquoi faire ? Tu sais déjà qui je suis !"/>
+        discoveredEnigmaSentence="Tu as trop tourbillonné on dirai ! C'est moi crash !"
+        discoveredSentenceHint="Pourquoi faire ? Tu sais déjà qui je suis !"
+        hintSentence="Woo-hoo ! Mon indice est caché dans la salle X. Bonne chance pour le trouver !"
+        enigmaSolution="Crash Bandicoot"/>
   </rooms>
   <rooms east="//@rooms.30"
       west="//@rooms.10"
@@ -163,12 +181,16 @@
         label="Je manie une immense épée dans une lutte pour sauver la planète."
         npc="//@rooms.12/@npc"/>
     <npc name="Kratos"
+        discovered="false"
         helloSentence="Un voyageur dans mon royaume ? Espère ne pas éveiller ma colère."
         validPropositionSentence="Tu es perspicace. Oui, je suis Kratos, le Fantôme de Sparte."
         invalidPropositionSentence="Non. Ton ignorance ne mérite pas ma pitié."
         hint="//@rooms.2/@hint"
-        discoveredSentenceNpc="Tu as déjà trouvé mon identité. N’insulte pas ma patience."
-        discoveredSentenceHint="Pourquoi aurais-je besoin de te donner un indice ? Tu as déjà découvert qui je suis."/>
+        discoveredEnigmaSentence="Tu as déjà trouvé mon identité. N’insulte pas ma patience."
+        discoveredSentenceHint="Pourquoi aurais-je besoin de te donner un indice ? Tu as déjà découvert qui je suis."
+        enigmaSentence=""
+        hintSentence="Mon indice repose dans la salle X, gravé dans les entrailles de cette épreuve."
+        enigmaSolution="Kratos"/>
   </rooms>
   <rooms north="//@rooms.21"
       east="//@rooms.32"
@@ -185,12 +207,16 @@
         label="Immunisé contre l'infection, je parcours l'Amérique pour vanger mon ami Joël"
         npc="//@rooms.31/@npc"/>
     <npc name="Sonic"
+        discovered="false"
         helloSentence="Hé, toi là-bas ! T’arrives à me suivre ou je vais trop vite ?"
         validPropositionSentence="Tu as vu juste ! Sonic, le hérisson le plus rapide au monde !"
         invalidPropositionSentence="Non, mauvaise réponse ! Allez, accélère un peu !"
         hint="//@rooms.40/@hint"
-        discoveredSentenceNpc="Haha, évidemment que tu sais déjà que c’est moi, Sonic !"
-        discoveredSentenceHint="Un indice ? Pourquoi perdre du temps ? Tu sais que c’est moi !"/>
+        discoveredEnigmaSentence="Haha, évidemment que tu sais déjà que c’est moi, Sonic !"
+        discoveredSentenceHint="Un indice ? Pourquoi perdre du temps ? Tu sais que c’est moi !"
+        enigmaSentence=""
+        hintSentence="Mon indice est dans la salle X. Tu vas devoir être rapide pour l’attraper !"
+        enigmaSolution="Sonic"/>
   </rooms>
   <rooms north="//@rooms.23"
       east="//@rooms.33"
@@ -213,12 +239,16 @@
         label="Je suis un sorceleur, pourfendeur de monstres et amateur de Gwynt."
         npc="//@rooms.15/@npc"/>
     <npc name="Madeline"
+        discovered="false"
         helloSentence="La montagne est rude. Mais toi aussi, non ?"
         validPropositionSentence="Oui, je suis Madeline. Je gravis les sommets, à ma façon."
         invalidPropositionSentence="Non, ce n’est pas ça. Mais ne lâche pas prise."
         hint="//@rooms.52/@hint"
-        discoveredSentenceNpc="Oui, tu sais déjà que c’est moi. Félicitations, grimpeur."
-        discoveredSentenceHint="Un indice ? Pas besoin, tu m’as déjà reconnue."/>
+        discoveredEnigmaSentence="Oui, tu sais déjà que c’est moi. Félicitations, grimpeur."
+        discoveredSentenceHint="Un indice ? Pas besoin, tu m’as déjà reconnue."
+        enigmaSentence="La montagne est rude. Mais toi aussi, non ?"
+        hintSentence="Mon indice est dans la salle X. Ne regarde pas en bas, grimpe !"
+        enigmaSolution="Madeline"/>
   </rooms>
   <rooms north="//@rooms.27"
       east="//@rooms.36"
@@ -247,12 +277,16 @@
       name="D1"
       backendName="D1">
     <npc name="Ellie"
+        discovered="false"
         helloSentence="Hé, toi ! T’es pas infecté, hein ?"
         validPropositionSentence="Bien vu. Ellie, survivante coriace, prête à tout."
         invalidPropositionSentence="Nope. Mauvaise réponse. Essaie encore, cowboy."
         hint="//@rooms.23/@hint"
-        discoveredSentenceNpc="T'as perdu la mémoire ? T'es pas infecté au moins ?"
-        discoveredSentenceHint="Un indice ? T’es sérieux ? Tu sais déjà qui je suis."/>
+        discoveredEnigmaSentence="T'as perdu la mémoire ? T'es pas infecté au moins ?"
+        discoveredSentenceHint="Un indice ? T’es sérieux ? Tu sais déjà qui je suis."
+        enigmaSentence="Hé, toi ! T’es pas infecté, hein ?"
+        hintSentence=" Mon indice est dans la salle X. Fais attention en chemin."
+        enigmaSolution="Ellie"/>
   </rooms>
   <rooms east="//@rooms.40"
       west="//@rooms.22"
@@ -263,24 +297,32 @@
       name="D4"
       backendName="D4">
     <npc name="Spyro"
+        discovered="false"
         helloSentence="Hé, petite flamme ! T'as vu d'autres dragons par ici ?"
         validPropositionSentence="C'est moi, Spyro, prêt à brûler quelques ennemis !"
         invalidPropositionSentence="Non, t'es à côté de la plaque. Essaie encore !"
         hint="//@rooms.4/@hint"
-        discoveredSentenceNpc="Oh, tu sais déjà que c'est moi ? Cool, pas besoin de me présenter à nouveau !"
-        discoveredSentenceHint="Un indice ? Hé, pas besoin, tu connais déjà le dragon le plus cool !"/>
+        discoveredEnigmaSentence="Oh, tu sais déjà que c'est moi ? Cool, pas besoin de me présenter à nouveau !"
+        discoveredSentenceHint="Un indice ? Hé, pas besoin, tu connais déjà le dragon le plus cool !"
+        enigmaSentence=""
+        hintSentence="Tu trouveras mon indice dans la salle X. Ne te brûle pas les ailes en chemin !"
+        enigmaSolution="Spyro"/>
   </rooms>
   <rooms east="//@rooms.44"
       south="//@rooms.35"
       name="D6"
       backendName="D6">
-    <npc name="The DoomGuy"
+    <npc name="The Doom Guy"
+        discovered="false"
         helloSentence="... (il vous regarde intensément en silence)"
         validPropositionSentence="... (il hoche la tête, vous avez raison)"
         invalidPropositionSentence="... (il grogne, visiblement agacé)"
         hint="//@rooms.45/@hint"
-        discoveredSentenceNpc="... (Il croise les bras, car vous n’avez plus besoin d’indice.)"
-        discoveredSentenceHint="... (Un hochement de tête confirme que vous savez déjà qui il est.)"/>
+        discoveredEnigmaSentence="... (Il croise les bras, car vous n’avez plus besoin d’indice.)"
+        discoveredSentenceHint="... (Un hochement de tête confirme que vous savez déjà qui il est.)"
+        enigmaSentence="... (il vous regarde intensément en silence)"
+        hintSentence="... (Il trace les mots 'X' sur la poussière du sol, d’un geste silencieux.)"
+        enigmaSolution="The Doom Guy"/>
   </rooms>
   <rooms north="//@rooms.34"
       east="//@rooms.45"
@@ -294,12 +336,16 @@
       name="D8"
       backendName="D8">
     <npc name="Zagreus"
+        discovered="false"
         helloSentence="Tiens, un autre mortel venu braver les Enfers ?"
         validPropositionSentence="Bravo, c'est bien moi, Zagreus, fils d'Hadès."
         invalidPropositionSentence="Non, pas cette fois. Mais l’échec fait partie du défi."
         hint="//@rooms.55/@hint"
-        discoveredSentenceNpc="Tu sais déjà que je suis Zagreus. Continuons !"
-        discoveredSentenceHint="Un indice ? Tu n’en as pas besoin, tu as percé mon secret."/>
+        discoveredEnigmaSentence="Tu sais déjà que je suis Zagreus. Continuons !"
+        discoveredSentenceHint="Un indice ? Tu n’en as pas besoin, tu as percé mon secret."
+        enigmaSentence="Tiens, un autre mortel venu braver les Enfers ?"
+        hintSentence="Mon indice t’attend dans la salle X. Ne te perds pas dans le royaume des morts en chemin."
+        enigmaSolution="Zagreus"/>
   </rooms>
   <rooms north="//@rooms.36"
       west="//@rooms.29"
@@ -309,12 +355,16 @@
       name="E0"
       backendName="E0">
     <npc name="Rayne"
-        helloSentence="Attention où tu marches, ou tu pourrais te couper"
+        discovered="false"
+        helloSentence="Attention où tu marches, ou tu pourrais te couper."
         validPropositionSentence="Oui, je suis Rayne. Tu aimes jouer avec le feu ?"
         invalidPropositionSentence="Non, ce n’est pas moi. Mais tu as du goût pour les ténèbres."
         hint="//@rooms.30/@hint"
-        discoveredSentenceNpc="Tu m’as déjà identifiée. Pas mal pour un humain."
-        discoveredSentenceHint="Un indice ? Pourquoi faire ? Tu sais déjà que je suis Rayne."/>
+        discoveredEnigmaSentence="Tu m’as déjà identifiée. Pas mal pour un humain."
+        discoveredSentenceHint="Un indice ? Pourquoi faire ? Tu sais déjà que je suis Rayne."
+        enigmaSentence="Attention où tu marches, ou tu pourrais te couper."
+        hintSentence="Tu trouveras mon indice dans la salle X. Mais prends garde, la nuit est propice aux pièges."
+        enigmaSolution="Rayne"/>
   </rooms>
   <rooms east="//@rooms.48"
       west="//@rooms.31"
@@ -338,12 +388,16 @@
       name="E3"
       backendName="E3">
     <npc name="Kirby"
+        discovered="false"
         helloSentence="Poyo ! (Il vous regarde en souriant.)"
         validPropositionSentence="Poyo ! C’est bien moi, Kirby ! Gagné !"
         invalidPropositionSentence="Poyo... (Il fait une moue triste.)"
         hint="//@rooms.69/@hint"
-        discoveredSentenceNpc="Poyo ! Oui, tu sais déjà que je suis Kirby !"
-        discoveredSentenceHint="Poyo ? Pas besoin d’indice, tu m’as déjà trouvé !"/>
+        discoveredEnigmaSentence="Poyo ! Oui, tu sais déjà que je suis Kirby !"
+        discoveredSentenceHint="Poyo ? Pas besoin d’indice, tu m’as déjà trouvé !"
+        enigmaSentence="Poyo ! (Il vous regarde en souriant.)"
+        hintSentence="Poyo ! Mon indice est dans la salle X. Ne le mange pas par erreur !"
+        enigmaSolution="Kirby"/>
   </rooms>
   <rooms east="//@rooms.51"
       west="//@rooms.33"
@@ -377,12 +431,16 @@
         label="Je combats les Locustes avec mon fusil Lancer."
         npc="//@rooms.53/@npc"/>
     <npc name="Link"
+        discovered="false"
         helloSentence="... (Il brandit son épée en guise de salut.)"
         validPropositionSentence="... (Il sourit et joue un air sur son ocarina.)"
         invalidPropositionSentence="... (Il secoue la tête et pointe vers l’horizon.)"
         hint="//@rooms.66/@hint"
-        discoveredSentenceNpc="... (Il hoche la tête, approuvant que vous connaissez son identité.)"
-        discoveredSentenceHint="... (Il vous lance un regard amusé, car un indice est inutile.)"/>
+        discoveredEnigmaSentence="... (Il hoche la tête, approuvant que vous connaissez son identité.)"
+        discoveredSentenceHint="... (Il vous lance un regard amusé, car un indice est inutile.)"
+        enigmaSentence="... (Il brandit son épée en guise de salut.)"
+        hintSentence="... (Il désigne silencieusement la salle X sur une carte, sans un mot.)"
+        enigmaSolution="Link"/>
   </rooms>
   <rooms east="//@rooms.57"
       west="//@rooms.38"
@@ -424,12 +482,16 @@
       name="F6"
       backendName="F6">
     <npc name="Marcus Fenix"
+        discovered="false"
         helloSentence="Tu te crois prêt pour la guerre, rookie ?"
         validPropositionSentence="Exact. Marcus Fenix, héros de la CGU, à votre service."
         invalidPropositionSentence="Non, tu t’es trompé de soldat. Essaie encore."
         hint="//@rooms.46/@hint"
-        discoveredSentenceNpc="Bon boulot, tu sais déjà que je suis Marcus. On avance ?"
-        discoveredSentenceHint="Un indice ? T’en as pas besoin. Tu connais déjà le soldat."/>
+        discoveredEnigmaSentence="Bon boulot, tu sais déjà que je suis Marcus. On avance ?"
+        discoveredSentenceHint="Un indice ? T’en as pas besoin. Tu connais déjà le soldat."
+        enigmaSentence=""
+        hintSentence="Mon indice est planqué dans la salle X. Prépare-toi, ça ne sera pas une promenade."
+        enigmaSolution="Marcus Fenix"/>
   </rooms>
   <rooms north="//@rooms.53"
       west="//@rooms.45"
@@ -459,12 +521,16 @@
         label="Je suis un agent secret, armé de mes lunettes à vision nocturne"
         npc="//@rooms.76/@npc"/>
     <npc name="Blinx"
+        discovered="false"
         helloSentence="Oh, tu veux parler au maître du temps ?"
         validPropositionSentence="Exact, c'est moi, Blinx, le chat nettoyeur temporel !"
         invalidPropositionSentence="Non, désolé, tu dois rembobiner ta réponse."
         hint="//@rooms.39/@hint"
-        discoveredSentenceNpc="Bravo, tu sais déjà que c’est moi, Blinx, le maître du temps !"
-        discoveredSentenceHint="Un indice ? Ha ! Pas besoin, tu m’as déjà reconnu !"/>
+        discoveredEnigmaSentence="Bravo, tu sais déjà que c’est moi, Blinx, le maître du temps !"
+        discoveredSentenceHint="Un indice ? Ha ! Pas besoin, tu m’as déjà reconnu !"
+        enigmaSentence=""
+        hintSentence="Mon indice est dans la salle X. Mais attention, le temps peut te jouer des tours."
+        enigmaSolution="Blinx"/>
   </rooms>
   <rooms north="//@rooms.58"
       east="//@rooms.69"
@@ -475,8 +541,10 @@
         validPropositionSentence="'Un doux son résonne, Ori approuve en silence.'"
         invalidPropositionSentence="'Un murmure triste traverse la pièce, comme un regret.'"
         hint="//@rooms.50/@hint"
-        discoveredSentenceNpc="Un scintillement lumineux vous indique que vous avez déjà identifié cette lumière"
-        discoveredSentenceHint="Une douce lumière vous enveloppe, vous savez déjà tout."/>
+        discoveredEnigmaSentence="Un scintillement lumineux vous indique que vous avez déjà identifié cette lumière"
+        discoveredSentenceHint="Une douce lumière vous enveloppe, vous savez déjà tout."
+        hintSentence="'Une douce lumière te guide vers la salle X, où repose mon indice.'"
+        enigmaSolution="Ori"/>
   </rooms>
   <rooms east="//@rooms.70"
       west="//@rooms.50"
@@ -490,12 +558,15 @@
         label="Je saute de champignons en champignons à la recherche de ma princesse."
         npc="//@rooms.79/@npc"/>
     <npc name="Samus Aran"
+        discovered="false"
         helloSentence="La mission n’est pas encore terminée. Tu es prêt ?"
         validPropositionSentence="Bien vu. Samus Aran, chasseuse de primes intergalactique."
         invalidPropositionSentence="Non, ton scanner n’est pas bien réglé."
         hint="//@rooms.81/@hint"
-        discoveredSentenceNpc="Tu as découvert mon identité. Bien joué, chasseur."
-        discoveredSentenceHint="Un indice ? Inutile. Tu sais déjà que je suis Samus."/>
+        discoveredEnigmaSentence="Tu as découvert mon identité. Bien joué, chasseur."
+        discoveredSentenceHint="Un indice ? Inutile. Tu sais déjà que je suis Samus."
+        hintSentence="Mon indice est dans la salle X. Analyse chaque recoin pour le trouver."
+        enigmaSolution="Samus Aran"/>
   </rooms>
   <rooms north="//@rooms.61"
       name="G5"
@@ -510,12 +581,15 @@
       name="G7"
       backendName="G7">
     <npc name="Donkey Kong"
+        discovered="false"
         helloSentence="Ooh-ooh-ah-ah ! Bienvenue dans ma jungle."
         validPropositionSentence="Haha, ouais, c’est moi, DK ! Passons aux bananes !"
         invalidPropositionSentence="Ooh-ooh... Mauvaise réponse. Essaie encore !"
         hint="//@rooms.85/@hint"
-        discoveredSentenceNpc="Ooh-ooh-ah-ah ! Tu sais déjà que c’est moi, Donkey Kong !"
-        discoveredSentenceHint="Un indice ? Sérieusement ? Tu sais que c’est moi, le roi des bananes !"/>
+        discoveredEnigmaSentence="Ooh-ooh-ah-ah ! Tu sais déjà que c’est moi, Donkey Kong !"
+        discoveredSentenceHint="Un indice ? Sérieusement ? Tu sais que c’est moi, le roi des bananes !"
+        hintSentence="Ooh-ooh-ah-ah ! Mon indice est dans la salle X."
+        enigmaSolution="Donkey Kong"/>
   </rooms>
   <rooms north="//@rooms.64"
       east="//@rooms.74"
@@ -524,12 +598,15 @@
       name="G8"
       backendName="G8">
     <npc name="Regina"
+        discovered="false"
         helloSentence="Attention ! Ce n'est pas un endroit pour les imprudents."
         validPropositionSentence="Bien joué. Regina, experte en situations de crise, à votre service."
         invalidPropositionSentence="Non, ce n'est pas moi. Les dinosaures sont plus rapides que toi ?"
         hint="//@rooms.13/@hint"
-        discoveredSentenceNpc="Tu m’as déjà identifiée. On peut avancer maintenant ?"
-        discoveredSentenceHint="Un indice ? Sérieusement ? Tu sais déjà que c’est moi, Regina."/>
+        discoveredEnigmaSentence="Tu m’as déjà identifiée. On peut avancer maintenant ?"
+        discoveredSentenceHint="Un indice ? Sérieusement ? Tu sais déjà que c’est moi, Regina."
+        hintSentence="Mon indice est dans la salle X, mais fais attention... tout peut surgir à tout moment."
+        enigmaSolution="Regina"/>
   </rooms>
   <rooms north="//@rooms.65"
       west="//@rooms.56"
@@ -572,12 +649,15 @@
       name="H5"
       backendName="H5">
     <npc name="Hershell Layton"
+        discovered="false"
         helloSentence="Une énigme pour toi : qui suis-je ?"
         validPropositionSentence="Très juste, je suis le professeur Layton. Félicitations !"
         invalidPropositionSentence="Non, ce n’est pas moi. Mais ton raisonnement est proche."
         hint="//@rooms.93/@hint"
-        discoveredSentenceNpc="T'as mémoire est une énigme pour moi... Tu as déjà découvert mon identité."
-        discoveredSentenceHint="Un indice ? Inutile pour toi, tu sais déjà qui je suis."/>
+        discoveredEnigmaSentence="T'as mémoire est une énigme pour moi... Tu as déjà découvert mon identité."
+        discoveredSentenceHint="Un indice ? Inutile pour toi, tu sais déjà qui je suis."
+        hintSentence="Mon indice repose dans la salle X. Une énigme en soi, ne trouvez-vous pas ?"
+        enigmaSolution="Hershell Layton"/>
   </rooms>
   <rooms east="//@rooms.83"
       west="//@rooms.64"
@@ -602,12 +682,15 @@
       name="I0"
       backendName="I0">
     <npc name="Sam Ficher"
+        discovered="false"
         helloSentence="Tu n’entendras pas mes pas, mais je suis là."
         validPropositionSentence="C’est exact. Sam Fisher, agent de l’ombre, à votre service."
         invalidPropositionSentence="Non, mauvaise cible. Réessaie, furtivement cette fois."
         hint="//@rooms.58/@hint"
-        discoveredSentenceNpc="Bien joué, tu sais déjà qui je suis. Mission accomplie."
-        discoveredSentenceHint="Un indice ? Tu as déjà tout compris, pas besoin d’en rajouter."/>
+        discoveredEnigmaSentence="Bien joué, tu sais déjà qui je suis. Mission accomplie."
+        discoveredSentenceHint="Un indice ? Tu as déjà tout compris, pas besoin d’en rajouter."
+        hintSentence="Mon indice est dissimulé dans la salle X. Trouve-le sans te faire repérer."
+        enigmaSolution="Sam Ficher"/>
   </rooms>
   <rooms east="//@rooms.87"
       west="//@rooms.68"
@@ -622,12 +705,15 @@
       name="I3"
       backendName="I3">
     <npc name="Mario"
+        discovered="false"
         helloSentence="Bienvenuti, mon ami."
         validPropositionSentence="Ouhouhou, it's me Mario!"
         invalidPropositionSentence="Oh no! mamamia!"
         hint="//@rooms.61/@hint"
-        discoveredSentenceNpc="Oh It's me Mario, tu m'as déjà oublié ?"
-        discoveredSentenceHint="Tu sais déjà qui je suis, n’est-ce pas ? Let’s go !"/>
+        discoveredEnigmaSentence="Oh It's me Mario, tu m'as déjà oublié ?"
+        discoveredSentenceHint="Tu sais déjà qui je suis, n’est-ce pas ? Let’s go !"
+        hintSentence="Mon indice est caché dans la salle X. Bonne chance, mon ami !"
+        enigmaSolution="Mario"/>
   </rooms>
   <rooms north="//@rooms.79"
       east="//@rooms.90"
@@ -646,12 +732,15 @@
       name="I6"
       backendName="I6">
     <npc name="Alloy"
+        discovered="false"
         helloSentence="Tu as traversé bien des épreuves pour arriver jusqu'ici."
         validPropositionSentence="Tu es perspicace. Moi, c'est Aloy, chasseuse de machines."
         invalidPropositionSentence="Non, ce n'est pas moi. Ton focus doit être reconfiguré"
         hint="//@rooms.16/@hint"
-        discoveredSentenceNpc="Tu as déjà trouvé mon nom. Bravo, voyageur."
-        discoveredSentenceHint="Un indice ? Pourquoi faire ? Tu connais déjà Aloy."/>
+        discoveredEnigmaSentence="Tu as déjà trouvé mon nom. Bravo, voyageur."
+        discoveredSentenceHint="Un indice ? Pourquoi faire ? Tu connais déjà Aloy."
+        hintSentence="Mon indice se trouve dans la salle X. Utilise ton focus pour ne pas le manquer."
+        enigmaSolution="Alloy"/>
   </rooms>
   <rooms north="//@rooms.82"
       west="//@rooms.73"
@@ -662,12 +751,15 @@
       name="I8"
       backendName="I8">
     <npc name="Vlad"
+        discovered="false"
         helloSentence="Cherches-tu la lumière ou les secrets de l’Alchimie ?"
         validPropositionSentence="Bien vu. Vlad, adepte de la Psynergie, à ton service."
         invalidPropositionSentence="Non, ton esprit est encore troublé. Réessaye."
         hint="//@rooms.89/@hint"
-        discoveredSentenceNpc="Tu as déjà compris que je suis Vlad. Bravo."
-        discoveredSentenceHint="Un indice ? Pourquoi en aurais-tu besoin ? Tu connais déjà mon identité."/>
+        discoveredEnigmaSentence="Tu as déjà compris que je suis Vlad. Bravo."
+        discoveredSentenceHint="Un indice ? Pourquoi en aurais-tu besoin ? Tu connais déjà mon identité."
+        hintSentence="Mon indice est dans la salle X. Suis la lumière de la Psynergie pour le localiser."
+        enigmaSolution="Vlad"/>
   </rooms>
   <rooms west="//@rooms.75"
       name="I9"
@@ -724,11 +816,26 @@
       name="J9"
       backendName="J9">
     <npc name="Sacha"
+        discovered="false"
         helloSentence="Je veux devenir le meilleur dresseur, comme personne avant moi."
         validPropositionSentence="Exact ! Sacha Ketchum, de Bourg-Palette ! Prêt pour un duel ?"
         invalidPropositionSentence="Non, mauvais Pokémon. Rappelle ton choix et retente ta chance !"
         hint="//@rooms.73/@hint"
-        discoveredSentenceNpc="Oui, c’est bien moi, Sacha ! On continue l’aventure ? J'ai des badge à gagner moi !"
-        discoveredSentenceHint="Un indice ? Pourquoi faire ? T'es pas plus futé qu'un Psyckokwak on dirai !"/>
+        discoveredEnigmaSentence="Oui, c’est bien moi, Sacha ! On continue l’aventure ? J'ai des badge à gagner moi !"
+        discoveredSentenceHint="Un indice ? Pourquoi faire ? T'es pas plus futé qu'un Psyckokwak on dirai !"
+        hintSentence="Mon indice se trouve dans la salle X. À toi de le capturer !"
+        enigmaSolution="Sacha"/>
   </rooms>
+  <actions label="MOVE"
+      name="Se déplacer"
+      Informations="Changer de pièces"/>
+  <actions label="PROPOSE"
+      name="Proposer un nom"
+      Informations="(Seulement en présence d'un personnage) Effectuer une tentative d'identification."/>
+  <actions label="ASK_HINT"
+      name="Demander l'indice"
+      Informations="(Seulement en présence d'un personnage) Le personnage vous indique dans quelle pièce se trouve l'indice qui le concerne."/>
+  <actions label="READ"
+      name="Lire l'indice"
+      Informations="(Seulement en présence d'un indice) Lire l'indice se trouvant dans la pièce."/>
 </labyrinthTalesOfGamers:Game>

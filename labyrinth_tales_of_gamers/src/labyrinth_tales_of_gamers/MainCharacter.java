@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link labyrinth_tales_of_gamers.MainCharacter#getNbDiscoveredNpc <em>Nb Discovered Npc</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.MainCharacter#getNbDiscoveredEnigmas <em>Nb Discovered Enigmas</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.MainCharacter#getGame <em>Game</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.MainCharacter#getCurrentRoom <em>Current Room</em>}</li>
  * </ul>
@@ -26,26 +26,26 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  */
 public interface MainCharacter extends Entity {
 	/**
-	 * Returns the value of the '<em><b>Nb Discovered Npc</b></em>' attribute.
+	 * Returns the value of the '<em><b>Nb Discovered Enigmas</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Nb Discovered Npc</em>' attribute.
-	 * @see #setNbDiscoveredNpc(int)
-	 * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getMainCharacter_NbDiscoveredNpc()
+	 * @return the value of the '<em>Nb Discovered Enigmas</em>' attribute.
+	 * @see #setNbDiscoveredEnigmas(int)
+	 * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getMainCharacter_NbDiscoveredEnigmas()
 	 * @model required="true"
 	 * @generated
 	 */
-	int getNbDiscoveredNpc();
+	int getNbDiscoveredEnigmas();
 
 	/**
-	 * Sets the value of the '{@link labyrinth_tales_of_gamers.MainCharacter#getNbDiscoveredNpc <em>Nb Discovered Npc</em>}' attribute.
+	 * Sets the value of the '{@link labyrinth_tales_of_gamers.MainCharacter#getNbDiscoveredEnigmas <em>Nb Discovered Enigmas</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Nb Discovered Npc</em>' attribute.
-	 * @see #getNbDiscoveredNpc()
+	 * @param value the new value of the '<em>Nb Discovered Enigmas</em>' attribute.
+	 * @see #getNbDiscoveredEnigmas()
 	 * @generated
 	 */
-	void setNbDiscoveredNpc(int value);
+	void setNbDiscoveredEnigmas(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Game</b></em>' container reference.
@@ -96,7 +96,7 @@ public interface MainCharacter extends Entity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.nbDiscoveredNpc &gt;= 0 and self.nbDiscoveredNpc &lt;= self.game.nbNpc'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.nbDiscoveredEnigmas&gt;= 0 and self.nbDiscoveredEnigmas &lt;= self.game.nbEnigmas'"
 	 * @generated
 	 */
 	boolean nbDiscoveredNpcBorned(DiagnosticChain diagnostics, Map<Object, Object> context);

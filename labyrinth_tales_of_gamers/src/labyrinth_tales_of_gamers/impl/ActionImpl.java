@@ -35,6 +35,8 @@ import org.eclipse.ocl.pivot.values.InvalidValueException;
  * </p>
  * <ul>
  *   <li>{@link labyrinth_tales_of_gamers.impl.ActionImpl#getLabel <em>Label</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.impl.ActionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.impl.ActionImpl#getInformations <em>Informations</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,6 +61,46 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * @ordered
 	 */
 	protected String label = LABEL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = "static Label";
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getInformations() <em>Informations</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInformations()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String INFORMATIONS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getInformations() <em>Informations</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInformations()
+	 * @generated
+	 * @ordered
+	 */
+	protected String informations = INFORMATIONS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -108,6 +150,52 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * @generated
 	 */
 	@Override
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Labyrinth_tales_of_gamersPackage.ACTION__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getInformations() {
+		return informations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setInformations(String newInformations) {
+		String oldInformations = informations;
+		informations = newInformations;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Labyrinth_tales_of_gamersPackage.ACTION__INFORMATIONS, oldInformations, informations));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public boolean labelAction(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
 		final String constraintName = "Action::labelAction";
 		try {
@@ -119,7 +207,7 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 			 *     if severity <= 0
 			 *     then true
 			 *     else
-			 *       let result : Boolean[?] = self.label = 'Se d\u00E9placer' or self.label = 'Demander l\'indice' or self.label = 'Proposer un nom' or self.label = 'Lire l\'indice'
+			 *       let result : Boolean[?] = self.label = 'MOVE' or self.label = 'TALK' or self.label = 'ASK_HINT' or self.label = 'READ' or self.label = 'PROPOSE'
 			 *       in
 			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
 			 *     endif
@@ -134,60 +222,88 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 			else {
 				/*@Caught*/ Object CAUGHT_result;
 				try {
-					final /*@NonInvalid*/ String label_2 = this.getLabel();
-					/*@Caught*/ Object CAUGHT_or_0;
+					final /*@NonInvalid*/ String label_3 = this.getLabel();
+					/*@Caught*/ Object CAUGHT_or_1;
 					try {
-						final /*@NonInvalid*/ boolean eq = label_2.equals(Labyrinth_tales_of_gamersTables.STR_Se_32_déplacer);
-						final /*@NonInvalid*/ Boolean or;
-						if (eq) {
-							or = ValueUtil.TRUE_VALUE;
-						}
-						else {
-							final /*@NonInvalid*/ boolean eq_0 = label_2.equals(Labyrinth_tales_of_gamersTables.STR_Demander_32_l_39_indice);
-							if (eq_0) {
+						/*@Caught*/ Object CAUGHT_or_0;
+						try {
+							final /*@NonInvalid*/ boolean eq = label_3.equals(Labyrinth_tales_of_gamersTables.STR_MOVE);
+							final /*@NonInvalid*/ Boolean or;
+							if (eq) {
 								or = ValueUtil.TRUE_VALUE;
 							}
 							else {
-								or = ValueUtil.FALSE_VALUE;
+								final /*@NonInvalid*/ boolean eq_0 = label_3.equals(Labyrinth_tales_of_gamersTables.STR_TALK);
+								if (eq_0) {
+									or = ValueUtil.TRUE_VALUE;
+								}
+								else {
+									or = ValueUtil.FALSE_VALUE;
+								}
 							}
-						}
-						final /*@Thrown*/ Boolean or_0;
-						if (or == ValueUtil.TRUE_VALUE) {
-							or_0 = ValueUtil.TRUE_VALUE;
-						}
-						else {
-							final /*@NonInvalid*/ boolean eq_1 = label_2.equals(Labyrinth_tales_of_gamersTables.STR_Proposer_32_un_32_nom);
-							if (eq_1) {
+							final /*@Thrown*/ Boolean or_0;
+							if (or == ValueUtil.TRUE_VALUE) {
 								or_0 = ValueUtil.TRUE_VALUE;
 							}
 							else {
-								if (or == null) {
-									or_0 = null;
+								final /*@NonInvalid*/ boolean eq_1 = label_3.equals(Labyrinth_tales_of_gamersTables.STR_ASK_HINT);
+								if (eq_1) {
+									or_0 = ValueUtil.TRUE_VALUE;
 								}
 								else {
-									or_0 = ValueUtil.FALSE_VALUE;
+									if (or == null) {
+										or_0 = null;
+									}
+									else {
+										or_0 = ValueUtil.FALSE_VALUE;
+									}
+								}
+							}
+							CAUGHT_or_0 = or_0;
+						}
+						catch (Exception e) {
+							CAUGHT_or_0 = ValueUtil.createInvalidValue(e);
+						}
+						final /*@Thrown*/ Boolean or_1;
+						if (CAUGHT_or_0 == ValueUtil.TRUE_VALUE) {
+							or_1 = ValueUtil.TRUE_VALUE;
+						}
+						else {
+							final /*@NonInvalid*/ boolean eq_2 = label_3.equals(Labyrinth_tales_of_gamersTables.STR_READ);
+							if (eq_2) {
+								or_1 = ValueUtil.TRUE_VALUE;
+							}
+							else {
+								if (CAUGHT_or_0 instanceof InvalidValueException) {
+									throw (InvalidValueException)CAUGHT_or_0;
+								}
+								if (CAUGHT_or_0 == null) {
+									or_1 = null;
+								}
+								else {
+									or_1 = ValueUtil.FALSE_VALUE;
 								}
 							}
 						}
-						CAUGHT_or_0 = or_0;
+						CAUGHT_or_1 = or_1;
 					}
 					catch (Exception e) {
-						CAUGHT_or_0 = ValueUtil.createInvalidValue(e);
+						CAUGHT_or_1 = ValueUtil.createInvalidValue(e);
 					}
 					final /*@Thrown*/ Boolean result;
-					if (CAUGHT_or_0 == ValueUtil.TRUE_VALUE) {
+					if (CAUGHT_or_1 == ValueUtil.TRUE_VALUE) {
 						result = ValueUtil.TRUE_VALUE;
 					}
 					else {
-						final /*@NonInvalid*/ boolean eq_2 = label_2.equals(Labyrinth_tales_of_gamersTables.STR_Lire_32_l_39_indice);
-						if (eq_2) {
+						final /*@NonInvalid*/ boolean eq_3 = label_3.equals(Labyrinth_tales_of_gamersTables.STR_PROPOSE);
+						if (eq_3) {
 							result = ValueUtil.TRUE_VALUE;
 						}
 						else {
-							if (CAUGHT_or_0 instanceof InvalidValueException) {
-								throw (InvalidValueException)CAUGHT_or_0;
+							if (CAUGHT_or_1 instanceof InvalidValueException) {
+								throw (InvalidValueException)CAUGHT_or_1;
 							}
-							if (CAUGHT_or_0 == null) {
+							if (CAUGHT_or_1 == null) {
 								result = null;
 							}
 							else {
@@ -220,6 +336,10 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 		switch (featureID) {
 			case Labyrinth_tales_of_gamersPackage.ACTION__LABEL:
 				return getLabel();
+			case Labyrinth_tales_of_gamersPackage.ACTION__NAME:
+				return getName();
+			case Labyrinth_tales_of_gamersPackage.ACTION__INFORMATIONS:
+				return getInformations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -234,6 +354,12 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 		switch (featureID) {
 			case Labyrinth_tales_of_gamersPackage.ACTION__LABEL:
 				setLabel((String)newValue);
+				return;
+			case Labyrinth_tales_of_gamersPackage.ACTION__NAME:
+				setName((String)newValue);
+				return;
+			case Labyrinth_tales_of_gamersPackage.ACTION__INFORMATIONS:
+				setInformations((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -250,6 +376,12 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 			case Labyrinth_tales_of_gamersPackage.ACTION__LABEL:
 				setLabel(LABEL_EDEFAULT);
 				return;
+			case Labyrinth_tales_of_gamersPackage.ACTION__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case Labyrinth_tales_of_gamersPackage.ACTION__INFORMATIONS:
+				setInformations(INFORMATIONS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -264,6 +396,10 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 		switch (featureID) {
 			case Labyrinth_tales_of_gamersPackage.ACTION__LABEL:
 				return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
+			case Labyrinth_tales_of_gamersPackage.ACTION__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case Labyrinth_tales_of_gamersPackage.ACTION__INFORMATIONS:
+				return INFORMATIONS_EDEFAULT == null ? informations != null : !INFORMATIONS_EDEFAULT.equals(informations);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -295,6 +431,10 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (label: ");
 		result.append(label);
+		result.append(", name: ");
+		result.append(name);
+		result.append(", Informations: ");
+		result.append(informations);
 		result.append(')');
 		return result.toString();
 	}

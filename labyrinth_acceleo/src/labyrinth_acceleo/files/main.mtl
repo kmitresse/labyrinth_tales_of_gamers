@@ -14,9 +14,11 @@ import java.util.ArrayList;
 
 public class Main { 
 	public static Action move = new Action(Action.MOVE);
- 	public static Action talk = new Action(Action.NPC);
+ 	public static Action talk = new Action(Action.TALK);
  	public static Action propose = new Action(Action.PROPOSE);
- 	public static Action hint = new Action(Action.HINT);
+ 	public static Action ask_hint = new Action(Action.ASK_HINT);
+ 	public static Action read = new Action(Action.READ);
+
 	public static void main(String['[]'/] args){
 		
 	    // Hints creation
@@ -34,18 +36,18 @@ public class Main {
 	    //Game creation
 	    Game game = new Game("[aGame.player.name/]", [aGame.player.currentRoom.backendName/], npcs.size(), "[aGame.title/]: [aGame.subtitle/]", "[aGame.prologue/]", "[aGame.epilogue/]");
 	    for (Room room : rooms) {
-	      game.addRoom(room);
+	      	game.addRoom(room);
 	    }
 	    //Management de la game
 	    game.introduce();
 	    while (!game.isTerminated()) {
-	      System.out.println("\n--------------------------------------------------\n");
-	      game.getPlayer().getCurrentRoom().introduce();
-	      game.getPlayer().getCurrentRoom().selectAction();
+	      	System.out.println("\n--------------------------------------------------\n");
+	      	game.getPlayer().getCurrentRoom().introduce();
+	      	game.getPlayer().getCurrentRoom().selectAction();
 	    }
 	    System.out.println("\n--------------------------------------------------\n");
 	    game.terminate();
-	  }
 	}
+}
 [/file]
 [/template]

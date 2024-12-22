@@ -24,10 +24,9 @@
     <h2>Les actions possibles</h2>
     <p>Vous pouvez effectuer les actions suivantes:</p>
     <ul>
-        <li><span>Se déplacer</span>: Changer de pièce</li>
-        <li><span>Demander l'indice</span>: (Seulement en présence d'un personnage) Le personnage vous indique dans quelle pièce se trouve l'indice qui le concerne.</li>
-        <li><span>Proposer un nom</span>: (Seulement en présence d'un personnage) Effectuer une tentative d'identification.</li>
-        <li><span>Lire l'indice</span>: (Seulement en présence d'un indice) Lire l'indice se trouvant dans la pièce</li>
+        [for(action : Action | aGame.actions)]
+		<li><span>[action.name/]</span>: [action.Informations/]</li>
+        [/for]
     </ul>
 	[if(not aGame.map.oclIsUndefined())]
     <h2>Plan du labyrinthe</h2>
@@ -35,8 +34,8 @@
     <p>Vous commencez dans la salle [aGame.player.currentRoom.backendName/]</p>
 	<!-- TODO: Ajouter une image de la carte dans le dossier src/livret/ --> 
     <img src="map.png" alt="Plan du labyrinthe" style="width: 100%; max-width: 600px; display: block; margin: 0 auto;"/>
-    <h1>Bon courage !</h1>
 	[/if]
+    <h1>Bon courage !</h1>
 </div>
 </body>
 </html>

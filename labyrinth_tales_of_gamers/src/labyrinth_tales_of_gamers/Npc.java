@@ -13,13 +13,16 @@ package labyrinth_tales_of_gamers;
  * </p>
  * <ul>
  *   <li>{@link labyrinth_tales_of_gamers.Npc#getHelloSentence <em>Hello Sentence</em>}</li>
- *   <li>{@link labyrinth_tales_of_gamers.Npc#isDiscovered <em>Discovered</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.Npc#isDiscoveredEnigma <em>Discovered Enigma</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.Npc#getValidPropositionSentence <em>Valid Proposition Sentence</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.Npc#getInvalidPropositionSentence <em>Invalid Proposition Sentence</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.Npc#getHint <em>Hint</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.Npc#getCurrentRoom <em>Current Room</em>}</li>
- *   <li>{@link labyrinth_tales_of_gamers.Npc#getDiscoveredSentenceNpc <em>Discovered Sentence Npc</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.Npc#getDiscoveredEnigmaSentence <em>Discovered Enigma Sentence</em>}</li>
  *   <li>{@link labyrinth_tales_of_gamers.Npc#getDiscoveredSentenceHint <em>Discovered Sentence Hint</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.Npc#getEnigmaSentence <em>Enigma Sentence</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.Npc#getHintSentence <em>Hint Sentence</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.Npc#getEnigmaSolution <em>Enigma Solution</em>}</li>
  * </ul>
  *
  * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getNpc()
@@ -50,26 +53,27 @@ public interface Npc extends Entity {
 	void setHelloSentence(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Discovered</b></em>' attribute.
+	 * Returns the value of the '<em><b>Discovered Enigma</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Discovered</em>' attribute.
-	 * @see #setDiscovered(boolean)
-	 * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getNpc_Discovered()
-	 * @model required="true"
+	 * @return the value of the '<em>Discovered Enigma</em>' attribute.
+	 * @see #setDiscoveredEnigma(boolean)
+	 * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getNpc_DiscoveredEnigma()
+	 * @model default="false" required="true"
 	 * @generated
 	 */
-	boolean isDiscovered();
+	boolean isDiscoveredEnigma();
 
 	/**
-	 * Sets the value of the '{@link labyrinth_tales_of_gamers.Npc#isDiscovered <em>Discovered</em>}' attribute.
+	 * Sets the value of the '{@link labyrinth_tales_of_gamers.Npc#isDiscoveredEnigma <em>Discovered Enigma</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Discovered</em>' attribute.
-	 * @see #isDiscovered()
+	 * @param value the new value of the '<em>Discovered Enigma</em>' attribute.
+	 * @see #isDiscoveredEnigma()
 	 * @generated
 	 */
-	void setDiscovered(boolean value);
+	void setDiscoveredEnigma(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Valid Proposition Sentence</b></em>' attribute.
@@ -164,26 +168,26 @@ public interface Npc extends Entity {
 	void setCurrentRoom(Room value);
 
 	/**
-	 * Returns the value of the '<em><b>Discovered Sentence Npc</b></em>' attribute.
+	 * Returns the value of the '<em><b>Discovered Enigma Sentence</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Discovered Sentence Npc</em>' attribute.
-	 * @see #setDiscoveredSentenceNpc(String)
-	 * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getNpc_DiscoveredSentenceNpc()
+	 * @return the value of the '<em>Discovered Enigma Sentence</em>' attribute.
+	 * @see #setDiscoveredEnigmaSentence(String)
+	 * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getNpc_DiscoveredEnigmaSentence()
 	 * @model required="true"
 	 * @generated
 	 */
-	String getDiscoveredSentenceNpc();
+	String getDiscoveredEnigmaSentence();
 
 	/**
-	 * Sets the value of the '{@link labyrinth_tales_of_gamers.Npc#getDiscoveredSentenceNpc <em>Discovered Sentence Npc</em>}' attribute.
+	 * Sets the value of the '{@link labyrinth_tales_of_gamers.Npc#getDiscoveredEnigmaSentence <em>Discovered Enigma Sentence</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Discovered Sentence Npc</em>' attribute.
-	 * @see #getDiscoveredSentenceNpc()
+	 * @param value the new value of the '<em>Discovered Enigma Sentence</em>' attribute.
+	 * @see #getDiscoveredEnigmaSentence()
 	 * @generated
 	 */
-	void setDiscoveredSentenceNpc(String value);
+	void setDiscoveredEnigmaSentence(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Discovered Sentence Hint</b></em>' attribute.
@@ -206,5 +210,71 @@ public interface Npc extends Entity {
 	 * @generated
 	 */
 	void setDiscoveredSentenceHint(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Enigma Sentence</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Enigma Sentence</em>' attribute.
+	 * @see #setEnigmaSentence(String)
+	 * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getNpc_EnigmaSentence()
+	 * @model
+	 * @generated
+	 */
+	String getEnigmaSentence();
+
+	/**
+	 * Sets the value of the '{@link labyrinth_tales_of_gamers.Npc#getEnigmaSentence <em>Enigma Sentence</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Enigma Sentence</em>' attribute.
+	 * @see #getEnigmaSentence()
+	 * @generated
+	 */
+	void setEnigmaSentence(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Hint Sentence</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Hint Sentence</em>' attribute.
+	 * @see #setHintSentence(String)
+	 * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getNpc_HintSentence()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getHintSentence();
+
+	/**
+	 * Sets the value of the '{@link labyrinth_tales_of_gamers.Npc#getHintSentence <em>Hint Sentence</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Hint Sentence</em>' attribute.
+	 * @see #getHintSentence()
+	 * @generated
+	 */
+	void setHintSentence(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Enigma Solution</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Enigma Solution</em>' attribute.
+	 * @see #setEnigmaSolution(String)
+	 * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getNpc_EnigmaSolution()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getEnigmaSolution();
+
+	/**
+	 * Sets the value of the '{@link labyrinth_tales_of_gamers.Npc#getEnigmaSolution <em>Enigma Solution</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Enigma Solution</em>' attribute.
+	 * @see #getEnigmaSolution()
+	 * @generated
+	 */
+	void setEnigmaSolution(String value);
 
 } // Npc

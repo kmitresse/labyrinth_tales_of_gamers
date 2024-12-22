@@ -123,13 +123,13 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	int GAME__EPILOGUE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Nb Npc</b></em>' attribute.
+	 * The feature id for the '<em><b>Nb Enigmas</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GAME__NB_NPC = 6;
+	int GAME__NB_ENIGMAS = 6;
 
 	/**
 	 * The feature id for the '<em><b>Aim</b></em>' attribute.
@@ -159,13 +159,22 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	int GAME__MAP = 9;
 
 	/**
+	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME__ACTIONS = 10;
+
+	/**
 	 * The number of structural features of the '<em>Game</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GAME_FEATURE_COUNT = 10;
+	int GAME_FEATURE_COUNT = 11;
 
 	/**
 	 * The operation id for the '<em>Nb Npc Positive Or Null</em>' operation.
@@ -377,13 +386,22 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	int ENTITY__NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Discovered</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__DISCOVERED = 1;
+
+	/**
 	 * The number of structural features of the '<em>Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_COUNT = 1;
+	int ENTITY_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Entity</em>' class.
@@ -412,6 +430,15 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	 * @ordered
 	 */
 	int HINT__NAME = ENTITY__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Discovered</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HINT__DISCOVERED = ENTITY__DISCOVERED;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -478,13 +505,22 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	int MAIN_CHARACTER__NAME = ENTITY__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Nb Discovered Npc</b></em>' attribute.
+	 * The feature id for the '<em><b>Discovered</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAIN_CHARACTER__NB_DISCOVERED_NPC = ENTITY_FEATURE_COUNT + 0;
+	int MAIN_CHARACTER__DISCOVERED = ENTITY__DISCOVERED;
+
+	/**
+	 * The feature id for the '<em><b>Nb Discovered Enigmas</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAIN_CHARACTER__NB_DISCOVERED_ENIGMAS = ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Game</b></em>' container reference.
@@ -551,6 +587,15 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	int NPC__NAME = ENTITY__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Discovered</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NPC__DISCOVERED = ENTITY__DISCOVERED;
+
+	/**
 	 * The feature id for the '<em><b>Hello Sentence</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -560,13 +605,13 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	int NPC__HELLO_SENTENCE = ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Discovered</b></em>' attribute.
+	 * The feature id for the '<em><b>Discovered Enigma</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NPC__DISCOVERED = ENTITY_FEATURE_COUNT + 1;
+	int NPC__DISCOVERED_ENIGMA = ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Valid Proposition Sentence</b></em>' attribute.
@@ -605,13 +650,13 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	int NPC__CURRENT_ROOM = ENTITY_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Discovered Sentence Npc</b></em>' attribute.
+	 * The feature id for the '<em><b>Discovered Enigma Sentence</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NPC__DISCOVERED_SENTENCE_NPC = ENTITY_FEATURE_COUNT + 6;
+	int NPC__DISCOVERED_ENIGMA_SENTENCE = ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Discovered Sentence Hint</b></em>' attribute.
@@ -623,13 +668,40 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	int NPC__DISCOVERED_SENTENCE_HINT = ENTITY_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Enigma Sentence</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NPC__ENIGMA_SENTENCE = ENTITY_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Hint Sentence</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NPC__HINT_SENTENCE = ENTITY_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Enigma Solution</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NPC__ENIGMA_SOLUTION = ENTITY_FEATURE_COUNT + 10;
+
+	/**
 	 * The number of structural features of the '<em>Npc</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NPC_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 8;
+	int NPC_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of operations of the '<em>Npc</em>' class.
@@ -660,13 +732,31 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	int ACTION__LABEL = 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION__NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Informations</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION__INFORMATIONS = 2;
+
+	/**
 	 * The number of structural features of the '<em>Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_FEATURE_COUNT = 1;
+	int ACTION_FEATURE_COUNT = 3;
 
 	/**
 	 * The operation id for the '<em>Label Action</em>' operation.
@@ -764,15 +854,15 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	EAttribute getGame_Epilogue();
 
 	/**
-	 * Returns the meta object for the attribute '{@link labyrinth_tales_of_gamers.Game#getNbNpc <em>Nb Npc</em>}'.
+	 * Returns the meta object for the attribute '{@link labyrinth_tales_of_gamers.Game#getNbEnigmas <em>Nb Enigmas</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Nb Npc</em>'.
-	 * @see labyrinth_tales_of_gamers.Game#getNbNpc()
+	 * @return the meta object for the attribute '<em>Nb Enigmas</em>'.
+	 * @see labyrinth_tales_of_gamers.Game#getNbEnigmas()
 	 * @see #getGame()
 	 * @generated
 	 */
-	EAttribute getGame_NbNpc();
+	EAttribute getGame_NbEnigmas();
 
 	/**
 	 * Returns the meta object for the attribute '{@link labyrinth_tales_of_gamers.Game#getAim <em>Aim</em>}'.
@@ -806,6 +896,17 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getGame_Map();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link labyrinth_tales_of_gamers.Game#getActions <em>Actions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Actions</em>'.
+	 * @see labyrinth_tales_of_gamers.Game#getActions()
+	 * @see #getGame()
+	 * @generated
+	 */
+	EReference getGame_Actions();
 
 	/**
 	 * Returns the meta object for the '{@link labyrinth_tales_of_gamers.Game#nbNpcPositiveOrNull(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Nb Npc Positive Or Null</em>}' operation.
@@ -1019,6 +1120,17 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	EAttribute getEntity_Name();
 
 	/**
+	 * Returns the meta object for the attribute '{@link labyrinth_tales_of_gamers.Entity#isDiscovered <em>Discovered</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Discovered</em>'.
+	 * @see labyrinth_tales_of_gamers.Entity#isDiscovered()
+	 * @see #getEntity()
+	 * @generated
+	 */
+	EAttribute getEntity_Discovered();
+
+	/**
 	 * Returns the meta object for class '{@link labyrinth_tales_of_gamers.Hint <em>Hint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1072,15 +1184,15 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	EClass getMainCharacter();
 
 	/**
-	 * Returns the meta object for the attribute '{@link labyrinth_tales_of_gamers.MainCharacter#getNbDiscoveredNpc <em>Nb Discovered Npc</em>}'.
+	 * Returns the meta object for the attribute '{@link labyrinth_tales_of_gamers.MainCharacter#getNbDiscoveredEnigmas <em>Nb Discovered Enigmas</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Nb Discovered Npc</em>'.
-	 * @see labyrinth_tales_of_gamers.MainCharacter#getNbDiscoveredNpc()
+	 * @return the meta object for the attribute '<em>Nb Discovered Enigmas</em>'.
+	 * @see labyrinth_tales_of_gamers.MainCharacter#getNbDiscoveredEnigmas()
 	 * @see #getMainCharacter()
 	 * @generated
 	 */
-	EAttribute getMainCharacter_NbDiscoveredNpc();
+	EAttribute getMainCharacter_NbDiscoveredEnigmas();
 
 	/**
 	 * Returns the meta object for the container reference '{@link labyrinth_tales_of_gamers.MainCharacter#getGame <em>Game</em>}'.
@@ -1136,15 +1248,15 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	EAttribute getNpc_HelloSentence();
 
 	/**
-	 * Returns the meta object for the attribute '{@link labyrinth_tales_of_gamers.Npc#isDiscovered <em>Discovered</em>}'.
+	 * Returns the meta object for the attribute '{@link labyrinth_tales_of_gamers.Npc#isDiscoveredEnigma <em>Discovered Enigma</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Discovered</em>'.
-	 * @see labyrinth_tales_of_gamers.Npc#isDiscovered()
+	 * @return the meta object for the attribute '<em>Discovered Enigma</em>'.
+	 * @see labyrinth_tales_of_gamers.Npc#isDiscoveredEnigma()
 	 * @see #getNpc()
 	 * @generated
 	 */
-	EAttribute getNpc_Discovered();
+	EAttribute getNpc_DiscoveredEnigma();
 
 	/**
 	 * Returns the meta object for the attribute '{@link labyrinth_tales_of_gamers.Npc#getValidPropositionSentence <em>Valid Proposition Sentence</em>}'.
@@ -1191,15 +1303,15 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	EReference getNpc_CurrentRoom();
 
 	/**
-	 * Returns the meta object for the attribute '{@link labyrinth_tales_of_gamers.Npc#getDiscoveredSentenceNpc <em>Discovered Sentence Npc</em>}'.
+	 * Returns the meta object for the attribute '{@link labyrinth_tales_of_gamers.Npc#getDiscoveredEnigmaSentence <em>Discovered Enigma Sentence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Discovered Sentence Npc</em>'.
-	 * @see labyrinth_tales_of_gamers.Npc#getDiscoveredSentenceNpc()
+	 * @return the meta object for the attribute '<em>Discovered Enigma Sentence</em>'.
+	 * @see labyrinth_tales_of_gamers.Npc#getDiscoveredEnigmaSentence()
 	 * @see #getNpc()
 	 * @generated
 	 */
-	EAttribute getNpc_DiscoveredSentenceNpc();
+	EAttribute getNpc_DiscoveredEnigmaSentence();
 
 	/**
 	 * Returns the meta object for the attribute '{@link labyrinth_tales_of_gamers.Npc#getDiscoveredSentenceHint <em>Discovered Sentence Hint</em>}'.
@@ -1211,6 +1323,39 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getNpc_DiscoveredSentenceHint();
+
+	/**
+	 * Returns the meta object for the attribute '{@link labyrinth_tales_of_gamers.Npc#getEnigmaSentence <em>Enigma Sentence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Enigma Sentence</em>'.
+	 * @see labyrinth_tales_of_gamers.Npc#getEnigmaSentence()
+	 * @see #getNpc()
+	 * @generated
+	 */
+	EAttribute getNpc_EnigmaSentence();
+
+	/**
+	 * Returns the meta object for the attribute '{@link labyrinth_tales_of_gamers.Npc#getHintSentence <em>Hint Sentence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Hint Sentence</em>'.
+	 * @see labyrinth_tales_of_gamers.Npc#getHintSentence()
+	 * @see #getNpc()
+	 * @generated
+	 */
+	EAttribute getNpc_HintSentence();
+
+	/**
+	 * Returns the meta object for the attribute '{@link labyrinth_tales_of_gamers.Npc#getEnigmaSolution <em>Enigma Solution</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Enigma Solution</em>'.
+	 * @see labyrinth_tales_of_gamers.Npc#getEnigmaSolution()
+	 * @see #getNpc()
+	 * @generated
+	 */
+	EAttribute getNpc_EnigmaSolution();
 
 	/**
 	 * Returns the meta object for class '{@link labyrinth_tales_of_gamers.Action <em>Action</em>}'.
@@ -1232,6 +1377,28 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAction_Label();
+
+	/**
+	 * Returns the meta object for the attribute '{@link labyrinth_tales_of_gamers.Action#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see labyrinth_tales_of_gamers.Action#getName()
+	 * @see #getAction()
+	 * @generated
+	 */
+	EAttribute getAction_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link labyrinth_tales_of_gamers.Action#getInformations <em>Informations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Informations</em>'.
+	 * @see labyrinth_tales_of_gamers.Action#getInformations()
+	 * @see #getAction()
+	 * @generated
+	 */
+	EAttribute getAction_Informations();
 
 	/**
 	 * Returns the meta object for the '{@link labyrinth_tales_of_gamers.Action#labelAction(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Label Action</em>}' operation.
@@ -1325,12 +1492,12 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 		EAttribute GAME__EPILOGUE = eINSTANCE.getGame_Epilogue();
 
 		/**
-		 * The meta object literal for the '<em><b>Nb Npc</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Nb Enigmas</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GAME__NB_NPC = eINSTANCE.getGame_NbNpc();
+		EAttribute GAME__NB_ENIGMAS = eINSTANCE.getGame_NbEnigmas();
 
 		/**
 		 * The meta object literal for the '<em><b>Aim</b></em>' attribute feature.
@@ -1355,6 +1522,14 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute GAME__MAP = eINSTANCE.getGame_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Actions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GAME__ACTIONS = eINSTANCE.getGame_Actions();
 
 		/**
 		 * The meta object literal for the '<em><b>Nb Npc Positive Or Null</b></em>' operation.
@@ -1521,6 +1696,14 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 		EAttribute ENTITY__NAME = eINSTANCE.getEntity_Name();
 
 		/**
+		 * The meta object literal for the '<em><b>Discovered</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY__DISCOVERED = eINSTANCE.getEntity_Discovered();
+
+		/**
 		 * The meta object literal for the '{@link labyrinth_tales_of_gamers.impl.HintImpl <em>Hint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1565,12 +1748,12 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 		EClass MAIN_CHARACTER = eINSTANCE.getMainCharacter();
 
 		/**
-		 * The meta object literal for the '<em><b>Nb Discovered Npc</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Nb Discovered Enigmas</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MAIN_CHARACTER__NB_DISCOVERED_NPC = eINSTANCE.getMainCharacter_NbDiscoveredNpc();
+		EAttribute MAIN_CHARACTER__NB_DISCOVERED_ENIGMAS = eINSTANCE.getMainCharacter_NbDiscoveredEnigmas();
 
 		/**
 		 * The meta object literal for the '<em><b>Game</b></em>' container reference feature.
@@ -1615,12 +1798,12 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 		EAttribute NPC__HELLO_SENTENCE = eINSTANCE.getNpc_HelloSentence();
 
 		/**
-		 * The meta object literal for the '<em><b>Discovered</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Discovered Enigma</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute NPC__DISCOVERED = eINSTANCE.getNpc_Discovered();
+		EAttribute NPC__DISCOVERED_ENIGMA = eINSTANCE.getNpc_DiscoveredEnigma();
 
 		/**
 		 * The meta object literal for the '<em><b>Valid Proposition Sentence</b></em>' attribute feature.
@@ -1655,12 +1838,12 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 		EReference NPC__CURRENT_ROOM = eINSTANCE.getNpc_CurrentRoom();
 
 		/**
-		 * The meta object literal for the '<em><b>Discovered Sentence Npc</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Discovered Enigma Sentence</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute NPC__DISCOVERED_SENTENCE_NPC = eINSTANCE.getNpc_DiscoveredSentenceNpc();
+		EAttribute NPC__DISCOVERED_ENIGMA_SENTENCE = eINSTANCE.getNpc_DiscoveredEnigmaSentence();
 
 		/**
 		 * The meta object literal for the '<em><b>Discovered Sentence Hint</b></em>' attribute feature.
@@ -1669,6 +1852,30 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NPC__DISCOVERED_SENTENCE_HINT = eINSTANCE.getNpc_DiscoveredSentenceHint();
+
+		/**
+		 * The meta object literal for the '<em><b>Enigma Sentence</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NPC__ENIGMA_SENTENCE = eINSTANCE.getNpc_EnigmaSentence();
+
+		/**
+		 * The meta object literal for the '<em><b>Hint Sentence</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NPC__HINT_SENTENCE = eINSTANCE.getNpc_HintSentence();
+
+		/**
+		 * The meta object literal for the '<em><b>Enigma Solution</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NPC__ENIGMA_SOLUTION = eINSTANCE.getNpc_EnigmaSolution();
 
 		/**
 		 * The meta object literal for the '{@link labyrinth_tales_of_gamers.impl.ActionImpl <em>Action</em>}' class.
@@ -1687,6 +1894,22 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ACTION__LABEL = eINSTANCE.getAction_Label();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTION__NAME = eINSTANCE.getAction_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Informations</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTION__INFORMATIONS = eINSTANCE.getAction_Informations();
 
 		/**
 		 * The meta object literal for the '<em><b>Label Action</b></em>' operation.

@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link labyrinth_tales_of_gamers.impl.EntityImpl#getName <em>Name</em>}</li>
+ *   <li>{@link labyrinth_tales_of_gamers.impl.EntityImpl#isDiscovered <em>Discovered</em>}</li>
  * </ul>
  *
  * @generated
@@ -44,6 +45,26 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isDiscovered() <em>Discovered</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDiscovered()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean DISCOVERED_EDEFAULT = true;
+
+	/**
+	 * The cached value of the '{@link #isDiscovered() <em>Discovered</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDiscovered()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean discovered = DISCOVERED_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -93,10 +114,35 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
+	public boolean isDiscovered() {
+		return discovered;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDiscovered(boolean newDiscovered) {
+		boolean oldDiscovered = discovered;
+		discovered = newDiscovered;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Labyrinth_tales_of_gamersPackage.ENTITY__DISCOVERED, oldDiscovered, discovered));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Labyrinth_tales_of_gamersPackage.ENTITY__NAME:
 				return getName();
+			case Labyrinth_tales_of_gamersPackage.ENTITY__DISCOVERED:
+				return isDiscovered();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -113,6 +159,9 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 			case Labyrinth_tales_of_gamersPackage.ENTITY__NAME:
 				setName((String)newValue);
 				return;
+			case Labyrinth_tales_of_gamersPackage.ENTITY__DISCOVERED:
+				setDiscovered((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -128,6 +177,9 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 			case Labyrinth_tales_of_gamersPackage.ENTITY__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case Labyrinth_tales_of_gamersPackage.ENTITY__DISCOVERED:
+				setDiscovered(DISCOVERED_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -142,6 +194,8 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 			case Labyrinth_tales_of_gamersPackage.ENTITY__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case Labyrinth_tales_of_gamersPackage.ENTITY__DISCOVERED:
+				return discovered != DISCOVERED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -158,6 +212,8 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", discovered: ");
+		result.append(discovered);
 		result.append(')');
 		return result.toString();
 	}

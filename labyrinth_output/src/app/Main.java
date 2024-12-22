@@ -3,9 +3,11 @@ import java.util.ArrayList;
 
 public class Main { 
 	public static Action move = new Action(Action.MOVE);
- 	public static Action talk = new Action(Action.NPC);
+ 	public static Action talk = new Action(Action.TALK);
  	public static Action propose = new Action(Action.PROPOSE);
- 	public static Action hint = new Action(Action.HINT);
+ 	public static Action ask_hint = new Action(Action.ASK_HINT);
+ 	public static Action read = new Action(Action.READ);
+
 	public static void main(String[] args){
 		
 	    // Hints creation
@@ -69,59 +71,59 @@ public class Main {
 
 	    // Non players characters creation
 		ArrayList<Npc> npcs = new ArrayList<>();
-		Npc laracroft = new Npc("Lara Croft",laraCroftHint,"Intrigué par ces ruines, voyageur ? Moi aussi.", "Bravo, tu m'as reconnue. Lara Croft, exploratrice de l'inconnu.","Non, c'est un mauvais tir. Mais garde espoir.","Tu as déjà percé le mystère de mon identité. Impressionnant.","Pourquoi donner un indice ? Tu sais déjà qui je suis, explorateur.");
+		Npc laracroft = new Npc("Lara Croft",laraCroftHint,"Intrigué par ces ruines, voyageur ? Moi aussi.", "", "Lara Croft", "L’indice que tu cherches est dans la salle X. Une véritable relique pour les explorateurs avisés.", "Bravo, tu m'as reconnue. Lara Croft, exploratrice de l'inconnu.","Non, c'est un mauvais tir. Mais garde espoir.","Tu as déjà percé le mystère de mon identité. Impressionnant.","Pourquoi donner un indice ? Tu sais déjà qui je suis, explorateur.");
 		npcs.add(laracroft);
-		Npc masterchief = new Npc("MasterChief",masterChiefHint,"Soldat, restez concentré. La mission est loin d’être terminée.", "Correct. Master Chief, Spartan 117, au rapport.","Non, recalé. Réessayez, marine.","Tu as déjà découvert qui je suis. Bonne mission, soldat.","Un indice ? Pas nécessaire, tu sais déjà que je suis Master Chief. Ah moins que.. t'es un Covenant?");
+		Npc masterchief = new Npc("Master Chief",masterChiefHint,"Soldat, restez concentré. La mission est loin d’être terminée.", "Soldat, restez concentré. La mission est loin d’être terminée.", "Master Chief", "Mon indice est sécurisé dans la salle X. Dépêche-toi avant que l’ennemi ne le localise.", "Correct. Master Chief, Spartan 117, au rapport.","Non, recalé. Réessayez, marine.","Tu as déjà découvert qui je suis. Bonne mission, soldat.","Un indice ? Pas nécessaire, tu sais déjà que je suis Master Chief. Ah moins que.. t'es un Covenant?");
 		npcs.add(masterchief);
-		Npc cloud = new Npc("Cloud",cloudHint,"Une lame ne suffit pas. Le courage fait tout.", "C'est moi, Cloud Strife. Mais tu le savais déjà, non ?","Non, ce n'est pas ça. Concentre-toi, comme sur une limite.","Tu sais déjà qui je suis. Cloud Strife, ça te dit quelque chose ?","Un indice ? Pas besoin, tu as déjà percé le mystère.");
+		Npc cloud = new Npc("Cloud",cloudHint,"Une lame ne suffit pas. Le courage fait tout.", "", "Cloud", "Tu trouveras mon indice dans la salle X. Fais vite avant que l’ombre ne le recouvre.", "C'est moi, Cloud Strife. Mais tu le savais déjà, non ?","Non, ce n'est pas ça. Concentre-toi, comme sur une limite.","Tu sais déjà qui je suis. Cloud Strife, ça te dit quelque chose ?","Un indice ? Pas besoin, tu as déjà percé le mystère.");
 		npcs.add(cloud);
-		Npc geraldderiv = new Npc("Gerald de Riv",geraldDeRivHint,"Un autre monstre à chasser, ou peut-être juste un humain curieux ?", "Correct. Je suis Geralt, le Loup Blanc.","Non, une mauvaise piste. Reviens quand tu auras compris l'indice.","Mon identité ne t’est plus étrangère.","Un indice ? Pourquoi en aurais-tu besoin, sorceleur ?");
+		Npc geraldderiv = new Npc("Gerald de Riv",geraldDeRivHint,"Un autre monstre à chasser, ou peut-être juste un humain curieux ?", "", "Gerald de Riv", "Mon indice t’attend dans la salle X. Suis les traces de l’évidence comme un vrai sorceleur.", "Correct. Je suis Geralt, le Loup Blanc.","Non, une mauvaise piste. Reviens quand tu auras compris l'indice.","Mon identité ne t’est plus étrangère.","Un indice ? Pourquoi en aurais-tu besoin, sorceleur ?");
 		npcs.add(geraldderiv);
-		Npc crashbandicoot = new Npc("CrashBandicoot",crashHint,"Woooaaah! T'a pas des pommes sur toi ?", "Haha, ouais, c'est moi, Crash Bandicoot ! Où sont mes Wumpas?!","Boing boing Non, c'est pas ça ! Essaie encore, ami !","Tu as trop tourbillonné on dirai ! C'est moi crash !","Pourquoi faire ? Tu sais déjà qui je suis !");
+		Npc crashbandicoot = new Npc("Crash Bandicoot",crashHint,"Woooaaah! T'a pas des pommes sur toi ?", "", "Crash Bandicoot", "Woo-hoo ! Mon indice est caché dans la salle X. Bonne chance pour le trouver !", "Haha, ouais, c'est moi, Crash Bandicoot ! Où sont mes Wumpas?!","Boing boing Non, c'est pas ça ! Essaie encore, ami !","Tu as trop tourbillonné on dirai ! C'est moi crash !","Pourquoi faire ? Tu sais déjà qui je suis !");
 		npcs.add(crashbandicoot);
-		Npc kratos = new Npc("Kratos",kratosHint,"Un voyageur dans mon royaume ? Espère ne pas éveiller ma colère.", "Tu es perspicace. Oui, je suis Kratos, le Fantôme de Sparte.","Non. Ton ignorance ne mérite pas ma pitié.","Tu as déjà trouvé mon identité. N’insulte pas ma patience.","Pourquoi aurais-je besoin de te donner un indice ? Tu as déjà découvert qui je suis.");
+		Npc kratos = new Npc("Kratos",kratosHint,"Un voyageur dans mon royaume ? Espère ne pas éveiller ma colère.", "", "Kratos", "Mon indice repose dans la salle X, gravé dans les entrailles de cette épreuve.", "Tu es perspicace. Oui, je suis Kratos, le Fantôme de Sparte.","Non. Ton ignorance ne mérite pas ma pitié.","Tu as déjà trouvé mon identité. N’insulte pas ma patience.","Pourquoi aurais-je besoin de te donner un indice ? Tu as déjà découvert qui je suis.");
 		npcs.add(kratos);
-		Npc sonic = new Npc("Sonic",sonicHint,"Hé, toi là-bas ! T’arrives à me suivre ou je vais trop vite ?", "Tu as vu juste ! Sonic, le hérisson le plus rapide au monde !","Non, mauvaise réponse ! Allez, accélère un peu !","Haha, évidemment que tu sais déjà que c’est moi, Sonic !","Un indice ? Pourquoi perdre du temps ? Tu sais que c’est moi !");
+		Npc sonic = new Npc("Sonic",sonicHint,"Hé, toi là-bas ! T’arrives à me suivre ou je vais trop vite ?", "", "Sonic", "Mon indice est dans la salle X. Tu vas devoir être rapide pour l’attraper !", "Tu as vu juste ! Sonic, le hérisson le plus rapide au monde !","Non, mauvaise réponse ! Allez, accélère un peu !","Haha, évidemment que tu sais déjà que c’est moi, Sonic !","Un indice ? Pourquoi perdre du temps ? Tu sais que c’est moi !");
 		npcs.add(sonic);
-		Npc madeline = new Npc("Madeline",madelineHint,"La montagne est rude. Mais toi aussi, non ?", "Oui, je suis Madeline. Je gravis les sommets, à ma façon.","Non, ce n’est pas ça. Mais ne lâche pas prise.","Oui, tu sais déjà que c’est moi. Félicitations, grimpeur.","Un indice ? Pas besoin, tu m’as déjà reconnue.");
+		Npc madeline = new Npc("Madeline",madelineHint,"La montagne est rude. Mais toi aussi, non ?", "La montagne est rude. Mais toi aussi, non ?", "Madeline", "Mon indice est dans la salle X. Ne regarde pas en bas, grimpe !", "Oui, je suis Madeline. Je gravis les sommets, à ma façon.","Non, ce n’est pas ça. Mais ne lâche pas prise.","Oui, tu sais déjà que c’est moi. Félicitations, grimpeur.","Un indice ? Pas besoin, tu m’as déjà reconnue.");
 		npcs.add(madeline);
-		Npc ellie = new Npc("Ellie",ellieHint,"Hé, toi ! T’es pas infecté, hein ?", "Bien vu. Ellie, survivante coriace, prête à tout.","Nope. Mauvaise réponse. Essaie encore, cowboy.","T'as perdu la mémoire ? T'es pas infecté au moins ?","Un indice ? T’es sérieux ? Tu sais déjà qui je suis.");
+		Npc ellie = new Npc("Ellie",ellieHint,"Hé, toi ! T’es pas infecté, hein ?", "Hé, toi ! T’es pas infecté, hein ?", "Ellie", " Mon indice est dans la salle X. Fais attention en chemin.", "Bien vu. Ellie, survivante coriace, prête à tout.","Nope. Mauvaise réponse. Essaie encore, cowboy.","T'as perdu la mémoire ? T'es pas infecté au moins ?","Un indice ? T’es sérieux ? Tu sais déjà qui je suis.");
 		npcs.add(ellie);
-		Npc spyro = new Npc("Spyro",spyroHint,"Hé, petite flamme ! T'as vu d'autres dragons par ici ?", "C'est moi, Spyro, prêt à brûler quelques ennemis !","Non, t'es à côté de la plaque. Essaie encore !","Oh, tu sais déjà que c'est moi ? Cool, pas besoin de me présenter à nouveau !","Un indice ? Hé, pas besoin, tu connais déjà le dragon le plus cool !");
+		Npc spyro = new Npc("Spyro",spyroHint,"Hé, petite flamme ! T'as vu d'autres dragons par ici ?", "", "Spyro", "Tu trouveras mon indice dans la salle X. Ne te brûle pas les ailes en chemin !", "C'est moi, Spyro, prêt à brûler quelques ennemis !","Non, t'es à côté de la plaque. Essaie encore !","Oh, tu sais déjà que c'est moi ? Cool, pas besoin de me présenter à nouveau !","Un indice ? Hé, pas besoin, tu connais déjà le dragon le plus cool !");
 		npcs.add(spyro);
-		Npc thedoomguy = new Npc("The DoomGuy",doomguyHint,"... (il vous regarde intensément en silence)", "... (il hoche la tête, vous avez raison)","... (il grogne, visiblement agacé)","... (Il croise les bras, car vous n’avez plus besoin d’indice.)","... (Un hochement de tête confirme que vous savez déjà qui il est.)");
+		Npc thedoomguy = new Npc("The Doom Guy",doomguyHint,"... (il vous regarde intensément en silence)", "... (il vous regarde intensément en silence)", "The Doom Guy", "... (Il trace les mots 'X' sur la poussière du sol, d’un geste silencieux.)", "... (il hoche la tête, vous avez raison)","... (il grogne, visiblement agacé)","... (Il croise les bras, car vous n’avez plus besoin d’indice.)","... (Un hochement de tête confirme que vous savez déjà qui il est.)");
 		npcs.add(thedoomguy);
-		Npc zagreus = new Npc("Zagreus",zagreusHint,"Tiens, un autre mortel venu braver les Enfers ?", "Bravo, c'est bien moi, Zagreus, fils d'Hadès.","Non, pas cette fois. Mais l’échec fait partie du défi.","Tu sais déjà que je suis Zagreus. Continuons !","Un indice ? Tu n’en as pas besoin, tu as percé mon secret.");
+		Npc zagreus = new Npc("Zagreus",zagreusHint,"Tiens, un autre mortel venu braver les Enfers ?", "Tiens, un autre mortel venu braver les Enfers ?", "Zagreus", "Mon indice t’attend dans la salle X. Ne te perds pas dans le royaume des morts en chemin.", "Bravo, c'est bien moi, Zagreus, fils d'Hadès.","Non, pas cette fois. Mais l’échec fait partie du défi.","Tu sais déjà que je suis Zagreus. Continuons !","Un indice ? Tu n’en as pas besoin, tu as percé mon secret.");
 		npcs.add(zagreus);
-		Npc rayne = new Npc("Rayne",rayneHint,"Attention où tu marches, ou tu pourrais te couper", "Oui, je suis Rayne. Tu aimes jouer avec le feu ?","Non, ce n’est pas moi. Mais tu as du goût pour les ténèbres.","Tu m’as déjà identifiée. Pas mal pour un humain.","Un indice ? Pourquoi faire ? Tu sais déjà que je suis Rayne.");
+		Npc rayne = new Npc("Rayne",rayneHint,"Attention où tu marches, ou tu pourrais te couper.", "Attention où tu marches, ou tu pourrais te couper.", "Rayne", "Tu trouveras mon indice dans la salle X. Mais prends garde, la nuit est propice aux pièges.", "Oui, je suis Rayne. Tu aimes jouer avec le feu ?","Non, ce n’est pas moi. Mais tu as du goût pour les ténèbres.","Tu m’as déjà identifiée. Pas mal pour un humain.","Un indice ? Pourquoi faire ? Tu sais déjà que je suis Rayne.");
 		npcs.add(rayne);
-		Npc kirby = new Npc("Kirby",kirbyHint,"Poyo ! (Il vous regarde en souriant.)", "Poyo ! C’est bien moi, Kirby ! Gagné !","Poyo... (Il fait une moue triste.)","Poyo ! Oui, tu sais déjà que je suis Kirby !","Poyo ? Pas besoin d’indice, tu m’as déjà trouvé !");
+		Npc kirby = new Npc("Kirby",kirbyHint,"Poyo ! (Il vous regarde en souriant.)", "Poyo ! (Il vous regarde en souriant.)", "Kirby", "Poyo ! Mon indice est dans la salle X. Ne le mange pas par erreur !", "Poyo ! C’est bien moi, Kirby ! Gagné !","Poyo... (Il fait une moue triste.)","Poyo ! Oui, tu sais déjà que je suis Kirby !","Poyo ? Pas besoin d’indice, tu m’as déjà trouvé !");
 		npcs.add(kirby);
-		Npc link = new Npc("Link",linkHint,"... (Il brandit son épée en guise de salut.)", "... (Il sourit et joue un air sur son ocarina.)","... (Il secoue la tête et pointe vers l’horizon.)","... (Il hoche la tête, approuvant que vous connaissez son identité.)","... (Il vous lance un regard amusé, car un indice est inutile.)");
+		Npc link = new Npc("Link",linkHint,"... (Il brandit son épée en guise de salut.)", "... (Il brandit son épée en guise de salut.)", "Link", "... (Il désigne silencieusement la salle X sur une carte, sans un mot.)", "... (Il sourit et joue un air sur son ocarina.)","... (Il secoue la tête et pointe vers l’horizon.)","... (Il hoche la tête, approuvant que vous connaissez son identité.)","... (Il vous lance un regard amusé, car un indice est inutile.)");
 		npcs.add(link);
-		Npc marcusfenix = new Npc("Marcus Fenix",marcusFenixHint,"Tu te crois prêt pour la guerre, rookie ?", "Exact. Marcus Fenix, héros de la CGU, à votre service.","Non, tu t’es trompé de soldat. Essaie encore.","Bon boulot, tu sais déjà que je suis Marcus. On avance ?","Un indice ? T’en as pas besoin. Tu connais déjà le soldat.");
+		Npc marcusfenix = new Npc("Marcus Fenix",marcusFenixHint,"Tu te crois prêt pour la guerre, rookie ?", "", "Marcus Fenix", "Mon indice est planqué dans la salle X. Prépare-toi, ça ne sera pas une promenade.", "Exact. Marcus Fenix, héros de la CGU, à votre service.","Non, tu t’es trompé de soldat. Essaie encore.","Bon boulot, tu sais déjà que je suis Marcus. On avance ?","Un indice ? T’en as pas besoin. Tu connais déjà le soldat.");
 		npcs.add(marcusfenix);
-		Npc blinx = new Npc("Blinx",blinxHint,"Oh, tu veux parler au maître du temps ?", "Exact, c'est moi, Blinx, le chat nettoyeur temporel !","Non, désolé, tu dois rembobiner ta réponse.","Bravo, tu sais déjà que c’est moi, Blinx, le maître du temps !","Un indice ? Ha ! Pas besoin, tu m’as déjà reconnu !");
+		Npc blinx = new Npc("Blinx",blinxHint,"Oh, tu veux parler au maître du temps ?", "", "Blinx", "Mon indice est dans la salle X. Mais attention, le temps peut te jouer des tours.", "Exact, c'est moi, Blinx, le chat nettoyeur temporel !","Non, désolé, tu dois rembobiner ta réponse.","Bravo, tu sais déjà que c’est moi, Blinx, le maître du temps !","Un indice ? Ha ! Pas besoin, tu m’as déjà reconnu !");
 		npcs.add(blinx);
-		Npc ori = new Npc("Ori",oriHint,"'Un scintillement lumineux danse autour de vous.'", "'Un doux son résonne, Ori approuve en silence.'","'Un murmure triste traverse la pièce, comme un regret.'","Un scintillement lumineux vous indique que vous avez déjà identifié cette lumière","Une douce lumière vous enveloppe, vous savez déjà tout.");
+		Npc ori = new Npc("Ori",oriHint,"'Un scintillement lumineux danse autour de vous.'", "", "Ori", "'Une douce lumière te guide vers la salle X, où repose mon indice.'", "'Un doux son résonne, Ori approuve en silence.'","'Un murmure triste traverse la pièce, comme un regret.'","Un scintillement lumineux vous indique que vous avez déjà identifié cette lumière","Une douce lumière vous enveloppe, vous savez déjà tout.");
 		npcs.add(ori);
-		Npc samusaran = new Npc("Samus Aran",samusAranHint,"La mission n’est pas encore terminée. Tu es prêt ?", "Bien vu. Samus Aran, chasseuse de primes intergalactique.","Non, ton scanner n’est pas bien réglé.","Tu as découvert mon identité. Bien joué, chasseur.","Un indice ? Inutile. Tu sais déjà que je suis Samus.");
+		Npc samusaran = new Npc("Samus Aran",samusAranHint,"La mission n’est pas encore terminée. Tu es prêt ?", "", "Samus Aran", "Mon indice est dans la salle X. Analyse chaque recoin pour le trouver.", "Bien vu. Samus Aran, chasseuse de primes intergalactique.","Non, ton scanner n’est pas bien réglé.","Tu as découvert mon identité. Bien joué, chasseur.","Un indice ? Inutile. Tu sais déjà que je suis Samus.");
 		npcs.add(samusaran);
-		Npc donkeykong = new Npc("Donkey Kong",donkeyKongHint,"Ooh-ooh-ah-ah ! Bienvenue dans ma jungle.", "Haha, ouais, c’est moi, DK ! Passons aux bananes !","Ooh-ooh... Mauvaise réponse. Essaie encore !","Ooh-ooh-ah-ah ! Tu sais déjà que c’est moi, Donkey Kong !","Un indice ? Sérieusement ? Tu sais que c’est moi, le roi des bananes !");
+		Npc donkeykong = new Npc("Donkey Kong",donkeyKongHint,"Ooh-ooh-ah-ah ! Bienvenue dans ma jungle.", "", "Donkey Kong", "Ooh-ooh-ah-ah ! Mon indice est dans la salle X.", "Haha, ouais, c’est moi, DK ! Passons aux bananes !","Ooh-ooh... Mauvaise réponse. Essaie encore !","Ooh-ooh-ah-ah ! Tu sais déjà que c’est moi, Donkey Kong !","Un indice ? Sérieusement ? Tu sais que c’est moi, le roi des bananes !");
 		npcs.add(donkeykong);
-		Npc regina = new Npc("Regina",reginaHint,"Attention ! Ce n'est pas un endroit pour les imprudents.", "Bien joué. Regina, experte en situations de crise, à votre service.","Non, ce n'est pas moi. Les dinosaures sont plus rapides que toi ?","Tu m’as déjà identifiée. On peut avancer maintenant ?","Un indice ? Sérieusement ? Tu sais déjà que c’est moi, Regina.");
+		Npc regina = new Npc("Regina",reginaHint,"Attention ! Ce n'est pas un endroit pour les imprudents.", "", "Regina", "Mon indice est dans la salle X, mais fais attention... tout peut surgir à tout moment.", "Bien joué. Regina, experte en situations de crise, à votre service.","Non, ce n'est pas moi. Les dinosaures sont plus rapides que toi ?","Tu m’as déjà identifiée. On peut avancer maintenant ?","Un indice ? Sérieusement ? Tu sais déjà que c’est moi, Regina.");
 		npcs.add(regina);
-		Npc hershelllayton = new Npc("Hershell Layton",hershelLaytonHint,"Une énigme pour toi : qui suis-je ?", "Très juste, je suis le professeur Layton. Félicitations !","Non, ce n’est pas moi. Mais ton raisonnement est proche.","T'as mémoire est une énigme pour moi... Tu as déjà découvert mon identité.","Un indice ? Inutile pour toi, tu sais déjà qui je suis.");
+		Npc hershelllayton = new Npc("Hershell Layton",hershelLaytonHint,"Une énigme pour toi : qui suis-je ?", "", "Hershell Layton", "Mon indice repose dans la salle X. Une énigme en soi, ne trouvez-vous pas ?", "Très juste, je suis le professeur Layton. Félicitations !","Non, ce n’est pas moi. Mais ton raisonnement est proche.","T'as mémoire est une énigme pour moi... Tu as déjà découvert mon identité.","Un indice ? Inutile pour toi, tu sais déjà qui je suis.");
 		npcs.add(hershelllayton);
-		Npc samficher = new Npc("Sam Ficher",samFicherHint,"Tu n’entendras pas mes pas, mais je suis là.", "C’est exact. Sam Fisher, agent de l’ombre, à votre service.","Non, mauvaise cible. Réessaie, furtivement cette fois.","Bien joué, tu sais déjà qui je suis. Mission accomplie.","Un indice ? Tu as déjà tout compris, pas besoin d’en rajouter.");
+		Npc samficher = new Npc("Sam Ficher",samFicherHint,"Tu n’entendras pas mes pas, mais je suis là.", "", "Sam Ficher", "Mon indice est dissimulé dans la salle X. Trouve-le sans te faire repérer.", "C’est exact. Sam Fisher, agent de l’ombre, à votre service.","Non, mauvaise cible. Réessaie, furtivement cette fois.","Bien joué, tu sais déjà qui je suis. Mission accomplie.","Un indice ? Tu as déjà tout compris, pas besoin d’en rajouter.");
 		npcs.add(samficher);
-		Npc mario = new Npc("Mario",marioHint,"Bienvenuti, mon ami.", "Ouhouhou, it's me Mario!","Oh no! mamamia!","Oh It's me Mario, tu m'as déjà oublié ?","Tu sais déjà qui je suis, n’est-ce pas ? Let’s go !");
+		Npc mario = new Npc("Mario",marioHint,"Bienvenuti, mon ami.", "", "Mario", "Mon indice est caché dans la salle X. Bonne chance, mon ami !", "Ouhouhou, it's me Mario!","Oh no! mamamia!","Oh It's me Mario, tu m'as déjà oublié ?","Tu sais déjà qui je suis, n’est-ce pas ? Let’s go !");
 		npcs.add(mario);
-		Npc alloy = new Npc("Alloy",alloyHint,"Tu as traversé bien des épreuves pour arriver jusqu'ici.", "Tu es perspicace. Moi, c'est Aloy, chasseuse de machines.","Non, ce n'est pas moi. Ton focus doit être reconfiguré","Tu as déjà trouvé mon nom. Bravo, voyageur.","Un indice ? Pourquoi faire ? Tu connais déjà Aloy.");
+		Npc alloy = new Npc("Alloy",alloyHint,"Tu as traversé bien des épreuves pour arriver jusqu'ici.", "", "Alloy", "Mon indice se trouve dans la salle X. Utilise ton focus pour ne pas le manquer.", "Tu es perspicace. Moi, c'est Aloy, chasseuse de machines.","Non, ce n'est pas moi. Ton focus doit être reconfiguré","Tu as déjà trouvé mon nom. Bravo, voyageur.","Un indice ? Pourquoi faire ? Tu connais déjà Aloy.");
 		npcs.add(alloy);
-		Npc vlad = new Npc("Vlad",vladHint,"Cherches-tu la lumière ou les secrets de l’Alchimie ?", "Bien vu. Vlad, adepte de la Psynergie, à ton service.","Non, ton esprit est encore troublé. Réessaye.","Tu as déjà compris que je suis Vlad. Bravo.","Un indice ? Pourquoi en aurais-tu besoin ? Tu connais déjà mon identité.");
+		Npc vlad = new Npc("Vlad",vladHint,"Cherches-tu la lumière ou les secrets de l’Alchimie ?", "", "Vlad", "Mon indice est dans la salle X. Suis la lumière de la Psynergie pour le localiser.", "Bien vu. Vlad, adepte de la Psynergie, à ton service.","Non, ton esprit est encore troublé. Réessaye.","Tu as déjà compris que je suis Vlad. Bravo.","Un indice ? Pourquoi en aurais-tu besoin ? Tu connais déjà mon identité.");
 		npcs.add(vlad);
-		Npc sacha = new Npc("Sacha",sachaHint,"Je veux devenir le meilleur dresseur, comme personne avant moi.", "Exact ! Sacha Ketchum, de Bourg-Palette ! Prêt pour un duel ?","Non, mauvais Pokémon. Rappelle ton choix et retente ta chance !","Oui, c’est bien moi, Sacha ! On continue l’aventure ? J'ai des badge à gagner moi !","Un indice ? Pourquoi faire ? T'es pas plus futé qu'un Psyckokwak on dirai !");
+		Npc sacha = new Npc("Sacha",sachaHint,"Je veux devenir le meilleur dresseur, comme personne avant moi.", "", "Sacha", "Mon indice se trouve dans la salle X. À toi de le capturer !", "Exact ! Sacha Ketchum, de Bourg-Palette ! Prêt pour un duel ?","Non, mauvais Pokémon. Rappelle ton choix et retente ta chance !","Oui, c’est bien moi, Sacha ! On continue l’aventure ? J'ai des badge à gagner moi !","Un indice ? Pourquoi faire ? T'es pas plus futé qu'un Psyckokwak on dirai !");
 		npcs.add(sacha);
 		
 		
@@ -423,16 +425,16 @@ public class Main {
 	    //Game creation
 	    Game game = new Game("player", F4, npcs.size(), "Labyrinth: Tales of Gamers", "Vous qui êtes en train de lancer ce jeu, préparez-vous à traverser le quatrième mur. Laissez derrière vous le monde réel et entrez dans un labyrinthe où chaque recoin cache un mystère, chaque pièce un défi, et chaque rencontre une énigme. Ici, les règles ne sont dictées que par votre intuition et votre curiosité. Oserez-vous marcher dans l’inconnu, résoudre les indices disséminés dans ce monde pour percer les identités de ceux qui l’habitent ? Alors, franchissez cette porte. Le labyrinthe vous attend, et ses secrets aussi.", "Tout à coup, les lumières s’éteignent. Dans l’ombre, une silhouette se dessine, puis une autre. Un par un, les personnages du labyrinthe entrent dans la pièce, leurs visages illuminés par une lueur reconnaissante. Vous les avez tous trouvés, tous compris. Ils s’inclinent devant vous, un sourire énigmatique aux lèvres, avant de disparaître dans une douce obscurité. Le labyrinthe s’efface, la pièce s'assombrit, et soudain, vous vous réveillez. Votre manette repose dans vos mains, mais quelque chose vous dit que cette aventure n’était pas qu’un simple jeu. Était-ce réel ? Ou seulement une énigme de plus ? À vous de deviner.");
 	    for (Room room : rooms) {
-	      game.addRoom(room);
+	      	game.addRoom(room);
 	    }
 	    //Management de la game
 	    game.introduce();
 	    while (!game.isTerminated()) {
-	      System.out.println("\n--------------------------------------------------\n");
-	      game.getPlayer().getCurrentRoom().introduce();
-	      game.getPlayer().getCurrentRoom().selectAction();
+	      	System.out.println("\n--------------------------------------------------\n");
+	      	game.getPlayer().getCurrentRoom().introduce();
+	      	game.getPlayer().getCurrentRoom().selectAction();
 	    }
 	    System.out.println("\n--------------------------------------------------\n");
 	    game.terminate();
-	  }
 	}
+}

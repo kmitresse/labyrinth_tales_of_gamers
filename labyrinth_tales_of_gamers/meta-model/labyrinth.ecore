@@ -15,7 +15,7 @@
       <details key="constraints" value="nbNpcPositiveOrNull"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="nbNpcPositiveOrNull" value="self.nbNpc >= 0"/>
+      <details key="nbNpcPositiveOrNull" value="self.nbEnigmas >= 0"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="player" lowerBound="1"
         eType="#//MainCharacter" containment="true" eOpposite="#//MainCharacter/game"/>
@@ -32,11 +32,14 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="epilogue" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbNpc" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbEnigmas" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="aim" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="howToPlay" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="map" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actions" lowerBound="1"
+        upperBound="-1" eType="#//Action" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Room">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -74,6 +77,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entity" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="discovered" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Hint" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -87,9 +92,9 @@
       <details key="constraints" value="nbDiscoveredNpcBorned"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="nbDiscoveredNpcBorned" value="self.nbDiscoveredNpc >= 0 and self.nbDiscoveredNpc &lt;= self.game.nbNpc"/>
+      <details key="nbDiscoveredNpcBorned" value="self.nbDiscoveredEnigmas>= 0 and self.nbDiscoveredEnigmas &lt;= self.game.nbEnigmas"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbDiscoveredNpc" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbDiscoveredEnigmas" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="game" lowerBound="1" eType="#//Game"
         eOpposite="#//Game/player"/>
@@ -99,8 +104,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Npc" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="helloSentence" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="discovered" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="discoveredEnigma" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="validPropositionSentence"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="invalidPropositionSentence"
@@ -109,18 +114,27 @@
         eOpposite="#//Hint/npc"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="currentRoom" lowerBound="1"
         eType="#//Room" eOpposite="#//Room/npc"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="discoveredSentenceNpc"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="discoveredEnigmaSentence"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="discoveredSentenceHint"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enigmaSentence" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hintSentence" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enigmaSolution" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="labelAction"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="labelAction" value="self.label = 'Se déplacer' or self.label = 'Demander l\'indice' or self.label = 'Proposer un nom' or self.label = 'Lire l\'indice'"/>
+      <details key="labelAction" value="self.label = 'MOVE' or self.label = 'TALK' or self.label = 'ASK_HINT' or self.label = 'READ' or self.label = 'PROPOSE'"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="static Label"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Informations" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

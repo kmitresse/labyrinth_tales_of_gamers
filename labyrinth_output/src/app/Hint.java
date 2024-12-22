@@ -1,14 +1,14 @@
 package app;
 
 public class Hint extends Entity{
-  private String content;
+  	private String content;
 
-  public Hint(String name, String content) {
-    super(name);
-    this.content = content;
-  }
+  	public Hint(String name, String content) {
+    	super(name);
+    	this.content = content;
+  	}
 
-  public void getContent() {
-    TextManager.print(this.content, TextManager.YELLOW_BOLD);
-  }
+  	public void getContent() {
+    	TextManager.print(this.content, TextManager.YELLOW);
+  	}
 }

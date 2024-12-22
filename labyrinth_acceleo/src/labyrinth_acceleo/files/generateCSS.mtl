@@ -8,6 +8,7 @@
 main, body {
     width:100%;
 }
+
 body {
     background-color: #f4f1e0;
     display: flex;

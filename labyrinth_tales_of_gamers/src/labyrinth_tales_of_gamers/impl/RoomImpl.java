@@ -670,7 +670,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			}
 			else {
 				final /*@NonInvalid*/ List<Action> actions = this.getActions();
-				final /*@NonInvalid*/ OrderedSetValue BOXED_actions = idResolver.createOrderedSetOfAll(Labyrinth_tales_of_gamersTables.ORD_CLSSid_Action, actions);
+				final /*@NonInvalid*/ OrderedSetValue BOXED_actions = idResolver.createOrderedSetOfAll(Labyrinth_tales_of_gamersTables.ORD_CLSSid_Action_0, actions);
 				final /*@NonInvalid*/ IntegerValue size = CollectionSizeOperation.INSTANCE.evaluate(BOXED_actions);
 				final /*@NonInvalid*/ boolean result = OclComparableGreaterThanOperation.INSTANCE.evaluate(executor, size, Labyrinth_tales_of_gamersTables.INT_0).booleanValue();
 				final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, constraintName, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, Labyrinth_tales_of_gamersTables.INT_0).booleanValue();
@@ -721,7 +721,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 					/*@Caught*/ Object CAUGHT_exists;
 					try {
 						final /*@NonInvalid*/ List<Action> actions = this.getActions();
-						final /*@NonInvalid*/ OrderedSetValue BOXED_actions = idResolver.createOrderedSetOfAll(Labyrinth_tales_of_gamersTables.ORD_CLSSid_Action, actions);
+						final /*@NonInvalid*/ OrderedSetValue BOXED_actions = idResolver.createOrderedSetOfAll(Labyrinth_tales_of_gamersTables.ORD_CLSSid_Action_0, actions);
 						/*@Thrown*/ Object accumulator = ValueUtil.FALSE_VALUE;
 						Iterator<Object> ITERATOR_action = BOXED_actions.iterator();
 						/*@Thrown*/ Boolean exists;
@@ -858,7 +858,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 					/*@Caught*/ Object CAUGHT_exists;
 					try {
 						final /*@NonInvalid*/ List<Action> actions = this.getActions();
-						final /*@NonInvalid*/ OrderedSetValue BOXED_actions = idResolver.createOrderedSetOfAll(Labyrinth_tales_of_gamersTables.ORD_CLSSid_Action, actions);
+						final /*@NonInvalid*/ OrderedSetValue BOXED_actions = idResolver.createOrderedSetOfAll(Labyrinth_tales_of_gamersTables.ORD_CLSSid_Action_0, actions);
 						/*@Thrown*/ Object accumulator = ValueUtil.FALSE_VALUE;
 						Iterator<Object> ITERATOR_action = BOXED_actions.iterator();
 						/*@Thrown*/ Boolean exists;
@@ -995,7 +995,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 					/*@Caught*/ Object CAUGHT_exists;
 					try {
 						final /*@NonInvalid*/ List<Action> actions = this.getActions();
-						final /*@NonInvalid*/ OrderedSetValue BOXED_actions = idResolver.createOrderedSetOfAll(Labyrinth_tales_of_gamersTables.ORD_CLSSid_Action, actions);
+						final /*@NonInvalid*/ OrderedSetValue BOXED_actions = idResolver.createOrderedSetOfAll(Labyrinth_tales_of_gamersTables.ORD_CLSSid_Action_0, actions);
 						/*@Thrown*/ Object accumulator = ValueUtil.FALSE_VALUE;
 						Iterator<Object> ITERATOR_action = BOXED_actions.iterator();
 						/*@Thrown*/ Boolean exists;
