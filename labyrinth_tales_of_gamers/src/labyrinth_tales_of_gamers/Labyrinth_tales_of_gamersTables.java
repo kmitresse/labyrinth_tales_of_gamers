@@ -72,11 +72,8 @@ public class Labyrinth_tales_of_gamersTables extends AbstractTables
 	public static final /*@NonInvalid*/ DataTypeId DATAid_EInt = Labyrinth_tales_of_gamersTables.PACKid_http_c_s_s_www_eclipse_org_s_emf_s_2002_s_Ecore.getDataTypeId("EInt", 0);
 	public static final /*@NonInvalid*/ IntegerValue INT_0 = ValueUtil.integerValueOf("0");
 	public static final /*@NonInvalid*/ String STR_ASK_HINT = "ASK_HINT";
-	public static final /*@NonInvalid*/ String STR_Demander_32_l_39_indice = "Demander l\'indice";
-	public static final /*@NonInvalid*/ String STR_Lire_32_l_39_indice = "Lire l\'indice";
 	public static final /*@NonInvalid*/ String STR_MOVE = "MOVE";
 	public static final /*@NonInvalid*/ String STR_PROPOSE = "PROPOSE";
-	public static final /*@NonInvalid*/ String STR_Proposer_32_un_32_nom = "Proposer un nom";
 	public static final /*@NonInvalid*/ String STR_READ = "READ";
 	public static final /*@NonInvalid*/ String STR_TALK = "TALK";
 	public static final /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_MainCharacter = TypeId.BAG.getSpecializedId(Labyrinth_tales_of_gamersTables.CLSSid_MainCharacter, false, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);

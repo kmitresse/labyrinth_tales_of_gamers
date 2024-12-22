@@ -396,6 +396,26 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 	 */
 	@Override
 	public EOperation getRoom__ExistingAction__DiagnosticChain_Map() {
+		return roomEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getRoom__ReadActionImpliesHintExists__DiagnosticChain_Map() {
+		return roomEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getRoom__AskHintActionImpliesNpcExists__DiagnosticChain_Map() {
 		return roomEClass.getEOperations().get(2);
 	}
 
@@ -405,17 +425,7 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EOperation getRoom__NpcActionImpliesNpcExists__DiagnosticChain_Map() {
-		return roomEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getRoom__HintActionImpliesHintExists__DiagnosticChain_Map() {
+	public EOperation getRoom__ProposeActionImpliesNpcExists__DiagnosticChain_Map() {
 		return roomEClass.getEOperations().get(4);
 	}
 
@@ -425,7 +435,7 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 	 * @generated
 	 */
 	@Override
-	public EOperation getRoom__ProposeActionImpliesNpcExists__DiagnosticChain_Map() {
+	public EOperation getRoom__TalkActionImpliesNpcExists__DiagnosticChain_Map() {
 		return roomEClass.getEOperations().get(5);
 	}
 
@@ -436,7 +446,7 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 	 */
 	@Override
 	public EOperation getRoom__NotHisOwnExit__DiagnosticChain_Map() {
-		return roomEClass.getEOperations().get(0);
+		return roomEClass.getEOperations().get(3);
 	}
 
 	/**
@@ -446,7 +456,7 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 	 */
 	@Override
 	public EOperation getRoom__ExistingAnExit__DiagnosticChain_Map() {
-		return roomEClass.getEOperations().get(1);
+		return roomEClass.getEOperations().get(6);
 	}
 
 	/**
@@ -793,12 +803,13 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 		createEReference(roomEClass, ROOM__ACTIONS);
 		createEReference(roomEClass, ROOM__NPC);
 		createEAttribute(roomEClass, ROOM__BACKEND_NAME);
-		createEOperation(roomEClass, ROOM___NOT_HIS_OWN_EXIT__DIAGNOSTICCHAIN_MAP);
-		createEOperation(roomEClass, ROOM___EXISTING_AN_EXIT__DIAGNOSTICCHAIN_MAP);
 		createEOperation(roomEClass, ROOM___EXISTING_ACTION__DIAGNOSTICCHAIN_MAP);
-		createEOperation(roomEClass, ROOM___NPC_ACTION_IMPLIES_NPC_EXISTS__DIAGNOSTICCHAIN_MAP);
-		createEOperation(roomEClass, ROOM___HINT_ACTION_IMPLIES_HINT_EXISTS__DIAGNOSTICCHAIN_MAP);
+		createEOperation(roomEClass, ROOM___READ_ACTION_IMPLIES_HINT_EXISTS__DIAGNOSTICCHAIN_MAP);
+		createEOperation(roomEClass, ROOM___ASK_HINT_ACTION_IMPLIES_NPC_EXISTS__DIAGNOSTICCHAIN_MAP);
+		createEOperation(roomEClass, ROOM___NOT_HIS_OWN_EXIT__DIAGNOSTICCHAIN_MAP);
 		createEOperation(roomEClass, ROOM___PROPOSE_ACTION_IMPLIES_NPC_EXISTS__DIAGNOSTICCHAIN_MAP);
+		createEOperation(roomEClass, ROOM___TALK_ACTION_IMPLIES_NPC_EXISTS__DIAGNOSTICCHAIN_MAP);
+		createEOperation(roomEClass, ROOM___EXISTING_AN_EXIT__DIAGNOSTICCHAIN_MAP);
 
 		entityEClass = createEClass(ENTITY);
 		createEAttribute(entityEClass, ENTITY__NAME);
@@ -902,24 +913,6 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 		initEReference(getRoom_Npc(), this.getNpc(), this.getNpc_CurrentRoom(), "npc", null, 0, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRoom_BackendName(), ecorePackage.getEString(), "backendName", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getRoom__NotHisOwnExit__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "notHisOwnExit", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getRoom__ExistingAnExit__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "existingAnExit", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		op = initEOperation(getRoom__ExistingAction__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "existingAction", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
@@ -929,7 +922,7 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getRoom__NpcActionImpliesNpcExists__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "npcActionImpliesNpcExists", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getRoom__ReadActionImpliesHintExists__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "readActionImpliesHintExists", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -938,7 +931,16 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getRoom__HintActionImpliesHintExists__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "hintActionImpliesHintExists", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getRoom__AskHintActionImpliesNpcExists__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "askHintActionImpliesNpcExists", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getRoom__NotHisOwnExit__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "notHisOwnExit", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -948,6 +950,24 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getRoom__ProposeActionImpliesNpcExists__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "proposeActionImpliesNpcExists", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getRoom__TalkActionImpliesNpcExists__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "talkActionImpliesNpcExists", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getRoom__ExistingAnExit__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "existingAnExit", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -1041,7 +1061,7 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 		  (roomEClass,
 		   source,
 		   new String[] {
-			   "constraints", "proposeActionImpliesNpcExists"
+			   "constraints", "existingAnExit"
 		   });
 		addAnnotation
 		  (mainCharacterEClass,
@@ -1072,40 +1092,46 @@ public class Labyrinth_tales_of_gamersPackageImpl extends EPackageImpl implement
 			   "body", "self.nbEnigmas >= 0"
 		   });
 		addAnnotation
-		  (getRoom__NotHisOwnExit__DiagnosticChain_Map(),
-		   source,
-		   new String[] {
-			   "body", "self.east <> self and self.north <> self and self.south <> self and self.west <> self"
-		   });
-		addAnnotation
-		  (getRoom__ExistingAnExit__DiagnosticChain_Map(),
-		   source,
-		   new String[] {
-			   "body", "not self.east.oclIsUndefined() or not self.north.oclIsUndefined() or not self.south.oclIsUndefined() or not self.west.oclIsUndefined()"
-		   });
-		addAnnotation
 		  (getRoom__ExistingAction__DiagnosticChain_Map(),
 		   source,
 		   new String[] {
 			   "body", "self.actions->size() > 0"
 		   });
 		addAnnotation
-		  (getRoom__NpcActionImpliesNpcExists__DiagnosticChain_Map(),
+		  (getRoom__ReadActionImpliesHintExists__DiagnosticChain_Map(),
 		   source,
 		   new String[] {
-			   "body", "self.actions->exists(action | action.label = \'Demander l\\\'indice\') implies not self.npc.oclIsUndefined()"
+			   "body", "self.actions->exists(action | action.label = \'READ\') implies not self.hint.oclIsUndefined()"
 		   });
 		addAnnotation
-		  (getRoom__HintActionImpliesHintExists__DiagnosticChain_Map(),
+		  (getRoom__AskHintActionImpliesNpcExists__DiagnosticChain_Map(),
 		   source,
 		   new String[] {
-			   "body", "self.actions->exists(action | action.label = \'Lire l\\\'indice\') implies not self.npc.oclIsUndefined()"
+			   "body", "self.actions->exists(action | action.label = \'ASK_HINT\') implies not self.npc.oclIsUndefined()"
+		   });
+		addAnnotation
+		  (getRoom__NotHisOwnExit__DiagnosticChain_Map(),
+		   source,
+		   new String[] {
+			   "body", "self.east <> self and self.north <> self and self.south <> self and self.west <> self"
 		   });
 		addAnnotation
 		  (getRoom__ProposeActionImpliesNpcExists__DiagnosticChain_Map(),
 		   source,
 		   new String[] {
-			   "body", "self.actions->exists(action | action.label = \'Proposer un nom\') implies not self.npc.oclIsUndefined()"
+			   "body", "self.actions->exists(action | action.label = \'PROPOSE\') implies not self.npc.oclIsUndefined()"
+		   });
+		addAnnotation
+		  (getRoom__TalkActionImpliesNpcExists__DiagnosticChain_Map(),
+		   source,
+		   new String[] {
+			   "body", "self.actions->exists(action | action.label = \'TALK\') implies not self.npc.oclIsUndefined()"
+		   });
+		addAnnotation
+		  (getRoom__ExistingAnExit__DiagnosticChain_Map(),
+		   source,
+		   new String[] {
+			   "body", "not self.east.oclIsUndefined() or not self.north.oclIsUndefined() or not self.south.oclIsUndefined() or not self.west.oclIsUndefined()"
 		   });
 		addAnnotation
 		  (getMainCharacter__NbDiscoveredNpcBorned__DiagnosticChain_Map(),

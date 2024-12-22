@@ -43,15 +43,16 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Room">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="existingAnExit notHisOwnExit existingAction npcActionImpliesNpcExists proposeActionImpliesNpcExists hintActionImpliesHintExists"/>
+      <details key="constraints" value="existingAnExit notHisOwnExit existingAction talkActionImpliesNpcExists askHintActionImpliesNpcExists proposeActionImpliesNpcExists readActionImpliesHintExists"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="existingAnExit" value="not self.east.oclIsUndefined() or not self.north.oclIsUndefined() or not self.south.oclIsUndefined() or not self.west.oclIsUndefined()"/>
       <details key="notHisOwnExit" value="self.east &lt;> self and self.north &lt;> self and self.south &lt;> self and self.west &lt;> self"/>
       <details key="existingAction" value="self.actions->size() > 0"/>
-      <details key="npcActionImpliesNpcExists" value="self.actions->exists(action | action.label = 'Demander l\'indice') implies not self.npc.oclIsUndefined()"/>
-      <details key="proposeActionImpliesNpcExists" value="self.actions->exists(action | action.label = 'Proposer un nom') implies not self.npc.oclIsUndefined()"/>
-      <details key="hintActionImpliesHintExists" value="self.actions->exists(action | action.label = 'Lire l\'indice') implies not self.npc.oclIsUndefined()"/>
+      <details key="talkActionImpliesNpcExists" value="self.actions->exists(action | action.label = 'TALK') implies not self.npc.oclIsUndefined()"/>
+      <details key="askHintActionImpliesNpcExists" value="self.actions->exists(action | action.label = 'ASK_HINT') implies not self.npc.oclIsUndefined()"/>
+      <details key="proposeActionImpliesNpcExists" value="self.actions->exists(action | action.label = 'PROPOSE') implies not self.npc.oclIsUndefined()"/>
+      <details key="readActionImpliesHintExists" value="self.actions->exists(action | action.label = 'READ') implies not self.hint.oclIsUndefined()"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="north" eType="#//Room"
         eOpposite="#//Room/south"/>

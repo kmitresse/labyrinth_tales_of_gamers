@@ -463,7 +463,7 @@
       name="F3"
       backendName="F3">
     <hint name="oriHint"
-        label="Je suis une lueur fragile qui illumine un monde sombre"
+        label="Je suis une lueur fragile qui illumine un monde sombre face à un hibou ténébreux."
         npc="//@rooms.59/@npc"/>
   </rooms>
   <rooms west="//@rooms.42"
@@ -827,7 +827,7 @@
         enigmaSolution="Sacha"/>
   </rooms>
   <actions label="MOVE"
-      name="Se déplacer"
+      name="Se déplacer "
       Informations="Changer de pièces"/>
   <actions label="PROPOSE"
       name="Proposer un nom"

@@ -304,49 +304,40 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	int ROOM_FEATURE_COUNT = 10;
 
 	/**
-	 * The operation id for the '<em>Not His Own Exit</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM___NOT_HIS_OWN_EXIT__DIAGNOSTICCHAIN_MAP = 0;
-
-	/**
-	 * The operation id for the '<em>Existing An Exit</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM___EXISTING_AN_EXIT__DIAGNOSTICCHAIN_MAP = 1;
-
-	/**
 	 * The operation id for the '<em>Existing Action</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM___EXISTING_ACTION__DIAGNOSTICCHAIN_MAP = 2;
+	int ROOM___EXISTING_ACTION__DIAGNOSTICCHAIN_MAP = 0;
 
 	/**
-	 * The operation id for the '<em>Npc Action Implies Npc Exists</em>' operation.
+	 * The operation id for the '<em>Read Action Implies Hint Exists</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM___NPC_ACTION_IMPLIES_NPC_EXISTS__DIAGNOSTICCHAIN_MAP = 3;
+	int ROOM___READ_ACTION_IMPLIES_HINT_EXISTS__DIAGNOSTICCHAIN_MAP = 1;
 
 	/**
-	 * The operation id for the '<em>Hint Action Implies Hint Exists</em>' operation.
+	 * The operation id for the '<em>Ask Hint Action Implies Npc Exists</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM___HINT_ACTION_IMPLIES_HINT_EXISTS__DIAGNOSTICCHAIN_MAP = 4;
+	int ROOM___ASK_HINT_ACTION_IMPLIES_NPC_EXISTS__DIAGNOSTICCHAIN_MAP = 2;
+
+	/**
+	 * The operation id for the '<em>Not His Own Exit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM___NOT_HIS_OWN_EXIT__DIAGNOSTICCHAIN_MAP = 3;
 
 	/**
 	 * The operation id for the '<em>Propose Action Implies Npc Exists</em>' operation.
@@ -355,7 +346,25 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM___PROPOSE_ACTION_IMPLIES_NPC_EXISTS__DIAGNOSTICCHAIN_MAP = 5;
+	int ROOM___PROPOSE_ACTION_IMPLIES_NPC_EXISTS__DIAGNOSTICCHAIN_MAP = 4;
+
+	/**
+	 * The operation id for the '<em>Talk Action Implies Npc Exists</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM___TALK_ACTION_IMPLIES_NPC_EXISTS__DIAGNOSTICCHAIN_MAP = 5;
+
+	/**
+	 * The operation id for the '<em>Existing An Exit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM___EXISTING_AN_EXIT__DIAGNOSTICCHAIN_MAP = 6;
 
 	/**
 	 * The number of operations of the '<em>Room</em>' class.
@@ -364,7 +373,7 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_OPERATION_COUNT = 6;
+	int ROOM_OPERATION_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link labyrinth_tales_of_gamers.impl.EntityImpl <em>Entity</em>}' class.
@@ -1049,24 +1058,24 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	EOperation getRoom__ExistingAction__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for the '{@link labyrinth_tales_of_gamers.Room#npcActionImpliesNpcExists(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Npc Action Implies Npc Exists</em>}' operation.
+	 * Returns the meta object for the '{@link labyrinth_tales_of_gamers.Room#readActionImpliesHintExists(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Read Action Implies Hint Exists</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Npc Action Implies Npc Exists</em>' operation.
-	 * @see labyrinth_tales_of_gamers.Room#npcActionImpliesNpcExists(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @return the meta object for the '<em>Read Action Implies Hint Exists</em>' operation.
+	 * @see labyrinth_tales_of_gamers.Room#readActionImpliesHintExists(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getRoom__NpcActionImpliesNpcExists__DiagnosticChain_Map();
+	EOperation getRoom__ReadActionImpliesHintExists__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for the '{@link labyrinth_tales_of_gamers.Room#hintActionImpliesHintExists(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Hint Action Implies Hint Exists</em>}' operation.
+	 * Returns the meta object for the '{@link labyrinth_tales_of_gamers.Room#askHintActionImpliesNpcExists(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Ask Hint Action Implies Npc Exists</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Hint Action Implies Hint Exists</em>' operation.
-	 * @see labyrinth_tales_of_gamers.Room#hintActionImpliesHintExists(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @return the meta object for the '<em>Ask Hint Action Implies Npc Exists</em>' operation.
+	 * @see labyrinth_tales_of_gamers.Room#askHintActionImpliesNpcExists(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getRoom__HintActionImpliesHintExists__DiagnosticChain_Map();
+	EOperation getRoom__AskHintActionImpliesNpcExists__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link labyrinth_tales_of_gamers.Room#proposeActionImpliesNpcExists(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Propose Action Implies Npc Exists</em>}' operation.
@@ -1077,6 +1086,16 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getRoom__ProposeActionImpliesNpcExists__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link labyrinth_tales_of_gamers.Room#talkActionImpliesNpcExists(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Talk Action Implies Npc Exists</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Talk Action Implies Npc Exists</em>' operation.
+	 * @see labyrinth_tales_of_gamers.Room#talkActionImpliesNpcExists(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getRoom__TalkActionImpliesNpcExists__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link labyrinth_tales_of_gamers.Room#notHisOwnExit(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Not His Own Exit</em>}' operation.
@@ -1638,20 +1657,20 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 		EOperation ROOM___EXISTING_ACTION__DIAGNOSTICCHAIN_MAP = eINSTANCE.getRoom__ExistingAction__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '<em><b>Npc Action Implies Npc Exists</b></em>' operation.
+		 * The meta object literal for the '<em><b>Read Action Implies Hint Exists</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ROOM___NPC_ACTION_IMPLIES_NPC_EXISTS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getRoom__NpcActionImpliesNpcExists__DiagnosticChain_Map();
+		EOperation ROOM___READ_ACTION_IMPLIES_HINT_EXISTS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getRoom__ReadActionImpliesHintExists__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '<em><b>Hint Action Implies Hint Exists</b></em>' operation.
+		 * The meta object literal for the '<em><b>Ask Hint Action Implies Npc Exists</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ROOM___HINT_ACTION_IMPLIES_HINT_EXISTS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getRoom__HintActionImpliesHintExists__DiagnosticChain_Map();
+		EOperation ROOM___ASK_HINT_ACTION_IMPLIES_NPC_EXISTS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getRoom__AskHintActionImpliesNpcExists__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>Propose Action Implies Npc Exists</b></em>' operation.
@@ -1660,6 +1679,14 @@ public interface Labyrinth_tales_of_gamersPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ROOM___PROPOSE_ACTION_IMPLIES_NPC_EXISTS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getRoom__ProposeActionImpliesNpcExists__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Talk Action Implies Npc Exists</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ROOM___TALK_ACTION_IMPLIES_NPC_EXISTS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getRoom__TalkActionImpliesNpcExists__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>Not His Own Exit</b></em>' operation.

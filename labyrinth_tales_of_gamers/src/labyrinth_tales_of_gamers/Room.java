@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see labyrinth_tales_of_gamers.Labyrinth_tales_of_gamersPackage#getRoom()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='proposeActionImpliesNpcExists'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='existingAnExit'"
  * @generated
  */
 public interface Room extends EObject {
@@ -270,26 +270,34 @@ public interface Room extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.actions-&gt;exists(action | action.label = \'Demander l\\\'indice\') implies not self.npc.oclIsUndefined()'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.actions-&gt;exists(action | action.label = \'READ\') implies not self.hint.oclIsUndefined()'"
 	 * @generated
 	 */
-	boolean npcActionImpliesNpcExists(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean readActionImpliesHintExists(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.actions-&gt;exists(action | action.label = \'Lire l\\\'indice\') implies not self.npc.oclIsUndefined()'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.actions-&gt;exists(action | action.label = \'ASK_HINT\') implies not self.npc.oclIsUndefined()'"
 	 * @generated
 	 */
-	boolean hintActionImpliesHintExists(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean askHintActionImpliesNpcExists(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.actions-&gt;exists(action | action.label = \'Proposer un nom\') implies not self.npc.oclIsUndefined()'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.actions-&gt;exists(action | action.label = \'PROPOSE\') implies not self.npc.oclIsUndefined()'"
 	 * @generated
 	 */
 	boolean proposeActionImpliesNpcExists(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.actions-&gt;exists(action | action.label = \'TALK\') implies not self.npc.oclIsUndefined()'"
+	 * @generated
+	 */
+	boolean talkActionImpliesNpcExists(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

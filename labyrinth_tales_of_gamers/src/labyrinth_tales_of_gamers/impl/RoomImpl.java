@@ -689,27 +689,27 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 */
 	@Override
-	public boolean npcActionImpliesNpcExists(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		final String constraintName = "Room::npcActionImpliesNpcExists";
+	public boolean readActionImpliesHintExists(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		final String constraintName = "Room::readActionImpliesHintExists";
 		try {
 			/**
 			 *
-			 * inv npcActionImpliesNpcExists:
+			 * inv readActionImpliesHintExists:
 			 *   let severity : Integer[1] = constraintName.getSeverity()
 			 *   in
 			 *     if severity <= 0
 			 *     then true
 			 *     else
 			 *       let
-			 *         result : Boolean[?] = self.actions->exists(action | action.label = 'Demander l\'indice') implies
-			 *         not self.npc.oclIsUndefined()
+			 *         result : Boolean[?] = self.actions->exists(action | action.label = 'READ') implies
+			 *         not self.hint.oclIsUndefined()
 			 *       in
 			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
 			 *     endif
 			 */
 			final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this);
 			final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
-			final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, Labyrinth_tales_of_gamersPackage.Literals.ROOM___NPC_ACTION_IMPLIES_NPC_EXISTS__DIAGNOSTICCHAIN_MAP);
+			final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, Labyrinth_tales_of_gamersPackage.Literals.ROOM___READ_ACTION_IMPLIES_HINT_EXISTS__DIAGNOSTICCHAIN_MAP);
 			final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, Labyrinth_tales_of_gamersTables.INT_0).booleanValue();
 			/*@NonInvalid*/ boolean IF_le;
 			if (le) {
@@ -737,7 +737,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 							}
 							/*@NonInvalid*/ Action action = (Action)ITERATOR_action.next();
 							/**
-							 * action.label = 'Demander l\'indice'
+							 * action.label = 'READ'
 							 */
 							/*@Caught*/ Object CAUGHT_eq;
 							try {
@@ -745,7 +745,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 									throw new InvalidValueException("Null source for \'\'http://labyrinthtalesofgamers.com/\'::Action::label\'");
 								}
 								final /*@Thrown*/ String label = action.getLabel();
-								final /*@Thrown*/ boolean eq = label.equals(Labyrinth_tales_of_gamersTables.STR_Demander_32_l_39_indice);
+								final /*@Thrown*/ boolean eq = label.equals(Labyrinth_tales_of_gamersTables.STR_READ);
 								CAUGHT_eq = eq;
 							}
 							catch (Exception e) {
@@ -776,8 +776,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 						result = ValueUtil.TRUE_VALUE;
 					}
 					else {
-						final /*@NonInvalid*/ Npc npc = this.getNpc();
-						final /*@NonInvalid*/ boolean oclIsUndefined = npc == null;
+						final /*@NonInvalid*/ Hint hint = this.getHint();
+						final /*@NonInvalid*/ boolean oclIsUndefined = hint == null;
 						final /*@NonInvalid*/ Boolean not;
 						if (!oclIsUndefined) {
 							not = ValueUtil.TRUE_VALUE;
@@ -826,19 +826,19 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 */
 	@Override
-	public boolean hintActionImpliesHintExists(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		final String constraintName = "Room::hintActionImpliesHintExists";
+	public boolean askHintActionImpliesNpcExists(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		final String constraintName = "Room::askHintActionImpliesNpcExists";
 		try {
 			/**
 			 *
-			 * inv hintActionImpliesHintExists:
+			 * inv askHintActionImpliesNpcExists:
 			 *   let severity : Integer[1] = constraintName.getSeverity()
 			 *   in
 			 *     if severity <= 0
 			 *     then true
 			 *     else
 			 *       let
-			 *         result : Boolean[?] = self.actions->exists(action | action.label = 'Lire l\'indice') implies
+			 *         result : Boolean[?] = self.actions->exists(action | action.label = 'ASK_HINT') implies
 			 *         not self.npc.oclIsUndefined()
 			 *       in
 			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
@@ -846,7 +846,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			 */
 			final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this);
 			final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
-			final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, Labyrinth_tales_of_gamersPackage.Literals.ROOM___HINT_ACTION_IMPLIES_HINT_EXISTS__DIAGNOSTICCHAIN_MAP);
+			final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, Labyrinth_tales_of_gamersPackage.Literals.ROOM___ASK_HINT_ACTION_IMPLIES_NPC_EXISTS__DIAGNOSTICCHAIN_MAP);
 			final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, Labyrinth_tales_of_gamersTables.INT_0).booleanValue();
 			/*@NonInvalid*/ boolean IF_le;
 			if (le) {
@@ -874,7 +874,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 							}
 							/*@NonInvalid*/ Action action = (Action)ITERATOR_action.next();
 							/**
-							 * action.label = 'Lire l\'indice'
+							 * action.label = 'ASK_HINT'
 							 */
 							/*@Caught*/ Object CAUGHT_eq;
 							try {
@@ -882,7 +882,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 									throw new InvalidValueException("Null source for \'\'http://labyrinthtalesofgamers.com/\'::Action::label\'");
 								}
 								final /*@Thrown*/ String label = action.getLabel();
-								final /*@Thrown*/ boolean eq = label.equals(Labyrinth_tales_of_gamersTables.STR_Lire_32_l_39_indice);
+								final /*@Thrown*/ boolean eq = label.equals(Labyrinth_tales_of_gamersTables.STR_ASK_HINT);
 								CAUGHT_eq = eq;
 							}
 							catch (Exception e) {
@@ -975,7 +975,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			 *     then true
 			 *     else
 			 *       let
-			 *         result : Boolean[?] = self.actions->exists(action | action.label = 'Proposer un nom') implies
+			 *         result : Boolean[?] = self.actions->exists(action | action.label = 'PROPOSE') implies
 			 *         not self.npc.oclIsUndefined()
 			 *       in
 			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
@@ -1011,7 +1011,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 							}
 							/*@NonInvalid*/ Action action = (Action)ITERATOR_action.next();
 							/**
-							 * action.label = 'Proposer un nom'
+							 * action.label = 'PROPOSE'
 							 */
 							/*@Caught*/ Object CAUGHT_eq;
 							try {
@@ -1019,7 +1019,144 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 									throw new InvalidValueException("Null source for \'\'http://labyrinthtalesofgamers.com/\'::Action::label\'");
 								}
 								final /*@Thrown*/ String label = action.getLabel();
-								final /*@Thrown*/ boolean eq = label.equals(Labyrinth_tales_of_gamersTables.STR_Proposer_32_un_32_nom);
+								final /*@Thrown*/ boolean eq = label.equals(Labyrinth_tales_of_gamersTables.STR_PROPOSE);
+								CAUGHT_eq = eq;
+							}
+							catch (Exception e) {
+								CAUGHT_eq = ValueUtil.createInvalidValue(e);
+							}
+							//
+							if (CAUGHT_eq == ValueUtil.TRUE_VALUE) {					// Normal successful body evaluation result
+								exists = ValueUtil.TRUE_VALUE;
+								break;														// Stop immediately
+							}
+							else if (CAUGHT_eq == ValueUtil.FALSE_VALUE) {				// Normal unsuccessful body evaluation result
+								;															// Carry on
+							}
+							else if (CAUGHT_eq instanceof InvalidValueException) {		// Abnormal exception evaluation result
+								accumulator = CAUGHT_eq;									// Cache an exception failure
+							}
+							else {															// Impossible badly typed result
+								accumulator = new InvalidValueException(PivotMessages.NonBooleanBody, "exists");
+							}
+						}
+						CAUGHT_exists = exists;
+					}
+					catch (Exception e) {
+						CAUGHT_exists = ValueUtil.createInvalidValue(e);
+					}
+					final /*@Thrown*/ Boolean result;
+					if (CAUGHT_exists == ValueUtil.FALSE_VALUE) {
+						result = ValueUtil.TRUE_VALUE;
+					}
+					else {
+						final /*@NonInvalid*/ Npc npc = this.getNpc();
+						final /*@NonInvalid*/ boolean oclIsUndefined = npc == null;
+						final /*@NonInvalid*/ Boolean not;
+						if (!oclIsUndefined) {
+							not = ValueUtil.TRUE_VALUE;
+						}
+						else {
+							if (oclIsUndefined) {
+								not = ValueUtil.FALSE_VALUE;
+							}
+							else {
+								not = null;
+							}
+						}
+						if (not == ValueUtil.TRUE_VALUE) {
+							result = ValueUtil.TRUE_VALUE;
+						}
+						else {
+							if (CAUGHT_exists instanceof InvalidValueException) {
+								throw (InvalidValueException)CAUGHT_exists;
+							}
+							if ((CAUGHT_exists == null) || (not == null)) {
+								result = null;
+							}
+							else {
+								result = ValueUtil.FALSE_VALUE;
+							}
+						}
+					}
+					CAUGHT_result = result;
+				}
+				catch (Exception e) {
+					CAUGHT_result = ValueUtil.createInvalidValue(e);
+				}
+				final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, constraintName, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_result, Labyrinth_tales_of_gamersTables.INT_0).booleanValue();
+				IF_le = logDiagnostic;
+			}
+			return IF_le;
+		}
+		catch (Throwable e) {
+			return ValueUtil.validationFailedDiagnostic(constraintName, this, diagnostics, context, e);
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean talkActionImpliesNpcExists(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		final String constraintName = "Room::talkActionImpliesNpcExists";
+		try {
+			/**
+			 *
+			 * inv talkActionImpliesNpcExists:
+			 *   let severity : Integer[1] = constraintName.getSeverity()
+			 *   in
+			 *     if severity <= 0
+			 *     then true
+			 *     else
+			 *       let
+			 *         result : Boolean[?] = self.actions->exists(action | action.label = 'TALK') implies
+			 *         not self.npc.oclIsUndefined()
+			 *       in
+			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+			 *     endif
+			 */
+			final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this);
+			final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+			final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, Labyrinth_tales_of_gamersPackage.Literals.ROOM___TALK_ACTION_IMPLIES_NPC_EXISTS__DIAGNOSTICCHAIN_MAP);
+			final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, Labyrinth_tales_of_gamersTables.INT_0).booleanValue();
+			/*@NonInvalid*/ boolean IF_le;
+			if (le) {
+				IF_le = true;
+			}
+			else {
+				/*@Caught*/ Object CAUGHT_result;
+				try {
+					/*@Caught*/ Object CAUGHT_exists;
+					try {
+						final /*@NonInvalid*/ List<Action> actions = this.getActions();
+						final /*@NonInvalid*/ OrderedSetValue BOXED_actions = idResolver.createOrderedSetOfAll(Labyrinth_tales_of_gamersTables.ORD_CLSSid_Action_0, actions);
+						/*@Thrown*/ Object accumulator = ValueUtil.FALSE_VALUE;
+						Iterator<Object> ITERATOR_action = BOXED_actions.iterator();
+						/*@Thrown*/ Boolean exists;
+						while (true) {
+							if (!ITERATOR_action.hasNext()) {
+								if (accumulator == ValueUtil.FALSE_VALUE) {
+									exists = ValueUtil.FALSE_VALUE;
+								}
+								else {
+									throw (InvalidValueException)accumulator;
+								}
+								break;
+							}
+							/*@NonInvalid*/ Action action = (Action)ITERATOR_action.next();
+							/**
+							 * action.label = 'TALK'
+							 */
+							/*@Caught*/ Object CAUGHT_eq;
+							try {
+								if (action == null) {
+									throw new InvalidValueException("Null source for \'\'http://labyrinthtalesofgamers.com/\'::Action::label\'");
+								}
+								final /*@Thrown*/ String label = action.getLabel();
+								final /*@Thrown*/ boolean eq = label.equals(Labyrinth_tales_of_gamersTables.STR_TALK);
 								CAUGHT_eq = eq;
 							}
 							catch (Exception e) {
@@ -1628,18 +1765,20 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case Labyrinth_tales_of_gamersPackage.ROOM___NOT_HIS_OWN_EXIT__DIAGNOSTICCHAIN_MAP:
-				return notHisOwnExit((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case Labyrinth_tales_of_gamersPackage.ROOM___EXISTING_AN_EXIT__DIAGNOSTICCHAIN_MAP:
-				return existingAnExit((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 			case Labyrinth_tales_of_gamersPackage.ROOM___EXISTING_ACTION__DIAGNOSTICCHAIN_MAP:
 				return existingAction((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case Labyrinth_tales_of_gamersPackage.ROOM___NPC_ACTION_IMPLIES_NPC_EXISTS__DIAGNOSTICCHAIN_MAP:
-				return npcActionImpliesNpcExists((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case Labyrinth_tales_of_gamersPackage.ROOM___HINT_ACTION_IMPLIES_HINT_EXISTS__DIAGNOSTICCHAIN_MAP:
-				return hintActionImpliesHintExists((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case Labyrinth_tales_of_gamersPackage.ROOM___READ_ACTION_IMPLIES_HINT_EXISTS__DIAGNOSTICCHAIN_MAP:
+				return readActionImpliesHintExists((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case Labyrinth_tales_of_gamersPackage.ROOM___ASK_HINT_ACTION_IMPLIES_NPC_EXISTS__DIAGNOSTICCHAIN_MAP:
+				return askHintActionImpliesNpcExists((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case Labyrinth_tales_of_gamersPackage.ROOM___NOT_HIS_OWN_EXIT__DIAGNOSTICCHAIN_MAP:
+				return notHisOwnExit((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 			case Labyrinth_tales_of_gamersPackage.ROOM___PROPOSE_ACTION_IMPLIES_NPC_EXISTS__DIAGNOSTICCHAIN_MAP:
 				return proposeActionImpliesNpcExists((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case Labyrinth_tales_of_gamersPackage.ROOM___TALK_ACTION_IMPLIES_NPC_EXISTS__DIAGNOSTICCHAIN_MAP:
+				return talkActionImpliesNpcExists((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case Labyrinth_tales_of_gamersPackage.ROOM___EXISTING_AN_EXIT__DIAGNOSTICCHAIN_MAP:
+				return existingAnExit((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

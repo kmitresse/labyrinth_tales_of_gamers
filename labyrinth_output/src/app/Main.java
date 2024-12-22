@@ -42,7 +42,7 @@ public class Main {
 		hints.add(doomguyHint);
 		Hint marcusFenixHint = new Hint("marcusFenixHint","Je combats les Locustes avec mon fusil Lancer.");
 		hints.add(marcusFenixHint);
-		Hint oriHint = new Hint("oriHint","Je suis une lueur fragile qui illumine un monde sombre");
+		Hint oriHint = new Hint("oriHint","Je suis une lueur fragile qui illumine un monde sombre face à un hibou ténébreux.");
 		hints.add(oriHint);
 		Hint madelineHint = new Hint("madelineHint","Je suis une jeune femme qui affronte ses propres démons en montagne.");
 		hints.add(madelineHint);

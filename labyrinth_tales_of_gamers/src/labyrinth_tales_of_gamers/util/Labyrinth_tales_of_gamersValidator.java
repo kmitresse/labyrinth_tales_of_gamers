@@ -53,23 +53,23 @@ public class Labyrinth_tales_of_gamersValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ROOM__EXISTING_ACTION = 4;
+	public static final int ROOM__EXISTING_ACTION = 2;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Npc Action Implies Npc Exists' of 'Room'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Read Action Implies Hint Exists' of 'Room'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ROOM__NPC_ACTION_IMPLIES_NPC_EXISTS = 5;
+	public static final int ROOM__READ_ACTION_IMPLIES_HINT_EXISTS = 3;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Hint Action Implies Hint Exists' of 'Room'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Ask Hint Action Implies Npc Exists' of 'Room'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ROOM__HINT_ACTION_IMPLIES_HINT_EXISTS = 6;
+	public static final int ROOM__ASK_HINT_ACTION_IMPLIES_NPC_EXISTS = 4;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Propose Action Implies Npc Exists' of 'Room'.
@@ -77,7 +77,15 @@ public class Labyrinth_tales_of_gamersValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ROOM__PROPOSE_ACTION_IMPLIES_NPC_EXISTS = 7;
+	public static final int ROOM__PROPOSE_ACTION_IMPLIES_NPC_EXISTS = 6;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Talk Action Implies Npc Exists' of 'Room'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int ROOM__TALK_ACTION_IMPLIES_NPC_EXISTS = 7;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Not His Own Exit' of 'Room'.
@@ -85,7 +93,7 @@ public class Labyrinth_tales_of_gamersValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ROOM__NOT_HIS_OWN_EXIT = 2;
+	public static final int ROOM__NOT_HIS_OWN_EXIT = 5;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Existing An Exit' of 'Room'.
@@ -93,7 +101,7 @@ public class Labyrinth_tales_of_gamersValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ROOM__EXISTING_AN_EXIT = 3;
+	public static final int ROOM__EXISTING_AN_EXIT = 8;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Nb Discovered Npc Borned' of 'Main Character'.
@@ -101,7 +109,7 @@ public class Labyrinth_tales_of_gamersValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MAIN_CHARACTER__NB_DISCOVERED_NPC_BORNED = 8;
+	public static final int MAIN_CHARACTER__NB_DISCOVERED_NPC_BORNED = 9;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Label Action' of 'Action'.
@@ -109,7 +117,7 @@ public class Labyrinth_tales_of_gamersValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ACTION__LABEL_ACTION = 9;
+	public static final int ACTION__LABEL_ACTION = 10;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -117,7 +125,7 @@ public class Labyrinth_tales_of_gamersValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 9;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 10;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -220,12 +228,13 @@ public class Labyrinth_tales_of_gamersValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(room, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(room, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(room, diagnostics, context);
-		if (result || diagnostics != null) result &= validateRoom_proposeActionImpliesNpcExists(room, diagnostics, context);
-		if (result || diagnostics != null) result &= validateRoom_notHisOwnExit(room, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRoom_existingAnExit(room, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRoom_existingAction(room, diagnostics, context);
-		if (result || diagnostics != null) result &= validateRoom_npcActionImpliesNpcExists(room, diagnostics, context);
-		if (result || diagnostics != null) result &= validateRoom_hintActionImpliesHintExists(room, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRoom_readActionImpliesHintExists(room, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRoom_askHintActionImpliesNpcExists(room, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRoom_notHisOwnExit(room, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRoom_proposeActionImpliesNpcExists(room, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRoom_talkActionImpliesNpcExists(room, diagnostics, context);
 		return result;
 	}
 
@@ -237,6 +246,16 @@ public class Labyrinth_tales_of_gamersValidator extends EObjectValidator {
 	 */
 	public boolean validateRoom_proposeActionImpliesNpcExists(Room room, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return room.proposeActionImpliesNpcExists(diagnostics, context);
+	}
+
+	/**
+	 * Validates the talkActionImpliesNpcExists constraint of '<em>Room</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRoom_talkActionImpliesNpcExists(Room room, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return room.talkActionImpliesNpcExists(diagnostics, context);
 	}
 
 	/**
@@ -260,23 +279,23 @@ public class Labyrinth_tales_of_gamersValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the npcActionImpliesNpcExists constraint of '<em>Room</em>'.
+	 * Validates the readActionImpliesHintExists constraint of '<em>Room</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateRoom_npcActionImpliesNpcExists(Room room, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return room.npcActionImpliesNpcExists(diagnostics, context);
+	public boolean validateRoom_readActionImpliesHintExists(Room room, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return room.readActionImpliesHintExists(diagnostics, context);
 	}
 
 	/**
-	 * Validates the hintActionImpliesHintExists constraint of '<em>Room</em>'.
+	 * Validates the askHintActionImpliesNpcExists constraint of '<em>Room</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateRoom_hintActionImpliesHintExists(Room room, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return room.hintActionImpliesHintExists(diagnostics, context);
+	public boolean validateRoom_askHintActionImpliesNpcExists(Room room, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return room.askHintActionImpliesNpcExists(diagnostics, context);
 	}
 
 	/**

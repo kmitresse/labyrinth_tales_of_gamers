@@ -3,7 +3,7 @@ import java.util.Collections;
 import java.util.Map;
 
 public class Action {
-  	public final static String MOVE = "Se déplacer";
+  	public final static String MOVE = "Se déplacer ";
 	public final static String TALK = "";
     public final static String PROPOSE = "Proposer un nom";
     public final static String ASK_HINT = "Demander l'indice";
@@ -104,8 +104,4 @@ public class Action {
 	        return false;
 	     }
 	}
-	
-	private static boolean isRightAnswer(String answer, String proposition) {
-		return answer.toLowerCase().replaceAll("\\s", "").equals(proposition.toLowerCase().replaceAll("\\s", ""));
-	}; 
 }

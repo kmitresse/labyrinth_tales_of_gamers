@@ -111,10 +111,6 @@ public class Action {
 	        return false;
 	     }
 	}
-	
-	private static boolean isRightAnswer(String answer, String proposition) {
-		return answer.toLowerCase().replaceAll("\\s", "").equals(proposition.toLowerCase().replaceAll("\\s", ""));
-	}; 
 }
 [/file]
 [/template]
